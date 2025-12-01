@@ -49,32 +49,27 @@ body.dark {
 ul {
   list-style: none;
 }
-
 .section {
   background: var(--bg-black-900);
-  min-height: 100vh;
-  display: block;
+  min-height: 100vh;      /* each section at least full-screen tall */
   padding: 0 30px;
   opacity: 1;
-  position: fixed;
-  left: 270px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  transition: all 0.3s ease;
+  position: relative;     /* or just remove this line entirely */
+  margin-left: 270px;     /* keeps space for the aside menu */
+  overflow: visible;      /* let the page scroll naturally */
 }
 
+/* These are no longer needed for the single-page layout.
+   You can delete them or leave them empty as placeholders. */
+
 .section.back-section {
-  z-index: 1;
+  /* no-op */
 }
 
 .section.active {
-  z-index: 2;
-  opacity: 1;
-  animation: slideSection 1s ease;
+  /* no-op – animation/z-index not needed anymore */
 }
+
 
 @keyframes slideSection {
   0% {

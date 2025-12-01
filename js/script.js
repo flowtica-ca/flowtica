@@ -1,92 +1,125 @@
 /* 
 Project Name: Modern Portfolio Website
-Description: A complete responsive modern portfolio website design
-             by using HTML CSS and Vanilla JavaScript from scratch.
-Author: Md Al Amin Hossen
-Github: https://github.com/MdRasen
-License: MIT License
-Copyright: 2023 ©MdRasen 
+Description: Flowtica single-page version with smooth scrolling
+Author: Md Al Amin Hossen (template) + Flowtica customization
 */
 
-// Typing animation
-var typed = new Typed(".typing", {
-  strings: [
-    "",
-    "AI systems",
-    "AI assistants",
-    "workflow automation",
-    "document Q&A",
-  ],
-  typeSpeed: 100,
-  BackSpeed: 60,
-  loop: true,
+// ---------------- Typing animation ----------------
+if (document.querySelector(".typing")) {
+  // Typed.js is loaded via script tag in index.html
+  // eslint-disable-next-line no-undef
+  new Typed(".typing", {
+    strings: [
+      "",
+      "AI systems",
+      "AI assistants",
+      "workflow automation",
+      "document Q&A",
+    ],
+    typeSpeed: 100,
+    BackSpeed: 60,
+    loop: true,
+  });
+}
+
+// ---------------- Smooth scroll & scroll spy ----------------
+const nav = document.querySelector(".nav");
+const navLinks = nav ? nav.querySelectorAll("a[href^='#']") : [];
+const sections = document.querySelectorAll(".section");
+
+// Smooth scroll on nav click
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const href = link.getAttribute("href");
+    if (!href || !href.includes("#")) return;
+
+    const targetId = href.split("#")[1];
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+
+    const y = targetEl.offsetTop;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+
+    setActiveNav(targetId);
+
+    // Close aside on small screens
+    if (window.innerWidth < 1200) {
+      toggleAside();
+    }
+  });
 });
 
-// Aside
-const nav = document.querySelector(".nav"),
-  navList = nav.querySelectorAll("li"),
-  totalNavList = navList.length,
-  allSection = document.querySelectorAll(".section"),
-  totalSection = allSection.length;
+// Optional: if there's a ".hire-me" button, make it scroll to its target
+const hireMeBtn = document.querySelector(".hire-me");
+if (hireMeBtn) {
+  hireMeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const href = hireMeBtn.getAttribute("href") || "#contact";
+    const targetId = href.split("#")[1];
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
 
-for (let i = 0; i < totalNavList; i++) {
-  const a = navList[i].querySelector("a");
-  a.addEventListener("click", function () {
-    for (let k = 0; k < totalSection; k++) {
-      allSection[k].classList.remove("back-section");
-    }
-    //Loop for removing active class
-    for (let j = 0; j < totalNavList; j++) {
-      if (navList[j].querySelector("a").classList.contains("active")) {
-        allSection[j].classList.add("back-section");
-      }
-      navList[j].querySelector("a").classList.remove("active");
-    }
-    //Adding active class
-    this.classList.add("active");
-    showSection(this); //Function call
-    //Nav click event - Hiding the nav menu
-    if (window.innerWidth < 1200) {
-      asideSectionTogglerBtn();
+    window.scrollTo({
+      top: targetEl.offsetTop,
+      behavior: "smooth",
+    });
+
+    setActiveNav(targetId);
+  });
+}
+
+// Highlight nav item based on scroll position (scroll spy)
+function setActiveNav(targetId) {
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || !href.includes("#")) return;
+    const id = href.split("#")[1];
+
+    if (id === targetId) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
     }
   });
 }
-function showSection(element) {
-  //Loop for removing active class
-  for (let k = 0; k < totalSection; k++) {
-    allSection[k].classList.remove("active");
-  }
-  const target = element.getAttribute("href").split("#")[1];
-  document.querySelector("#" + target).classList.add("active");
-}
 
-//For Hire me section
-document.querySelector(".hire-me").addEventListener("click", function () {
-  showSection(this);
-  updateNav(this);
-});
+window.addEventListener("scroll", () => {
+  const scrollPos = window.scrollY + window.innerHeight / 3; // middle-ish of viewport
+  let currentId = null;
 
-function updateNav(element) {
-  for (let i = 0; i < totalNavList; i++) {
-    navList[i].querySelector("a").classList.remove("active");
-    const target = element.getAttribute("href").split("#")[1];
-    if (
-      target ===
-      navList[i].querySelector("a").getAttribute("href").split("#")[1]
-    ) {
-      navList[i].querySelector("a").classList.add("active");
+  sections.forEach((section) => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+
+    if (scrollPos >= top && scrollPos < top + height) {
+      currentId = section.id;
     }
+  });
+
+  if (currentId) {
+    setActiveNav(currentId);
+  }
+});
+
+// ---------------- Aside nav toggler ----------------
+const navTogglerBtn = document.querySelector(".nav-toggler");
+const aside = document.querySelector(".aside");
+
+function toggleAside() {
+  if (aside) {
+    aside.classList.toggle("open");
+  }
+  if (navTogglerBtn) {
+    navTogglerBtn.classList.toggle("open");
   }
 }
 
-//For Nav Toggler Button
-const navTogglerBtn = document.querySelector(".nav-toggler"),
-  aside = document.querySelector(".aside");
-navTogglerBtn.addEventListener("click", () => {
-  asideSectionTogglerBtn();
-});
-
-function asideSectionTogglerBtn() {
-  aside.classList.toggle("open");
-  navTogglerBtn.classList.toggle("open");
+if (navTogglerBtn) {
+  navTogglerBtn.addEventListener("click", toggleAside);
 }
