@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!----------
+Project Name: Modern Portfolio Website
+Description: A complete responsive modern portfolio website design
+             by using HTML CSS and Vanilla JavaScript from scratch.
+Author: Md Al Amin Hossen
+Github: https://github.com/MdRasen
+License: MIT License
+Copyright: 2023 ©MdRasen 
+---------->
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowtica — AI assistants & workflows</title>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/blog-single.css">
+  <link rel="stylesheet" href="css/skins/color-1.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <!-- Style Switcher -->
+  <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled />
+  <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled />
+  <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled />
+  <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled />
+  <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled />
+
+  <link rel="stylesheet" href="css/style-switcher.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+</head>
+
+<body class="dark">
+  <!-- Main Container Start -->
+  <div class="main-container">
+    <!-- Aside Start -->
+    <div class="aside">
+      <div class="logo">
+        <a href="index.html"><span>F</span>lowtica</a>
+      </div>
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <ul class="nav">
+        <li>
+          <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="#about"><i class="fa fa-user"></i> About</a>
+        </li>
+        <li>
+          <a href="#service"><i class="fa fa-list"></i> Services</a>
+        </li>
+        <li>
+          <a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a>
+        </li>
+        <li>
+          <a href="#blog"><i class="fa-brands fa-readme"></i> Blog</a>
+        </li>
+        <li>
+          <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- Aside End -->
+    <!-- Main Content Start -->
+    <div class="main-content">
+      <!-- Home Section Start -->
+      <section class="home active section" id="home">
+        <div class="container">
+          <div class="row">
+            <div class="home-info padd-15">
+              <h3 class="hello">
+                Meet <span class="name">Flowtica</span>
+              </h3>
+              <h3 class="my-profession">
+                We build <span class="typing">AI assistants &amp; workflows</span>
+              </h3>
+              <p>
+  Flowtica designs, builds, and maintains custom AI assistants and
+  automations for real businesses. From phone and chat agents to
+  document-heavy workflows, we plug AI into the tools you already
+  use—without turning your stack into chaos.
+</p>
+              <a href="#contact" class="btn">Book a discovery call</a>
+            </div>
+            <div class="home-img padd-15">
+              <img src="images/hero.jpg" alt="hero" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Home Section End -->
+
+      <!-- About Section Start -->
+      <section class="about section" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>About Flowtica</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="about-content padd-15">
+              <div class="row">
+                <div class="about-text padd-15">
+                  <h3>We are Flowtica, an <span>AI systems studio</span></h3>
+                  <p>
+  Flowtica is a small, focused studio that turns AI from a cool demo
+  into working infrastructure. We help teams automate repetitive work,
+  route customer conversations, and make sense of messy documents—
+  without asking you to rebuild your entire stack.
+</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="personal-info padd-15">
+                  <div class="row">
+                    <div class="info-item padd-15">
+                      <p>Birthday : <span>17 sep 1999</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Age : <span>22</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Website : <span>www.domain.com</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Email : <span>info@gmail.com</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Degree : <span>CS</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Phone : <span>+880 1234567890</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>City : <span>Dhaka</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Freelance : <span>Available</span></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="buttons padd-15">
+                      <a href="#" class="btn">Download CV</a>
+                      <a href="#contact" class="btn hire-me">Hire Me</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="skills padd-15">
+                  <div class="row">
+                    <div class="skills-item padd-15">
+                      <h5>AI Assistants &amp; Chatbots</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 95%"></div>
+                        <div class="skill-percent">95%</div>
+                      </div>
+                    </div>
+                    <div class="skills-item padd-15">
+                      <h5>Workflow &amp; System Integration</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 75%"></div>
+                        <div class="skill-percent">75%</div>
+                      </div>
+                    </div>
+                    <div class="skills-item padd-15">
+                      <h5>Document Q&amp;A / RAG Systems</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 65%"></div>
+                        <div class="skill-percent">65%</div>
+                      </div>
+                    </div>
+                    <div class="skills-item padd-15">
+                      <h5>Data &amp; Infrastructure</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 80%"></div>
+                        <div class="skill-percent">80%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="education padd-15">
+  <h3 class="title">How we work</h3>
+  <div class="row">
+    <div class="timeline-box padd-15">
+      <div class="timeline shadow-dark">
+        <!-- Timeline item -->
+        <div class="timeline-item">
+          <div class="circle-dot"></div>
+          <h3 class="timeline-date">
+            <i class="fa fa-calendar"></i> Phase 1
+          </h3>
+          <h4 class="timeline-title">
+            Discovery &amp; workflow mapping
+          </h4>
+          <p class="timeline-text">
+            We start by unpacking how your team actually works today—systems,
+            constraints, and the annoying edge cases that break naive automation.
+          </p>
+        </div>
+        <!-- Timeline item -->
+        <div class="timeline-item">
+          <div class="circle-dot"></div>
+          <h3 class="timeline-date">
+            <i class="fa fa-calendar"></i> Phase 2
+          </h3>
+          <h4 class="timeline-title">
+            Prototype in weeks, not months
+          </h4>
+          <p class="timeline-text">
+            We design a minimal, testable AI assistant or workflow that plugs into
+            your existing stack. If it doesn&apos;t improve something measurable, we don&apos;t ship it.
+          </p>
+        </div>
+        <!-- Timeline item -->
+        <div class="timeline-item">
+          <div class="circle-dot"></div>
+          <h3 class="timeline-date">
+            <i class="fa fa-calendar"></i> Phase 3
+          </h3>
+          <h4 class="timeline-title">
+            Harden &amp; scale
+          </h4>
+          <p class="timeline-text">
+            We add monitoring, fallbacks, guardrails, and performance tuning so your
+            AI system behaves like real infrastructure, not a toy demo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="experience padd-15">
+  <h3 class="title">Principles</h3>
+  <div class="row">
+    <div class="timeline-box padd-15">
+      <div class="timeline shadow-dark">
+        <!-- Timeline item -->
+        <div class="timeline-item">
+          <div class="circle-dot"></div>
+          <h3 class="timeline-date">
+            <i class="fa fa-calendar"></i> Principle 1
+          </h3>
+          <h4 class="timeline-title">
+            Own your data
+          </h4>
+          <p class="timeline-text">
+            Your data stays under your control. We prefer architectures where you can
+            self-host or use your own cloud whenever possible.
+          </p>
+        </div>
+        <!-- Timeline item -->
+        <div class="timeline-item">
+          <div class="circle-dot"></div>
+          <h3 class="timeline-date">
+            <i class="fa fa-calendar"></i> Principle 2
+          </h3>
+          <h4 class="timeline-title">
+            Don&apos;t fight your stack
+          </h4>
+          <p class="timeline-text">
+            We integrate with what you already use—CRMs, ticketing systems, databases—
+            instead of forcing new tools everywhere.
+          </p>
+        </div>
+        <!-- Timeline item -->
+        <div class="timeline-item">
+          <div class="circle-dot"></div>
+          <h3 class="timeline-date">
+            <i class="fa fa-calendar"></i> Principle 3
+          </h3>
+          <h4 class="timeline-title">
+            Small bets, real impact
+          </h4>
+          <p class="timeline-text">
+            We favour small projects with clear value over massive &quot;AI transformation&quot;
+            initiatives that never launch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section End -->
+
+      <!-- Services Section Start -->
+      <section class="service section" id="service">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Services</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Services item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-mobile-alt"></i>
+                </div>
+                <h4>AI Phone &amp; Chat Assistants</h4>
+                <p>
+                  Custom voice and chat agents that answer questions, qualify leads, and route conversations to humans when needed.
+                </p>
+              </div>
+            </div>
+            <!-- Services item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-laptop-code"></i>
+                </div>
+                <h4>Document Q&amp;A for Legal &amp; Ops</h4>
+                <p>
+                  Search and ask questions across contracts, policies, and internal docs—with traceable, cited answers.
+                </p>
+              </div>
+            </div>
+            <!-- Services item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-palette"></i>
+                </div>
+                <h4>Workflow Automation &amp; Integration</h4>
+                <p>
+                  Connect AI to your CRM, helpdesk, scheduling tools, or internal systems so work actually moves, not just gets summarized.
+                </p>
+              </div>
+            </div>
+            <!-- Services item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-code"></i>
+                </div>
+                <h4>Private / Hybrid Cloud Deployments</h4>
+                <p>
+                  Architectures where you control hosting and data on AWS, Kubernetes, or your existing infrastructure.
+                </p>
+              </div>
+            </div>
+            <!-- Services item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <h4>Prototyping &amp; Experiments</h4>
+                <p>
+                  Short, focused engagements to validate an AI use case before you commit budget to a full build.
+                </p>
+              </div>
+            </div>
+            <!-- Services item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-bullhorn"></i>
+                </div>
+                <h4>Ongoing Support &amp; Iteration</h4>
+                <p>
+                  We monitor, refine, and extend your AI workflows as your team and data evolve.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section End -->
+
+      <!-- Portfolio Section Start -->
+      <section class="portfolio section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Work</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="portfolio-heading padd-15">
+              <h2>Recent &amp; reference projects :</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Portfolio item -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-innner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/portfolio-1.jpg" alt="portfolio-1" />
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio item -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-innner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/portfolio-2.jpg" alt="portfolio-2" />
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio item -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-innner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/portfolio-3.jpg" alt="portfolio-3" />
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio item -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-innner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/portfolio-4.jpg" alt="portfolio-4" />
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio item -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-innner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/portfolio-5.jpg" alt="portfolio-5" />
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio item -->
+            <div class="portfolio-item padd-15">
+              <div class="portfolio-item-innner shadow-dark">
+                <div class="portfolio-img">
+                  <img src="images/portfolio/portfolio-6.jpg" alt="portfolio-6" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio Section End -->
+
+      <!-- Blog Section Start -->
+      <section class="blog section" id="blog">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Notes &amp; Ideas</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="blog-heading padd-15">
+              <h2>Notes &amp; ideas :</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Blog item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="image">
+                  <img src="images/portfolio/portfolio-1.jpg" alt="">
+                </div>
+                <div class="blog-info">
+                  <div class="category">
+                    <a href="#">
+                      <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 01</p>
+                    </a>
+                  </div>
+                  <div class="date">
+                    <p><i class="fa-solid fa-calendar-days"></i> 25 July, 1999</p>
+                  </div>
+                </div>
+                <a href="blog-single.html">
+                  <h4>Blog Title 01</h4>
+                </a>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis pariatur consectetur doloremque.
+                </p>
+                <a href="blog-single.html">Read More...</a>
+              </div>
+            </div>
+            <!-- Blog item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="image">
+                  <img src="images/portfolio/portfolio-2.jpg" alt="">
+                </div>
+                <div class="blog-info">
+                  <div class="category">
+                    <a href="#">
+                      <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 02</p>
+                    </a>
+                  </div>
+                  <div class="date">
+                    <p><i class="fa-solid fa-calendar-days"></i> 25 July, 1999</p>
+                  </div>
+                </div>
+                <a href="blog-single.html">
+                  <h4>Blog Title 02</h4>
+                </a>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis pariatur consectetur doloremque.
+                </p>
+                <a href="blog-single.html">Read More...</a>
+              </div>
+            </div>
+            <!-- Blog item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="image">
+                  <img src="images/portfolio/portfolio-3.jpg" alt="">
+                </div>
+                <div class="blog-info">
+                  <div class="category">
+                    <a href="blog-single.html">
+                      <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 03</p>
+                    </a>
+                  </div>
+                  <div class="date">
+                    <p><i class="fa-solid fa-calendar-days"></i> 25 July, 1999</p>
+                  </div>
+                </div>
+                <a href="blog-single.html">
+                  <h4>Blog Title 03</h4>
+                </a>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis pariatur consectetur doloremque.
+                </p>
+                <a href="blog-single.html">Read More...</a>
+              </div>
+            </div>
+            <!-- Blog item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="image">
+                  <img src="images/portfolio/portfolio-4.jpg" alt="">
+                </div>
+                <div class="blog-info">
+                  <div class="category">
+                    <a href="blog-single.html">
+                      <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 04</p>
+                    </a>
+                  </div>
+                  <div class="date">
+                    <p><i class="fa-solid fa-calendar-days"></i> 25 July, 1999</p>
+                  </div>
+                </div>
+                <a href="blog-single.html">
+                  <h4>Blog Title 04</h4>
+                </a>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis pariatur consectetur doloremque.
+                </p>
+                <a href="#">Read More...</a>
+              </div>
+            </div>
+            <!-- Blog item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="image">
+                  <img src="images/portfolio/portfolio-5.jpg" alt="">
+                </div>
+                <div class="blog-info">
+                  <div class="category">
+                    <a href="blog-single.html">
+                      <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 05</p>
+                    </a>
+                  </div>
+                  <div class="date">
+                    <p><i class="fa-solid fa-calendar-days"></i> 25 July, 1999</p>
+                  </div>
+                </div>
+                <a href="blog-single.html">
+                  <h4>Blog Title 05</h4>
+                </a>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis pariatur consectetur doloremque.
+                </p>
+                <a href="blog-single.html">Read More...</a>
+              </div>
+            </div>
+            <!-- Blog item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="image">
+                  <img src="images/portfolio/portfolio-6.jpg" alt="">
+                </div>
+                <div class="blog-info">
+                  <div class="category">
+                    <a href="blog-single.html">
+                      <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 06</p>
+                    </a>
+                  </div>
+                  <div class="date">
+                    <p><i class="fa-solid fa-calendar-days"></i> 25 July, 1999</p>
+                  </div>
+                </div>
+                <a href="blog-single.html">
+                  <h4>Blog Title 06</h4>
+                </a>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Blanditiis pariatur consectetur doloremque.
+                </p>
+                <a href="blog-single.html">Read More...</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- Blog Section End -->
+
+      <!-- Contact Section Start -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Contact Flowtica</h2>
+            </div>
+          </div>
+          <h3 class="contact-title padd-15">Have a project or workflow in mind?</h3>
+          <h4 class="contact-sub-title padd-15">We&apos;re here to explore options</h4>
+          <div class="row">
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-phone"></i></div>
+              <h4>Preferred contact</h4>
+              <p>Email first; we&apos;ll schedule a call if it makes sense.</p>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+              <h4>Based in</h4>
+              <p>Remote · Canada</p>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <h4>Email</h4>
+              <p>contact@flowtica.ca</p>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-globe-europe"></i></div>
+              <h4>Website</h4>
+              <p>flowtica.ca</p>
+            </div>
+          </div>
+          <h3 class="contact-title padd-15">Send Flowtica a message</h3>
+          <h4 class="contact-sub-title padd-15">
+            We usually reply within 1–2 business days.
+          </h4>
+          <!-- Contact form -->
+          <div class="row">
+            <div class="contact-form padd-15">
+              <div class="row">
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" />
+                  </div>
+                </div>
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Subject" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Message"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <button type="submit" class="btn">Send Message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section End -->
+    </div>
+    <!-- Main Content End -->
+  </div>
+  <!-- Main Container End -->
+  <!-- Style Switcher Start -->
+  <div class="style-switcher">
+    <div class="style-switcher-toggler s-icon">
+      <i class="fas fa-cog fa-spin"></i>
+    </div>
+    <div class="day-night s-icon">
+      <i class="fas"></i>
+    </div>
+    <h4>Theme Colors</h4>
+    <div class="colors">
+      <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+      <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+      <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+      <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+      <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+    </div>
+  </div>
+  <!-- Style Switcher End -->
+  <!-- Custom JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+    referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+  <script src="js/style-switcher.js"></script>
+</body>
+
+</html>
