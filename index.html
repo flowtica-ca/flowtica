@@ -41,7 +41,7 @@
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/blog-single.css" />
-    <!-- Use color-4 as the main skin (matches what you changed) -->
+    <!-- Use color-4 as the main skin -->
     <link rel="stylesheet" href="css/skins/color-4.css" />
 
     <!-- Font Awesome -->
@@ -50,7 +50,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
 
-    <!-- Style Switcher (blue/palette, with color-4 as default active) -->
+    <!-- Style Switcher (color-4 as default active) -->
     <link
       rel="stylesheet"
       href="css/skins/color-1.css"
@@ -91,342 +91,412 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
 
-    <!-- Component-level tweaks; desktop preserved, mobile improved via media queries -->
-    <style>
-      body {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-      }
+    <!-- Component-level + MOBILE layout fixes -->
+<style>
+  :root {
+    scroll-behavior: smooth;
+  }
 
-      .btn {
-        border-radius: 999px;
-        padding-inline: 1.75rem;
-        font-weight: 500;
-      }
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
-      .btn:hover {
-        transform: translateY(-1px);
-        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
-      }
+  body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    /* Make the whole page match the main background so the left column
+       doesn't look like a separate white strip */
+    background: #f5f3ff;
+  }
 
-      .home .hello {
-        font-weight: 500;
-        letter-spacing: 0.03em;
-        margin-bottom: 0.75rem;
-      }
+  .btn {
+    border-radius: 999px;
+    padding-inline: 1.75rem;
+    font-weight: 500;
+  }
 
-      .tag-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        padding: 0.3rem 0.75rem;
-        border-radius: 999px;
-        border: 1px solid var(--skin-color, #4a90e2);
-        color: var(--skin-color, #4a90e2);
-        background: transparent;
-        font-size: 0.78rem;
-      }
+  .btn:hover {
+    transform: translateY(-1px);
+    transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+  }
 
-      .tag-pill i {
-        font-size: 0.8rem;
-      }
+  .home .hello {
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.75rem;
+  }
 
-      .home-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--skin-color, #4a90e2);
+    color: var(--skin-color, #4a90e2);
+    background: transparent;
+    font-size: 0.78rem;
+  }
 
-      .home-img-inner {
-        width: 100%;
-        max-width: 360px;
-        border-radius: 18px;
-        padding: 1.5rem;
-        background: radial-gradient(
-            circle at top left,
-            rgba(74, 144, 226, 0.2),
-            transparent 55%
-          ),
-          rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
+  .tag-pill i {
+    font-size: 0.8rem;
+  }
 
-      .home-img-inner h4 {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-        font-weight: 600;
-      }
+  .home-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-      .home-img-inner p {
-        font-size: 0.85rem;
-        opacity: 0.9;
-      }
+  .home-img-inner {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 18px;
+    padding: 1.5rem;
+    background: radial-gradient(
+        circle at top left,
+        rgba(74, 144, 226, 0.2),
+        transparent 55%
+      ),
+      rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-      .home-img-metrics {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.9rem;
-        margin-top: 1.25rem;
-      }
+  .home-img-inner h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
 
-      .metric-card {
-        border-radius: 12px;
-        padding: 0.9rem;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        font-size: 0.8rem;
-      }
+  .home-img-inner p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
 
-      .metric-label {
-        opacity: 0.7;
-        font-size: 0.78rem;
-      }
+  .home-img-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1.25rem;
+  }
 
-      .metric-value {
-        font-weight: 600;
-        margin-top: 0.15rem;
-      }
+  .metric-card {
+    border-radius: 12px;
+    padding: 0.9rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+  }
 
-      .skills-list {
-        margin-top: 0.5rem;
-      }
+  .metric-label {
+    opacity: 0.7;
+    font-size: 0.78rem;
+  }
 
-      .skills-list ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-      }
+  .metric-value {
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
 
-      .skills-list li {
-        font-size: 0.9rem;
-        margin-bottom: 0.25rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-      }
+  .skills-list {
+    margin-top: 0.5rem;
+  }
 
-      .skills-list li i {
-        font-size: 0.7rem;
-      }
+  .skills-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
 
-      .portfolio-note {
-        font-size: 0.9rem;
-        opacity: 0.9;
-        margin-bottom: 1.5rem;
-      }
+  .skills-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
 
-      .case-card {
-        padding: 1.25rem 1.35rem;
-        border-radius: 14px;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
+  .skills-list li i {
+    font-size: 0.7rem;
+  }
 
-      .case-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.7rem;
-        border-radius: 999px;
-        border: 1px solid var(--skin-color, #4a90e2);
-        color: var(--skin-color, #4a90e2);
-        background: transparent;
-        margin-bottom: 0.6rem;
-      }
+  .portfolio-note {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
 
-      .case-badge i {
-        font-size: 0.8rem;
-      }
+  .case-card {
+    padding: 1.25rem 1.35rem;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-      .case-list {
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.85rem;
-        margin: 0.5rem 0 0.75rem;
-      }
+  .case-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--skin-color, #4a90e2);
+    color: var(--skin-color, #4a90e2);
+    background: transparent;
+    margin-bottom: 0.6rem;
+  }
 
-      .case-list li {
-        margin-bottom: 0.25rem;
-      }
+  .case-badge i {
+    font-size: 0.8rem;
+  }
 
-      .discount-note {
-        font-size: 0.85rem;
-        opacity: 0.9;
-      }
+  .case-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0.75rem;
+  }
 
-      .strike {
-        text-decoration: line-through;
-        opacity: 0.7;
-      }
+  .case-list li {
+    margin-bottom: 0.25rem;
+  }
 
-      .offers-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.25rem;
-      }
+  .discount-note {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
 
-      .offer-card {
-        border-radius: 14px;
-        padding: 1.5rem;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
+  .strike {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
 
-      .offer-price {
-        margin: 0.5rem 0 0.75rem;
-        font-size: 0.95rem;
-      }
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
 
-      .offer-price strong {
-        font-size: 1.1rem;
-      }
+  .offer-card {
+    border-radius: 14px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-      .offer-price .strike {
-        margin-left: 0.4rem;
-        font-size: 0.85rem;
-      }
+  .offer-price {
+    margin: 0.5rem 0 0.75rem;
+    font-size: 0.95rem;
+  }
 
-      .offer-tagline {
-        font-size: 0.85rem;
-        opacity: 0.9;
-        margin-bottom: 0.6rem;
-      }
+  .offer-price strong {
+    font-size: 1.1rem;
+  }
 
-      .demo-list {
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.85rem;
-        margin: 0.5rem 0 0.75rem;
-      }
+  .offer-price .strike {
+    margin-left: 0.4rem;
+    font-size: 0.85rem;
+  }
 
-      .demo-list li {
-        margin-bottom: 0.3rem;
-      }
+  .offer-tagline {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.6rem;
+  }
 
-      .contact-form .form-control {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-      }
+  .demo-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0.75rem;
+  }
 
-      /* ============================
-         MOBILE IMPROVEMENTS ONLY
-         ============================ */
+  .demo-list li {
+    margin-bottom: 0.3rem;
+  }
 
-      @media (max-width: 991px) {
-        /* Make hero feel better on mobile/tablet */
-        .home .container {
-          padding-top: 3rem;
-        }
+  .contact-form .form-control {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
 
-        .home .row {
-          flex-direction: column;
-        }
+  /* ================================
+     MOBILE OVERRIDES (LAYOUT)
+     ================================ */
 
-        .home-info {
-          text-align: left;
-        }
+  @media (max-width: 991px) {
+    body {
+      overflow-x: hidden;
+    }
 
-        .home-info .btn {
-          margin-top: 0.75rem;
-        }
+    .main-container {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
 
-        .home-img {
-          margin-top: 1.75rem;
-        }
+    /* Keep aside off-canvas and not occupying space */
+    .aside {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -260px !important;
+      width: 260px;
+      z-index: 999;
+      transition: left 0.3s ease;
+    }
 
-        .home-img-inner {
-          max-width: 100%;
-        }
+    .aside.open {
+      left: 0 !important;
+    }
 
-        .home-img-metrics {
-          grid-template-columns: 1fr;
-        }
+    /* Floating burger button */
+    .nav-toggler {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 1000;
+    }
 
-        .metric-card {
-          font-size: 0.9rem;
-        }
-      }
+    /* Main content must use full width (no fake left column) */
+    .main-content,
+    .main-content.open {
+      position: relative;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
 
-      @media (max-width: 767px) {
-        /* General spacing for sections */
-        .section {
-          padding-top: 3rem;
-          padding-bottom: 3rem;
-        }
+    .section {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+    }
 
-        .section-title h2 {
-          font-size: 1.5rem;
-        }
+    .section .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
 
-        /* Improve readability of cards on small screens:
-           slightly lighter background and clearer borders */
-        .home-img-inner,
-        .case-card,
-        .offer-card {
-          background: rgba(255, 255, 255, 0.96);
-          border: 1px solid rgba(0, 0, 0, 0.06);
-        }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
 
-        .home-img-inner p,
-        .case-card p,
-        .offer-card p,
-        .case-card li,
-        .offer-card li {
-          color: #222;
-        }
+    .padd-15 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
-        .metric-card {
-          background: rgba(255, 255, 255, 0.96);
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          color: #222;
-        }
+    .home .container {
+      padding-top: 2.5rem;
+    }
 
-        .portfolio-note {
-          font-size: 0.88rem;
-        }
+    .home-info,
+    .home-img,
+    .service .service-item,
+    .portfolio .portfolio-item,
+    .contact .contact-info-item,
+    #offers .offer-card {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+    }
 
-        /* Stack case studies & offers nicely */
-        .portfolio .portfolio-item,
-        #offers .offer-card.padd-15 {
-          margin-bottom: 1rem;
-        }
+    .home-img {
+      margin-top: 1.5rem;
+    }
 
-        .offers-grid {
-          grid-template-columns: 1fr;
-        }
+    .home-img-inner {
+      max-width: 100%;
+    }
 
-        /* Contact form spacing */
-        .contact-form .form-group {
-          margin-bottom: 0.85rem;
-        }
+    .home-img-metrics {
+      grid-template-columns: 1fr;
+    }
 
-        .contact-info-item {
-          margin-bottom: 1rem;
-        }
+    .metric-card {
+      font-size: 0.9rem;
+    }
+  }
 
-        .contact-title {
-          font-size: 1.25rem;
-        }
+  @media (max-width: 767px) {
+    .section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
 
-        .contact-sub-title {
-          font-size: 0.95rem;
-        }
+    .section-title h2 {
+      font-size: 1.5rem;
+    }
 
-        /* Tag pill better tap size */
-        .tag-pill {
-          font-size: 0.75rem;
-          padding: 0.35rem 0.85rem;
-        }
-      }
-    </style>
+    /* Brighter cards for legibility on phones */
+    .home-img-inner,
+    .case-card,
+    .offer-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .home-img-inner p,
+    .case-card p,
+    .offer-card p,
+    .case-card li,
+    .offer-card li {
+      color: #222;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      color: #222;
+    }
+
+    .portfolio-note {
+      font-size: 0.88rem;
+    }
+
+    .offers-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 0.85rem;
+    }
+
+    .contact-info-item {
+      margin-bottom: 1rem;
+    }
+
+    .contact-title {
+      font-size: 1.25rem;
+    }
+
+    .contact-sub-title {
+      font-size: 0.95rem;
+    }
+
+    .tag-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.85rem;
+    }
+  }
+</style>
   </head>
 
-  <!-- default: bright / light (no "dark" class on body) -->
   <body>
     <!-- Main Container Start -->
     <div class="main-container">
@@ -1248,7 +1318,7 @@
         </section>
         <!-- Contact Section End -->
       </div>
-      <!-- Main Content End-->
+      <!-- Main Content End -->
     </div>
     <!-- Main Container End -->
 
