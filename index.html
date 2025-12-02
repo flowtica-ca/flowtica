@@ -38,10 +38,10 @@
       rel="stylesheet"
     />
 
-    <!-- Custom CSS -->
+    <!-- Base CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/blog-single.css" />
-    <!-- Use blue skin as the main one -->
+    <!-- Use color-4 as the main skin (matches what you changed) -->
     <link rel="stylesheet" href="css/skins/color-4.css" />
 
     <!-- Font Awesome -->
@@ -50,7 +50,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
 
-    <!-- Style Switcher (restore all palettes, make blue default) -->
+    <!-- Style Switcher (blue/palette, with color-4 as default active) -->
     <link
       rel="stylesheet"
       href="css/skins/color-1.css"
@@ -60,9 +60,10 @@
     />
     <link
       rel="stylesheet"
-      href="css/skins/color-4.css"
+      href="css/skins/color-2.css"
       class="alternate-style"
-      title="color-4"
+      title="color-2"
+      disabled
     />
     <link
       rel="stylesheet"
@@ -76,7 +77,6 @@
       href="css/skins/color-4.css"
       class="alternate-style"
       title="color-4"
-      disabled
     />
     <link
       rel="stylesheet"
@@ -91,7 +91,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
 
-    <!-- Component-level tweaks only (don’t override global palette) -->
+    <!-- Component-level tweaks; desktop preserved, mobile improved via media queries -->
     <style>
       body {
         font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
@@ -115,7 +115,6 @@
         margin-bottom: 0.75rem;
       }
 
-      /* Use skin color for accents where possible */
       .tag-pill {
         display: inline-flex;
         align-items: center;
@@ -312,6 +311,117 @@
       .contact-form .form-control {
         font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
+      }
+
+      /* ============================
+         MOBILE IMPROVEMENTS ONLY
+         ============================ */
+
+      @media (max-width: 991px) {
+        /* Make hero feel better on mobile/tablet */
+        .home .container {
+          padding-top: 3rem;
+        }
+
+        .home .row {
+          flex-direction: column;
+        }
+
+        .home-info {
+          text-align: left;
+        }
+
+        .home-info .btn {
+          margin-top: 0.75rem;
+        }
+
+        .home-img {
+          margin-top: 1.75rem;
+        }
+
+        .home-img-inner {
+          max-width: 100%;
+        }
+
+        .home-img-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .metric-card {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        /* General spacing for sections */
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.5rem;
+        }
+
+        /* Improve readability of cards on small screens:
+           slightly lighter background and clearer borders */
+        .home-img-inner,
+        .case-card,
+        .offer-card {
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .home-img-inner p,
+        .case-card p,
+        .offer-card p,
+        .case-card li,
+        .offer-card li {
+          color: #222;
+        }
+
+        .metric-card {
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          color: #222;
+        }
+
+        .portfolio-note {
+          font-size: 0.88rem;
+        }
+
+        /* Stack case studies & offers nicely */
+        .portfolio .portfolio-item,
+        #offers .offer-card.padd-15 {
+          margin-bottom: 1rem;
+        }
+
+        .offers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        /* Contact form spacing */
+        .contact-form .form-group {
+          margin-bottom: 0.85rem;
+        }
+
+        .contact-info-item {
+          margin-bottom: 1rem;
+        }
+
+        .contact-title {
+          font-size: 1.25rem;
+        }
+
+        .contact-sub-title {
+          font-size: 0.95rem;
+        }
+
+        /* Tag pill better tap size */
+        .tag-pill {
+          font-size: 0.75rem;
+          padding: 0.35rem 0.85rem;
+        }
       }
     </style>
   </head>
