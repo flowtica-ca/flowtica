@@ -4,17 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flowtica — AI assistants & workflows</title>
+
+    <title>Flowtica — Custom AI assistants, workflows & automation</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Flowtica is an AI systems studio that designs and builds custom AI assistants, phone agents, and workflow automations for real businesses."
+    />
+    <meta
+      name="keywords"
+      content="Flowtica, AI automation, AI assistants, AI workflows, AI consultant, phone agents, document Q&A, RAG, Canada"
+    />
+    <link rel="canonical" href="https://flowtica-ca.github.io/flowtica/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Flowtica — AI assistants & workflows" />
+    <meta
+      property="og:description"
+      content="Custom AI assistants and workflow automation for real businesses."
+    />
+    <meta
+      property="og:url"
+      content="https://flowtica-ca.github.io/flowtica/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Flowtica" />
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/blog-single.css" />
-    <link rel="stylesheet" href="css/skins/color-1.css" />
+    <!-- Use blue skin as the main one -->
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    <!-- Style Switcher -->
+
+    <!-- Style Switcher (restore all palettes, make blue default) -->
     <link
       rel="stylesheet"
       href="css/skins/color-1.css"
@@ -24,10 +60,9 @@
     />
     <link
       rel="stylesheet"
-      href="css/skins/color-2.css"
+      href="css/skins/color-4.css"
       class="alternate-style"
-      title="color-2"
-      disabled
+      title="color-4"
     />
     <link
       rel="stylesheet"
@@ -52,11 +87,237 @@
     />
 
     <link rel="stylesheet" href="css/style-switcher.css" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <!-- Component-level tweaks only (don’t override global palette) -->
+    <style>
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .home .hello {
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.75rem;
+      }
+
+      /* Use skin color for accents where possible */
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .home-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .home-img-inner {
+        width: 100%;
+        max-width: 360px;
+        border-radius: 18px;
+        padding: 1.5rem;
+        background: radial-gradient(
+            circle at top left,
+            rgba(74, 144, 226, 0.2),
+            transparent 55%
+          ),
+          rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .home-img-inner h4 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .home-img-inner p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .home-img-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 1.25rem;
+      }
+
+      .metric-card {
+        border-radius: 12px;
+        padding: 0.9rem;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.8rem;
+      }
+
+      .metric-label {
+        opacity: 0.7;
+        font-size: 0.78rem;
+      }
+
+      .metric-value {
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
+
+      .skills-list {
+        margin-top: 0.5rem;
+      }
+
+      .skills-list ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .skills-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .skills-list li i {
+        font-size: 0.7rem;
+      }
+
+      .portfolio-note {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+      }
+
+      .case-card {
+        padding: 1.25rem 1.35rem;
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .case-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        margin-bottom: 0.6rem;
+      }
+
+      .case-badge i {
+        font-size: 0.8rem;
+      }
+
+      .case-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .case-list li {
+        margin-bottom: 0.25rem;
+      }
+
+      .discount-note {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .offer-card {
+        border-radius: 14px;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .offer-price {
+        margin: 0.5rem 0 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      .offer-price strong {
+        font-size: 1.1rem;
+      }
+
+      .offer-price .strike {
+        margin-left: 0.4rem;
+        font-size: 0.85rem;
+      }
+
+      .offer-tagline {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        margin-bottom: 0.6rem;
+      }
+
+      .demo-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .demo-list li {
+        margin-bottom: 0.3rem;
+      }
+
+      .contact-form .form-control {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+    </style>
   </head>
 
-  <body class="dark">
+  <!-- default: bright / light (no "dark" class on body) -->
+  <body>
     <!-- Main Container Start -->
     <div class="main-container">
       <!-- Aside Start -->
@@ -78,10 +339,12 @@
             <a href="#service"><i class="fa fa-list"></i> Services</a>
           </li>
           <li>
-            <a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a>
+            <a href="#portfolio"
+              ><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a
+            >
           </li>
           <li>
-            <a href="#blog"><i class="fa-brands fa-readme"></i> Blog</a>
+            <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
           </li>
           <li>
             <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
@@ -98,22 +361,58 @@
             <div class="row">
               <div class="home-info padd-15">
                 <h3 class="hello">
-                  Meet <span class="name">Flowtica</span>
+                  <span class="tag-pill">
+                    <i class="fa-regular fa-circle-check"></i>
+                    AI systems studio for real businesses
+                  </span>
                 </h3>
                 <h3 class="my-profession">
-                  We build
-                  <span class="typing">AI assistants &amp; workflows</span>
+                  Flowtica builds
+                  <span class="typing">custom AI assistants &amp; workflows</span>
                 </h3>
                 <p>
-                  Flowtica designs, builds, and maintains custom AI assistants
-                  and automations for real businesses. From phone and chat
-                  agents to document-heavy workflows, we plug AI into the tools
-                  you already use—without turning your stack into chaos.
+                  We design, build, and maintain AI assistants and automations
+                  that plug into the tools you already use. From phone and chat
+                  agents to document-heavy workflows, we help teams reduce
+                  manual work, keep humans in the loop, and treat AI like
+                  infrastructure—not a shiny one-off demo.
                 </p>
                 <a href="#contact" class="btn">Book a discovery call</a>
               </div>
               <div class="home-img padd-15">
-                <img src="images/logo.jpg" alt="Flowtica" />
+                <div class="home-img-inner">
+                  <h4>Where Flowtica helps most</h4>
+                  <p>
+                    We&apos;re a small, engineering-led studio. You get
+                    thoughtful architecture, not &quot;just another chatbot.&quot;
+                  </p>
+                  <div class="home-img-metrics">
+                    <div class="metric-card">
+                      <div class="metric-label">Great fit for</div>
+                      <div class="metric-value">
+                        Service businesses, legal &amp; ops-heavy teams
+                      </div>
+                    </div>
+                    <div class="metric-card">
+                      <div class="metric-label">We focus on</div>
+                      <div class="metric-value">
+                        Assistants, workflow automation, document Q&amp;A
+                      </div>
+                    </div>
+                    <div class="metric-card">
+                      <div class="metric-label">Stack</div>
+                      <div class="metric-value">
+                        Python · TypeScript · OpenAI · AWS · Kubernetes
+                      </div>
+                    </div>
+                    <div class="metric-card">
+                      <div class="metric-label">Intro offer</div>
+                      <div class="metric-value">
+                        50% off for early case studies
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -136,57 +435,77 @@
                       We are Flowtica, an <span>AI systems studio</span>
                     </h3>
                     <p>
-                      Flowtica is a small, focused studio that turns AI from a
-                      cool demo into working infrastructure. We help teams
-                      automate repetitive work, route customer conversations,
-                      and make sense of messy documents—without asking you to
-                      rebuild your entire stack.
+                      Flowtica exists to bridge the gap between impressive AI
+                      demos and systems that quietly do real work every day. We
+                      approach AI like infrastructure: something that should be
+                      reliable, observable, and integrated into your existing
+                      tools—not a disconnected experiment that lives in a
+                      separate tab.
+                    </p>
+                    <p>
+                      We partner with teams who already feel the pain of manual
+                      workflows, scattered knowledge, and constant context
+                      switching. Together, we design small, testable projects
+                      that earn trust, and then grow them into durable systems
+                      over time.
                     </p>
                   </div>
                 </div>
+
+                <!-- Snapshot + Who we work with -->
                 <div class="row">
                   <div class="personal-info padd-15">
+                    <h3 class="title">Snapshot</h3>
                     <div class="row">
                       <div class="info-item padd-15">
-                        <p>Founded : <span>2025</span></p>
+                        <p>Founded: <span>2025</span></p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Focus :
+                          Based in:
+                          <span>Remote · Canada</span>
+                        </p>
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>
+                          Focus:
                           <span>AI assistants &amp; workflow automation</span>
                         </p>
                       </div>
                       <div class="info-item padd-15">
-                        <p>Website : <span>flowtica.ca</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>Email : <span>contact@flowtica.ca</span></p>
+                        <p>
+                          Typical teams:
+                          <span>5–200 people, ops &amp; service heavy</span>
+                        </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Tech Stack :
+                          Best fit:
                           <span
-                            >Python · TypeScript · OpenAI · AWS ·
-                            Kubernetes</span
+                            >Teams past the &quot;play with AI&quot; stage,
+                            ready for real systems</span
                           >
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Engagements :
+                          How we work:
+                          <span>Small, engineering-led, high-touch</span>
+                        </p>
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>
+                          Data stance:
                           <span
-                            >Prototypes, pilots &amp; long-term
-                            partnerships</span
+                            >You own your data; we prefer your cloud or
+                            controlled environments</span
                           >
                         </p>
                       </div>
                       <div class="info-item padd-15">
-                        <p>Based in : <span>Remote · Canada</span></p>
-                      </div>
-                      <div class="info-item padd-15">
                         <p>
-                          Availability :
-                          <span>Taking on a limited number of projects</span>
+                          Availability:
+                          <span>Limited number of active projects</span>
                         </p>
                       </div>
                     </div>
@@ -198,51 +517,42 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="skills padd-15">
-                    <div class="row">
-                      <div class="skills-item padd-15">
-                        <h5>AI Assistants &amp; Chatbots</h5>
-                        <div class="progress">
-                          <div
-                            class="progress-in"
-                            style="width: 95%"
-                          ></div>
-                          <div class="skill-percent">95%</div>
-                        </div>
-                      </div>
-                      <div class="skills-item padd-15">
-                        <h5>Workflow &amp; System Integration</h5>
-                        <div class="progress">
-                          <div
-                            class="progress-in"
-                            style="width: 75%"
-                          ></div>
-                          <div class="skill-percent">75%</div>
-                        </div>
-                      </div>
-                      <div class="skills-item padd-15">
-                        <h5>Document Q&amp;A / RAG Systems</h5>
-                        <div class="progress">
-                          <div
-                            class="progress-in"
-                            style="width: 65%"
-                          ></div>
-                          <div class="skill-percent">65%</div>
-                        </div>
-                      </div>
-                      <div class="skills-item padd-15">
-                        <h5>Data &amp; Infrastructure</h5>
-                        <div class="progress">
-                          <div
-                            class="progress-in"
-                            style="width: 80%"
-                          ></div>
-                          <div class="skill-percent">80%</div>
-                        </div>
-                      </div>
+                    <h3 class="title">What we do best</h3>
+                    <div class="skills-list">
+                      <ul>
+                        <li>
+                          <i class="fa-solid fa-circle"></i>
+                          AI phone &amp; chat assistants that hand off cleanly
+                          to humans when needed
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle"></i>
+                          Document Q&amp;A / RAG systems for contracts,
+                          policies, and playbooks—with citations
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle"></i>
+                          Workflow automation that connects AI to CRMs,
+                          ticketing tools, and internal systems
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle"></i>
+                          Architectures on AWS/Kubernetes that respect privacy
+                          and compliance boundaries
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle"></i>
+                          Monitoring, feedback loops, and iteration so systems
+                          improve instead of quietly degrading
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
+
+                <!-- How we work & Principles -->
                 <div class="row">
                   <div class="education padd-15">
                     <h3 class="title">How we work</h3>
@@ -374,7 +684,9 @@
                   <h4>AI Phone &amp; Chat Assistants</h4>
                   <p>
                     Custom voice and chat agents that answer questions, qualify
-                    leads, and route conversations to humans when needed.
+                    leads, and route conversations to humans when needed. Great
+                    for service businesses, clinics, and small teams that are
+                    tired of missed calls.
                   </p>
                 </div>
               </div>
@@ -387,7 +699,8 @@
                   <h4>Document Q&amp;A for Legal &amp; Ops</h4>
                   <p>
                     Search and ask questions across contracts, policies, and
-                    internal docs—with traceable, cited answers.
+                    internal docs—with traceable, cited answers. Ideal for
+                    legal teams, HR, compliance, and operations.
                   </p>
                 </div>
               </div>
@@ -401,7 +714,8 @@
                   <p>
                     Connect AI to your CRM, helpdesk, scheduling tools, or
                     internal systems so work actually moves, not just gets
-                    summarized.
+                    summarized. We design end-to-end flows with humans in the
+                    loop where needed.
                   </p>
                 </div>
               </div>
@@ -414,7 +728,8 @@
                   <h4>Private / Hybrid Cloud Deployments</h4>
                   <p>
                     Architectures where you control hosting and data on AWS,
-                    Kubernetes, or your existing infrastructure.
+                    Kubernetes, or your existing infrastructure. Helpful for
+                    teams with stronger privacy or compliance requirements.
                   </p>
                 </div>
               </div>
@@ -427,7 +742,8 @@
                   <h4>Prototyping &amp; Experiments</h4>
                   <p>
                     Short, focused engagements to validate an AI use case
-                    before you commit budget to a full build.
+                    before you commit budget to a full build. We aim for
+                    testable prototypes in weeks, not months.
                   </p>
                 </div>
               </div>
@@ -440,7 +756,8 @@
                   <h4>Ongoing Support &amp; Iteration</h4>
                   <p>
                     We monitor, refine, and extend your AI workflows as your
-                    team and data evolve.
+                    team and data evolve, so systems stay healthy instead of
+                    quietly degrading.
                   </p>
                 </div>
               </div>
@@ -449,84 +766,146 @@
         </section>
         <!-- Services Section End -->
 
-        <!-- Portfolio Section Start -->
+        <!-- Portfolio / Case Studies & Demos Section Start -->
         <section class="portfolio section" id="portfolio">
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>Work</h2>
+                <h2>Case Studies &amp; Demos</h2>
               </div>
             </div>
             <div class="row">
               <div class="portfolio-heading padd-15">
-                <h2>Recent &amp; reference projects :</h2>
+                <h2>Early reference work &amp; demo scenarios</h2>
+                <p class="portfolio-note">
+                  Flowtica is at the beginning of its journey as an AI systems
+                  studio. We&apos;re actively looking for new case studies and
+                  long-term partners—so we&apos;re offering our core packages at
+                  <strong>50% introductory discounts</strong> for a limited
+                  number of projects.
+                </p>
               </div>
             </div>
+
             <div class="row">
-              <!-- Portfolio item -->
+              <!-- Case Study 1 -->
               <div class="portfolio-item padd-15">
-                <div class="portfolio-item-innner shadow-dark">
-                  <div class="portfolio-img">
-                    <img
-                      src="images/portfolio/portfolio-1.jpg"
-                      alt="portfolio-1"
-                    />
+                <div class="case-card shadow-dark">
+                  <div>
+                    <div class="case-badge">
+                      <i class="fa-solid fa-scale-balanced"></i>
+                      Case Study · Document Q&amp;A
+                    </div>
+                    <h4>Legal &amp; Ops document assistant prototype</h4>
+                    <p>
+                      A focused prototype for a small legal/ops team to search,
+                      filter, and ask questions across contracts, policies, and
+                      process docs—with citations and guardrails.
+                    </p>
+                    <ul class="case-list">
+                      <li>
+                        <strong>Who it&apos;s for:</strong> law firms, legal
+                        clinics, ops-heavy teams with lots of internal docs
+                      </li>
+                      <li>
+                        <strong>What it does:</strong> question answering with
+                        page-level citations, suggested follow-ups, and
+                        &quot;I don&apos;t know&quot; behaviour when needed
+                      </li>
+                      <li>
+                        <strong>Stack:</strong> OpenAI, Python, vector search,
+                        simple web UI or internal chat
+                      </li>
+                    </ul>
                   </div>
+                  <p class="discount-note">
+                    <strong>Open for 1–2 more legal/ops teams</strong> at
+                    <strong>50% off</strong> our standard &quot;AI Workflow MVP&quot;
+                    pricing. See offers below or get in touch for details.
+                  </p>
                 </div>
               </div>
-              <!-- Portfolio item -->
+
+              <!-- Case Study 2 -->
               <div class="portfolio-item padd-15">
-                <div class="portfolio-item-innner shadow-dark">
-                  <div class="portfolio-img">
-                    <img
-                      src="images/portfolio/portfolio-2.jpg"
-                      alt="portfolio-2"
-                    />
+                <div class="case-card shadow-dark">
+                  <div>
+                    <div class="case-badge">
+                      <i class="fa-solid fa-phone-volume"></i>
+                      Case Study · Phone &amp; chat triage
+                    </div>
+                    <h4>Service business AI receptionist &amp; intake</h4>
+                    <p>
+                      A phone and chat assistant that handles FAQs, intake, and
+                      basic triage for a local service business—so fewer calls
+                      are missed and humans can focus on real work.
+                    </p>
+                    <ul class="case-list">
+                      <li>
+                        <strong>Who it&apos;s for:</strong> trades, clinics,
+                        salons, appointment-based services, small offices
+                      </li>
+                      <li>
+                        <strong>What it does:</strong> answers common questions,
+                        collects contact details, creates structured &quot;please
+                        call back&quot; tickets via email or chat
+                      </li>
+                      <li>
+                        <strong>Stack:</strong> telephony platform (Twilio /
+                        similar), OpenAI, email/Telegram or CRM integration
+                      </li>
+                    </ul>
                   </div>
+                  <p class="discount-note">
+                    We&apos;re looking for a few more service businesses
+                    interested in an AI receptionist at an
+                    <strong>introductory, discounted rate</strong>.
+                  </p>
                 </div>
               </div>
-              <!-- Portfolio item -->
+
+              <!-- Demos block -->
               <div class="portfolio-item padd-15">
-                <div class="portfolio-item-innner shadow-dark">
-                  <div class="portfolio-img">
-                    <img
-                      src="images/portfolio/portfolio-3.jpg"
-                      alt="portfolio-3"
-                    />
+                <div class="case-card shadow-dark">
+                  <div>
+                    <div class="case-badge">
+                      <i class="fa-solid fa-flask"></i>
+                      Demo scenarios
+                    </div>
+                    <h4>Example demos we can walk you through</h4>
+                    <p>
+                      These are ready-to-customize demo flows that cover many
+                      common use cases. On a discovery call, we can choose the
+                      closest one and adapt it to your reality.
+                    </p>
+                    <ul class="demo-list">
+                      <li>
+                        <strong>AI phone triage for a clinic:</strong> route
+                        calls by topic, capture symptoms, and create tickets for
+                        staff.
+                      </li>
+                      <li>
+                        <strong>Document Q&amp;A for HR policies:</strong>
+                        employees can ask &quot;What is our parental leave policy?&quot;
+                        and get cited answers.
+                      </li>
+                      <li>
+                        <strong>Slack or Teams assistant for ops:</strong>
+                        internal helper that answers &quot;how do we…&quot;
+                        questions and surfaces the right doc or runbook.
+                      </li>
+                      <li>
+                        <strong>Intake bot for service businesses:</strong>
+                        collect contact info, requested service, and timing via
+                        chat or web form, then email it to your team.
+                      </li>
+                    </ul>
                   </div>
-                </div>
-              </div>
-              <!-- Portfolio item -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-innner shadow-dark">
-                  <div class="portfolio-img">
-                    <img
-                      src="images/portfolio/portfolio-4.jpg"
-                      alt="portfolio-4"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!-- Portfolio item -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-innner shadow-dark">
-                  <div class="portfolio-img">
-                    <img
-                      src="images/portfolio/portfolio-5.jpg"
-                      alt="portfolio-5"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!-- Portfolio item -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-innner shadow-dark">
-                  <div class="portfolio-img">
-                    <img
-                      src="images/portfolio/portfolio-6.jpg"
-                      alt="portfolio-6"
-                    />
-                  </div>
+                  <p class="discount-note">
+                    Interested in seeing one of these in action with your own
+                    data or workflows? Mention the demo you&apos;re curious
+                    about when you contact us.
+                  </p>
                 </div>
               </div>
             </div>
@@ -534,222 +913,108 @@
         </section>
         <!-- Portfolio Section End -->
 
-        <!-- Blog Section Start -->
-        <section class="blog section" id="blog">
+        <!-- Offers / Pricing Section Start -->
+        <section class="service section" id="offers">
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>Notes &amp; Ideas</h2>
+                <h2>Introductory Offers</h2>
               </div>
             </div>
             <div class="row">
-              <div class="blog-heading padd-15">
-                <h2>Notes &amp; ideas :</h2>
+              <div class="padd-15">
+                <p>
+                  To build out our early case studies and long-term relationships,
+                  we&apos;re offering a small number of projects at
+                  <strong>50% discounted pricing</strong>. These prices reflect
+                  our current &quot;early partner&quot; stage and will increase as our
+                  portfolio grows.
+                </p>
               </div>
             </div>
-            <div class="row">
-              <!-- Blog item -->
-              <div class="blog-item padd-15">
-                <div class="blog-item-inner">
-                  <div class="image">
-                    <img src="images/portfolio/portfolio-1.jpg" alt="" />
-                  </div>
-                  <div class="blog-info">
-                    <div class="category">
-                      <a href="#">
-                        <p>
-                          <i
-                            class="fa-sharp fa-solid fa-book-open-reader"
-                          ></i>
-                          Insights
-                        </p>
-                      </a>
-                    </div>
-                    <div class="date">
-                      <p>
-                        <i class="fa-solid fa-calendar-days"></i> 12 Jan, 2025
-                      </p>
-                    </div>
-                  </div>
-                  <a href="blog-single.html">
-                    <h4>When an AI assistant actually helps</h4>
-                  </a>
-                  <p>
-                    How we think about choosing the right problems for AI
-                    assistants instead of trying to automate everything.
-                  </p>
-                  <a href="blog-single.html">Read More...</a>
-                </div>
+            <div class="row offers-grid">
+              <!-- Offer 1 -->
+              <div class="offer-card padd-15">
+                <h3>AI Workflow MVP</h3>
+                <p class="offer-tagline">
+                  A scoped, end-to-end AI assistant or workflow that solves one
+                  concrete problem in your business.
+                </p>
+                <p class="offer-price">
+                  <strong>$2,000 USD flat</strong>
+                  <span class="strike">$4,000 regular</span>
+                </p>
+                <ul class="demo-list">
+                  <li>Discovery &amp; workflow mapping (1–2 sessions)</li>
+                  <li>
+                    Prototype of a single assistant or workflow (phone, chat, or
+                    document Q&amp;A)
+                  </li>
+                  <li>Simple integration (email, chat, or basic API)</li>
+                  <li>Handover + light documentation</li>
+                </ul>
+                <p class="offer-tagline">
+                  Ideal if you want to prove value quickly before rolling out
+                  more automation.
+                </p>
               </div>
-              <!-- Blog item -->
-              <div class="blog-item padd-15">
-                <div class="blog-item-inner">
-                  <div class="image">
-                    <img src="images/portfolio/portfolio-2.jpg" alt="" />
-                  </div>
-                  <div class="blog-info">
-                    <div class="category">
-                      <a href="#">
-                        <p>
-                          <i
-                            class="fa-sharp fa-solid fa-book-open-reader"
-                          ></i>
-                          Architecture
-                        </p>
-                      </a>
-                    </div>
-                    <div class="date">
-                      <p>
-                        <i class="fa-solid fa-calendar-days"></i> 28 Jan, 2025
-                      </p>
-                    </div>
-                  </div>
-                  <a href="blog-single.html">
-                    <h4>Owning your data in an AI world</h4>
-                  </a>
-                  <p>
-                    A practical look at private and hybrid cloud setups for
-                    teams who want AI without giving up control.
-                  </p>
-                  <a href="blog-single.html">Read More...</a>
-                </div>
+
+              <!-- Offer 2 -->
+              <div class="offer-card padd-15">
+                <h3>Custom AI Agent Build</h3>
+                <p class="offer-tagline">
+                  A more flexible engagement for teams that need a deeper
+                  integration or more complex behaviour.
+                </p>
+                <p class="offer-price">
+                  <strong>$3,500–$5,000 USD</strong>
+                  <span class="strike">$7,000–$10,000 regular</span>
+                </p>
+                <ul class="demo-list">
+                  <li>
+                    Custom logic &amp; multi-step workflows (e.g. routing,
+                    approvals, fallbacks)
+                  </li>
+                  <li>
+                    Multiple channels (phone + chat, or chat + internal tool)
+                  </li>
+                  <li>Integration with your existing systems/stack</li>
+                  <li>
+                    Basic monitoring and iteration pass after initial go-live
+                  </li>
+                </ul>
+                <p class="offer-tagline">
+                  Good for teams who already know where AI should plug in and
+                  need an implementation partner.
+                </p>
               </div>
-              <!-- Blog item -->
-              <div class="blog-item padd-15">
-                <div class="blog-item-inner">
-                  <div class="image">
-                    <img src="images/portfolio/portfolio-3.jpg" alt="" />
-                  </div>
-                  <div class="blog-info">
-                    <div class="category">
-                      <a href="blog-single.html">
-                        <p>
-                          <i
-                            class="fa-sharp fa-solid fa-book-open-reader"
-                          ></i>
-                          Experiments
-                        </p>
-                      </a>
-                    </div>
-                    <div class="date">
-                      <p>
-                        <i class="fa-solid fa-calendar-days"></i> 10 Feb, 2025
-                      </p>
-                    </div>
-                  </div>
-                  <a href="blog-single.html">
-                    <h4>Designing small bets with real impact</h4>
-                  </a>
-                  <p>
-                    Why we prefer small, well-defined AI projects over huge
-                    “transformation” programs that never ship.
-                  </p>
-                  <a href="blog-single.html">Read More...</a>
-                </div>
-              </div>
-              <!-- Blog item -->
-              <div class="blog-item padd-15">
-                <div class="blog-item-inner">
-                  <div class="image">
-                    <img src="images/portfolio/portfolio-4.jpg" alt="" />
-                  </div>
-                  <div class="blog-info">
-                    <div class="category">
-                      <a href="blog-single.html">
-                        <p>
-                          <i
-                            class="fa-sharp fa-solid fa-book-open-reader"
-                          ></i>
-                          Operations
-                        </p>
-                      </a>
-                    </div>
-                    <div class="date">
-                      <p>
-                        <i class="fa-solid fa-calendar-days"></i> 22 Feb, 2025
-                      </p>
-                    </div>
-                  </div>
-                  <a href="blog-single.html">
-                    <h4>Routing conversations, not just answering them</h4>
-                  </a>
-                  <p>
-                    Combining AI with your existing processes so work flows to
-                    the right people and systems.
-                  </p>
-                  <a href="blog-single.html">Read More...</a>
-                </div>
-              </div>
-              <!-- Blog item -->
-              <div class="blog-item padd-15">
-                <div class="blog-item-inner">
-                  <div class="image">
-                    <img src="images/portfolio/portfolio-5.jpg" alt="" />
-                  </div>
-                  <div class="blog-info">
-                    <div class="category">
-                      <a href="blog-single.html">
-                        <p>
-                          <i
-                            class="fa-sharp fa-solid fa-book-open-reader"
-                          ></i>
-                          Legal &amp; docs
-                        </p>
-                      </a>
-                    </div>
-                    <div class="date">
-                      <p>
-                        <i class="fa-solid fa-calendar-days"></i> 5 Mar, 2025
-                      </p>
-                    </div>
-                  </div>
-                  <a href="blog-single.html">
-                    <h4>Document Q&amp;A that people can trust</h4>
-                  </a>
-                  <p>
-                    What it takes to build document assistants that cite sources
-                    and don&apos;t hallucinate wildly.
-                  </p>
-                  <a href="blog-single.html">Read More...</a>
-                </div>
-              </div>
-              <!-- Blog item -->
-              <div class="blog-item padd-15">
-                <div class="blog-item-inner">
-                  <div class="image">
-                    <img src="images/portfolio/portfolio-6.jpg" alt="" />
-                  </div>
-                  <div class="blog-info">
-                    <div class="category">
-                      <a href="blog-single.html">
-                        <p>
-                          <i
-                            class="fa-sharp fa-solid fa-book-open-reader"
-                          ></i>
-                          Practice
-                        </p>
-                      </a>
-                    </div>
-                    <div class="date">
-                      <p>
-                        <i class="fa-solid fa-calendar-days"></i> 18 Mar, 2025
-                      </p>
-                    </div>
-                  </div>
-                  <a href="blog-single.html">
-                    <h4>Keeping AI systems healthy over time</h4>
-                  </a>
-                  <p>
-                    Monitoring, feedback loops, and iteration for assistants
-                    that keep improving instead of degrading.
-                  </p>
-                  <a href="blog-single.html">Read More...</a>
-                </div>
+
+              <!-- Offer 3 -->
+              <div class="offer-card padd-15">
+                <h3>Support &amp; Iteration Retainer</h3>
+                <p class="offer-tagline">
+                  Ongoing help to keep your AI systems healthy as your data and
+                  workflows change.
+                </p>
+                <p class="offer-price">
+                  <strong>$300–$1,000 USD / month</strong>
+                  <span class="strike">$600–$2,000 regular</span>
+                </p>
+                <ul class="demo-list">
+                  <li>Monitoring &amp; basic incident response</li>
+                  <li>Prompt &amp; workflow tweaks based on feedback</li>
+                  <li>Light feature improvements over time</li>
+                  <li>Priority support via email</li>
+                </ul>
+                <p class="offer-tagline">
+                  Perfect if you want a small, reliable AI partner rather than
+                  one-off projects.
+                </p>
               </div>
             </div>
           </div>
         </section>
-        <!-- Blog Section End -->
+        <!-- Offers / Pricing Section End -->
 
         <!-- Contact Section Start -->
         <section class="contact section" id="contact">
@@ -763,7 +1028,7 @@
               Have a project or workflow in mind?
             </h3>
             <h4 class="contact-sub-title padd-15">
-              We&apos;re here to explore options
+              Tell us a bit about your team and what you&apos;d like to explore.
             </h4>
             <div class="row">
               <!-- Contact info item-->
@@ -784,7 +1049,9 @@
               <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-envelope"></i></div>
                 <h4>Email</h4>
-                <p>contact@flowtica.ca</p>
+                <p>
+                  <a href="mailto:contact@flowtica.ca">contact@flowtica.ca</a>
+                </p>
               </div>
               <!-- Contact info item-->
               <div class="contact-info-item padd-15">
@@ -792,7 +1059,7 @@
                   <i class="fa fa-globe-europe"></i>
                 </div>
                 <h4>Website</h4>
-                <p>flowtica.ca</p>
+                <p><a href="https://flowtica.ca">flowtica.ca</a></p>
               </div>
             </div>
             <h3 class="contact-title padd-15">Send Flowtica a message</h3>
@@ -802,54 +1069,69 @@
             <!-- Contact form -->
             <div class="row">
               <div class="contact-form padd-15">
-                <div class="row">
-                  <div class="form-item col-6 padd-15">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Name"
-                      />
+                <form
+                  action="https://formspree.io/f/mdkqzljj"
+                  method="POST"
+                  novalidate
+                >
+                  <div class="row">
+                    <div class="form-item col-6 padd-15">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="name"
+                          placeholder="Name"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-item col-6 padd-15">
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          class="form-control"
+                          name="email"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div class="form-item col-6 padd-15">
-                    <div class="form-group">
-                      <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Email"
-                      />
+                  <div class="row">
+                    <div class="form-item col-12 padd-15">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          placeholder="Subject"
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="form-item col-12 padd-15">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Subject"
-                      />
+                  <div class="row">
+                    <div class="form-item col-12 padd-15">
+                      <div class="form-group">
+                        <textarea
+                          class="form-control"
+                          name="message"
+                          placeholder="Tell us about your business, current tools, and what you&apos;d like to automate."
+                          rows="5"
+                          required
+                        ></textarea>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="form-item col-12 padd-15">
-                    <div class="form-group">
-                      <textarea
-                        class="form-control"
-                        placeholder="Message"
-                      ></textarea>
+                  <div class="row">
+                    <div class="form-item col-12 padd-15">
+                      <div class="form-group">
+                        <button type="submit" class="btn">Send Message</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="form-item col-12 padd-15">
-                    <div class="form-group">
-                      <button type="submit" class="btn">Send Message</button>
-                    </div>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
