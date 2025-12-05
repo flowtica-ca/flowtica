@@ -5,31 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Flowtica — Custom AI assistants, workflows & automation</title>
+    <title>Flowtica | AI Systems Studio for Assistants & Workflow Automation</title>
 
     <!-- SEO -->
     <meta
       name="description"
-      content="Flowtica is an AI systems studio that designs and builds custom AI assistants, phone agents, and workflow automations for real businesses."
+      content="Flowtica is an AI systems studio that designs, builds, and maintains custom AI assistants, phone agents, and workflow automations for service-focused businesses."
     />
     <meta
       name="keywords"
-      content="Flowtica, AI automation, AI assistants, AI workflows, AI consultant, phone agents, document Q&A, RAG, Canada"
+      content="Flowtica, AI systems studio, AI automation, AI assistants, AI workflows, AI consulting, phone agents, document Q&A, RAG, Canada"
     />
-    <link rel="canonical" href="https://flowtica-ca.github.io/flowtica/" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://flowtica.ca/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Flowtica — AI assistants & workflows" />
+    <meta property="og:title" content="Flowtica | AI Assistants & Workflow Automation" />
     <meta
       property="og:description"
-      content="Custom AI assistants and workflow automation for real businesses."
+      content="Flowtica partners with businesses to design and operate reliable AI assistants and workflow automation that integrate with existing tools."
     />
-    <meta
-      property="og:url"
-      content="https://flowtica-ca.github.io/flowtica/"
-    />
+    <meta property="og:url" content="https://flowtica.ca/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Flowtica" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Flowtica",
+        "url": "https://flowtica.ca/",
+        "description": "AI systems studio specializing in custom AI assistants, phone agents, and workflow automation for service-oriented businesses.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CA"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "availableLanguage": ["en"]
+          }
+        ]
+      }
+    </script>
 
     <!-- Font: Inter -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -92,409 +113,419 @@
     <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
 
     <!-- Component-level + MOBILE layout fixes -->
-<style>
-  :root {
-    scroll-behavior: smooth;
-  }
-
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  body {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
-    /* Make the whole page match the main background so the left column
-       doesn't look like a separate white strip */
-    background: #f5f3ff;
-  }
-
-  .btn {
-    border-radius: 999px;
-    padding-inline: 1.75rem;
-    font-weight: 500;
-  }
-
-  .btn:hover {
-    transform: translateY(-1px);
-    transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
-  }
-
-  .home .hello {
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.75rem;
-  }
-
-  .tag-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.3rem 0.75rem;
-    border-radius: 999px;
-    border: 1px solid var(--skin-color, #4a90e2);
-    color: var(--skin-color, #4a90e2);
-    background: transparent;
-    font-size: 0.78rem;
-  }
-
-  .tag-pill i {
-    font-size: 0.8rem;
-  }
-
-  .home-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .home-img-inner {
-    width: 100%;
-    max-width: 360px;
-    border-radius: 18px;
-    padding: 1.5rem;
-    background: radial-gradient(
-        circle at top left,
-        rgba(74, 144, 226, 0.2),
-        transparent 55%
-      ),
-      rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .home-img-inner h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .home-img-inner p {
-    font-size: 0.85rem;
-    opacity: 0.9;
-  }
-
-  .home-img-metrics {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-top: 1.25rem;
-  }
-
-  .metric-card {
-    border-radius: 12px;
-    padding: 0.9rem;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.8rem;
-  }
-
-  .metric-label {
-    opacity: 0.7;
-    font-size: 0.78rem;
-  }
-
-  .metric-value {
-    font-weight: 600;
-    margin-top: 0.15rem;
-  }
-
-  .skills-list {
-    margin-top: 0.5rem;
-  }
-
-  .skills-list ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-
-  .skills-list li {
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .skills-list li i {
-    font-size: 0.7rem;
-  }
-
-  .portfolio-note {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-  }
-
-  .case-card {
-    padding: 1.25rem 1.35rem;
-    border-radius: 14px;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .case-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.7rem;
-    border-radius: 999px;
-    border: 1px solid var(--skin-color, #4a90e2);
-    color: var(--skin-color, #4a90e2);
-    background: transparent;
-    margin-bottom: 0.6rem;
-  }
-
-  .case-badge i {
-    font-size: 0.8rem;
-  }
-
-  .case-list {
-    list-style: none;
-    padding-left: 0;
-    font-size: 0.85rem;
-    margin: 0.5rem 0 0.75rem;
-  }
-
-  .case-list li {
-    margin-bottom: 0.25rem;
-  }
-
-  .discount-note {
-    font-size: 0.85rem;
-    opacity: 0.9;
-  }
-
-  .strike {
-    text-decoration: line-through;
-    opacity: 0.7;
-  }
-
-  .offers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .offer-card {
-    border-radius: 14px;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .offer-price {
-    margin: 0.5rem 0 0.75rem;
-    font-size: 0.95rem;
-  }
-
-  .offer-price strong {
-    font-size: 1.1rem;
-  }
-
-  .offer-price .strike {
-    margin-left: 0.4rem;
-    font-size: 0.85rem;
-  }
-
-  .offer-tagline {
-    font-size: 0.85rem;
-    opacity: 0.9;
-    margin-bottom: 0.6rem;
-  }
-
-  .demo-list {
-    list-style: none;
-    padding-left: 0;
-    font-size: 0.85rem;
-    margin: 0.5rem 0 0.75rem;
-  }
-
-  .demo-list li {
-    margin-bottom: 0.3rem;
-  }
-
-  .contact-form .form-control {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
-  }
-
-  /* ================================
-     MOBILE OVERRIDES (LAYOUT)
-     ================================ */
-
-  @media (max-width: 991px) {
-    body {
-      overflow-x: hidden;
-    }
-
-    .main-container {
-      display: block !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    /* Keep aside off-canvas and not occupying space */
-    .aside {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: -260px !important;
-      width: 260px;
-      z-index: 999;
-      transition: left 0.3s ease;
-    }
-
-    .aside.open {
-      left: 0 !important;
-    }
-
-    /* Floating burger button */
-    .nav-toggler {
-      position: fixed;
-      top: 16px;
-      left: 16px;
-      z-index: 1000;
-    }
-
-    /* Main content must use full width (no fake left column) */
-    .main-content,
-    .main-content.open {
-      position: relative;
-      margin-left: 0 !important;
-      padding-left: 0 !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    .section {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      margin-left: 0 !important;
-    }
-
-    .section .container {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 !important;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      margin-left: -15px;
-      margin-right: -15px;
-    }
-
-    .padd-15 {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    .home .container {
-      padding-top: 2.5rem;
-    }
-
-    .home-info,
-    .home-img,
-    .service .service-item,
-    .portfolio .portfolio-item,
-    .contact .contact-info-item,
-    #offers .offer-card {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-    }
-
-    .home-img {
-      margin-top: 1.5rem;
-    }
-
-    .home-img-inner {
-      max-width: 100%;
-    }
-
-    .home-img-metrics {
-      grid-template-columns: 1fr;
-    }
-
-    .metric-card {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .section {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-
-    .section-title h2 {
-      font-size: 1.5rem;
-    }
-
-    /* Brighter cards for legibility on phones */
-    .home-img-inner,
-    .case-card,
-    .offer-card {
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .home-img-inner p,
-    .case-card p,
-    .offer-card p,
-    .case-card li,
-    .offer-card li {
-      color: #222;
-    }
-
-    .metric-card {
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      color: #222;
-    }
-
-    .portfolio-note {
-      font-size: 0.88rem;
-    }
-
-    .offers-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-form .form-group {
-      margin-bottom: 0.85rem;
-    }
-
-    .contact-info-item {
-      margin-bottom: 1rem;
-    }
-
-    .contact-title {
-      font-size: 1.25rem;
-    }
-
-    .contact-sub-title {
-      font-size: 0.95rem;
-    }
-
-    .tag-pill {
-      font-size: 0.75rem;
-      padding: 0.35rem 0.85rem;
-    }
-  }
-</style>
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .home .hello {
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.75rem;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .home-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .home-img-inner {
+        width: 100%;
+        max-width: 360px;
+        border-radius: 18px;
+        padding: 1.5rem;
+        background: radial-gradient(
+            circle at top left,
+            rgba(74, 144, 226, 0.2),
+            transparent 55%
+          ),
+          rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .home-img-inner h4 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .home-img-inner p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .home-img-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 1.25rem;
+      }
+
+      .metric-card {
+        border-radius: 12px;
+        padding: 0.9rem;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.8rem;
+      }
+
+      .metric-label {
+        opacity: 0.7;
+        font-size: 0.78rem;
+      }
+
+      .metric-value {
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
+
+      .skills-list {
+        margin-top: 0.5rem;
+      }
+
+      .skills-list ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .skills-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .skills-list li i {
+        font-size: 0.7rem;
+      }
+
+      .portfolio-note {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+      }
+
+      .case-card {
+        padding: 1.25rem 1.35rem;
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 0.8rem;
+      }
+
+      /* ensure readable text on dark background (case studies & demos) */
+      .case-card,
+      .case-card p,
+      .case-card li,
+      .demo-list li {
+        color: #f7f7f7;
+      }
+
+      .case-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        margin-bottom: 0.6rem;
+      }
+
+      .case-badge i {
+        font-size: 0.8rem;
+      }
+
+      .case-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .case-list li {
+        margin-bottom: 0.25rem;
+      }
+
+      .discount-note {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .offer-card {
+        border-radius: 14px;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .offer-price {
+        margin: 0.5rem 0 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      .offer-price strong {
+        font-size: 1.1rem;
+      }
+
+      .offer-price .strike {
+        margin-left: 0.4rem;
+        font-size: 0.85rem;
+      }
+
+      .offer-tagline {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        margin-bottom: 0.6rem;
+      }
+
+      .demo-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .demo-list li {
+        margin-bottom: 0.3rem;
+      }
+
+      .contact-form .form-control {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      /* Fix dark-mode text visibility in Offers section */
+      body.dark #offers p,
+      body.dark #offers li {
+        color: #f7f7f7;
+      }
+
+      /* ================================
+         MOBILE OVERRIDES (LAYOUT)
+         ================================ */
+
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .home .container {
+          padding-top: 2.5rem;
+        }
+
+        .home-info,
+        .home-img,
+        .service .service-item,
+        .portfolio .portfolio-item,
+        .contact .contact-info-item,
+        #offers .offer-card {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+
+        .home-img {
+          margin-top: 1.5rem;
+        }
+
+        .home-img-inner {
+          max-width: 100%;
+        }
+
+        .home-img-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .metric-card {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.5rem;
+        }
+
+        .home-img-inner,
+        .case-card,
+        .offer-card {
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .home-img-inner p,
+        .case-card p,
+        .offer-card p,
+        .case-card li,
+        .offer-card li,
+        .demo-list li {
+          color: #222;
+        }
+
+        .metric-card {
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          color: #222;
+        }
+
+        .portfolio-note {
+          font-size: 0.88rem;
+        }
+
+        .offers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-form .form-group {
+          margin-bottom: 0.85rem;
+        }
+
+        .contact-info-item {
+          margin-bottom: 1rem;
+        }
+
+        .contact-title {
+          font-size: 1.25rem;
+        }
+
+        .contact-sub-title {
+          font-size: 0.95rem;
+        }
+
+        .tag-pill {
+          font-size: 0.75rem;
+          padding: 0.35rem 0.85rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -543,52 +574,53 @@
                 <h3 class="hello">
                   <span class="tag-pill">
                     <i class="fa-regular fa-circle-check"></i>
-                    AI systems studio for real businesses
+                    AI systems studio for operational teams
                   </span>
                 </h3>
                 <h3 class="my-profession">
-                  Flowtica builds
+                  Flowtica designs
                   <span class="typing">custom AI assistants &amp; workflows</span>
                 </h3>
                 <p>
-                  We design, build, and maintain AI assistants and automations
-                  that plug into the tools you already use. From phone and chat
-                  agents to document-heavy workflows, we help teams reduce
-                  manual work, keep humans in the loop, and treat AI like
-                  infrastructure—not a shiny one-off demo.
+                  Flowtica helps organisations turn AI into reliable
+                  infrastructure. We design, build, and operate AI assistants
+                  and automations that integrate with the tools you already use.
+                  From phone and chat agents to document-heavy workflows, we
+                  focus on measurable outcomes, robust architecture, and clear
+                  handoffs to your team.
                 </p>
-                <a href="#contact" class="btn">Book a discovery call</a>
+                <a href="#contact" class="btn">Request a discovery call</a>
               </div>
               <div class="home-img padd-15">
                 <div class="home-img-inner">
-                  <h4>Where Flowtica helps most</h4>
+                  <h4>Where Flowtica provides the most value</h4>
                   <p>
-                    We&apos;re a small, engineering-led studio. You get
-                    thoughtful architecture, not &quot;just another chatbot.&quot;
+                    We work closely with lean teams that need dependable AI
+                    systems rather than experimental chatbots.
                   </p>
                   <div class="home-img-metrics">
                     <div class="metric-card">
-                      <div class="metric-label">Great fit for</div>
+                      <div class="metric-label">Best suited for</div>
                       <div class="metric-value">
-                        Service businesses, legal &amp; ops-heavy teams
+                        Service businesses, legal, HR, and ops-heavy teams
                       </div>
                     </div>
                     <div class="metric-card">
-                      <div class="metric-label">We focus on</div>
+                      <div class="metric-label">Core focus areas</div>
                       <div class="metric-value">
                         Assistants, workflow automation, document Q&amp;A
                       </div>
                     </div>
                     <div class="metric-card">
-                      <div class="metric-label">Stack</div>
+                      <div class="metric-label">Technical stack</div>
                       <div class="metric-value">
                         Python · TypeScript · OpenAI · AWS · Kubernetes
                       </div>
                     </div>
                     <div class="metric-card">
-                      <div class="metric-label">Intro offer</div>
+                      <div class="metric-label">Early partner offer</div>
                       <div class="metric-value">
-                        50% off for early case studies
+                        50% discount for case study projects
                       </div>
                     </div>
                   </div>
@@ -612,22 +644,21 @@
                 <div class="row">
                   <div class="about-text padd-15">
                     <h3>
-                      We are Flowtica, an <span>AI systems studio</span>
+                      Flowtica is an <span>AI systems studio</span>
                     </h3>
                     <p>
-                      Flowtica exists to bridge the gap between impressive AI
-                      demos and systems that quietly do real work every day. We
-                      approach AI like infrastructure: something that should be
-                      reliable, observable, and integrated into your existing
-                      tools—not a disconnected experiment that lives in a
-                      separate tab.
+                      Flowtica was created to close the gap between impressive
+                      AI demos and dependable systems that support day-to-day
+                      operations. We approach AI as part of your infrastructure:
+                      observable, maintainable, and integrated, rather than a
+                      stand-alone tool disconnected from your processes.
                     </p>
                     <p>
-                      We partner with teams who already feel the pain of manual
-                      workflows, scattered knowledge, and constant context
-                      switching. Together, we design small, testable projects
-                      that earn trust, and then grow them into durable systems
-                      over time.
+                      We work with teams that already experience the cost of
+                      manual workflows, scattered knowledge, and constant
+                      context switching. Together, we define achievable projects
+                      that deliver clear value and build on that foundation over
+                      time.
                     </p>
                   </div>
                 </div>
@@ -642,7 +673,7 @@
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Based in:
+                          Location:
                           <span>Remote · Canada</span>
                         </p>
                       </div>
@@ -654,45 +685,45 @@
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Typical teams:
-                          <span>5–200 people, ops &amp; service heavy</span>
+                          Typical clients:
+                          <span>5–200 people, service and ops-led teams</span>
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
                           Best fit:
                           <span
-                            >Teams past the &quot;play with AI&quot; stage,
-                            ready for real systems</span
+                            >Organisations beyond experimentation, ready for
+                            production systems</span
                           >
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          How we work:
-                          <span>Small, engineering-led, high-touch</span>
+                          Engagement style:
+                          <span>Engineering-led, collaborative, and lean</span>
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Data stance:
+                          Data approach:
                           <span
-                            >You own your data; we prefer your cloud or
-                            controlled environments</span
+                            >Clients retain ownership; we favour deployments in
+                            your cloud or controlled environments</span
                           >
                         </p>
                       </div>
                       <div class="info-item padd-15">
                         <p>
-                          Availability:
-                          <span>Limited number of active projects</span>
+                          Capacity:
+                          <span>Limited number of concurrent projects</span>
                         </p>
                       </div>
                     </div>
                     <div class="row">
                       <div class="buttons padd-15">
                         <a href="#contact" class="btn"
-                          >Book a discovery call</a
+                          >Discuss a potential project</a
                         >
                       </div>
                     </div>
@@ -704,13 +735,13 @@
                       <ul>
                         <li>
                           <i class="fa-solid fa-circle"></i>
-                          AI phone &amp; chat assistants that hand off cleanly
-                          to humans when needed
+                          AI phone and chat assistants that hand off cleanly to
+                          people when required
                         </li>
                         <li>
                           <i class="fa-solid fa-circle"></i>
                           Document Q&amp;A / RAG systems for contracts,
-                          policies, and playbooks—with citations
+                          policies, and runbooks, with transparent citations
                         </li>
                         <li>
                           <i class="fa-solid fa-circle"></i>
@@ -719,13 +750,13 @@
                         </li>
                         <li>
                           <i class="fa-solid fa-circle"></i>
-                          Architectures on AWS/Kubernetes that respect privacy
-                          and compliance boundaries
+                          Architectures on AWS or Kubernetes that respect
+                          privacy and compliance constraints
                         </li>
                         <li>
                           <i class="fa-solid fa-circle"></i>
-                          Monitoring, feedback loops, and iteration so systems
-                          improve instead of quietly degrading
+                          Monitoring and feedback loops so systems improve over
+                          time rather than quietly degrading
                         </li>
                       </ul>
                     </div>
@@ -749,9 +780,10 @@
                               Discovery &amp; workflow mapping
                             </h4>
                             <p class="timeline-text">
-                              We start by unpacking how your team actually
-                              works today—systems, constraints, and the annoying
-                              edge cases that break naive automation.
+                              We begin by understanding how your team operates
+                              today—systems, constraints, and the edge cases
+                              that commonly break automation—so we can design a
+                              realistic solution.
                             </p>
                           </div>
                           <!-- Timeline item -->
@@ -764,10 +796,9 @@
                               Prototype in weeks, not months
                             </h4>
                             <p class="timeline-text">
-                              We design a minimal, testable AI assistant or
-                              workflow that plugs into your existing stack. If
-                              it doesn&apos;t improve something measurable, we
-                              don&apos;t ship it.
+                              We implement a focused AI assistant or workflow
+                              that plugs into your existing stack. Every
+                              prototype is tied to clear success metrics.
                             </p>
                           </div>
                           <!-- Timeline item -->
@@ -778,9 +809,10 @@
                             </h3>
                             <h4 class="timeline-title">Harden &amp; scale</h4>
                             <p class="timeline-text">
-                              We add monitoring, fallbacks, guardrails, and
-                              performance tuning so your AI system behaves like
-                              real infrastructure, not a toy demo.
+                              Once value is demonstrated, we invest in
+                              monitoring, guardrails, fallbacks, and performance
+                              tuning so the solution behaves like dependable
+                              infrastructure.
                             </p>
                           </div>
                         </div>
@@ -798,11 +830,12 @@
                             <h3 class="timeline-date">
                               <i class="fa fa-calendar"></i> Principle 1
                             </h3>
-                            <h4 class="timeline-title">Own your data</h4>
+                            <h4 class="timeline-title">Your data, your control</h4>
                             <p class="timeline-text">
-                              Your data stays under your control. We prefer
-                              architectures where you can self-host or use your
-                              own cloud whenever possible.
+                              Data ownership remains with you. Wherever
+                              possible, we design deployments in your
+                              infrastructure or in controlled environments you
+                              administer.
                             </p>
                           </div>
                           <!-- Timeline item -->
@@ -812,12 +845,12 @@
                               <i class="fa fa-calendar"></i> Principle 2
                             </h3>
                             <h4 class="timeline-title">
-                              Don&apos;t fight your stack
+                              Integrate with existing systems
                             </h4>
                             <p class="timeline-text">
-                              We integrate with what you already use—CRMs,
-                              ticketing systems, databases—instead of forcing
-                              new tools everywhere.
+                              We align with the tools you already rely on—CRMs,
+                              ticketing systems, data stores—rather than
+                              introducing unnecessary platforms.
                             </p>
                           </div>
                           <!-- Timeline item -->
@@ -827,12 +860,12 @@
                               <i class="fa fa-calendar"></i> Principle 3
                             </h3>
                             <h4 class="timeline-title">
-                              Small bets, real impact
+                              Targeted projects, tangible results
                             </h4>
                             <p class="timeline-text">
-                              We favour small projects with clear value over
-                              massive &quot;AI transformation&quot; initiatives
-                              that never launch.
+                              We favour focused, high-impact initiatives instead
+                              of broad programmes that are difficult to deliver
+                              and maintain.
                             </p>
                           </div>
                         </div>
@@ -864,9 +897,9 @@
                   <h4>AI Phone &amp; Chat Assistants</h4>
                   <p>
                     Custom voice and chat agents that answer questions, qualify
-                    leads, and route conversations to humans when needed. Great
-                    for service businesses, clinics, and small teams that are
-                    tired of missed calls.
+                    leads, and route conversations to the right people. Designed
+                    for service businesses, clinics, and teams that want to
+                    reduce missed calls and repetitive work.
                   </p>
                 </div>
               </div>
@@ -876,11 +909,11 @@
                   <div class="icon">
                     <i class="fa fa-laptop-code"></i>
                   </div>
-                  <h4>Document Q&amp;A for Legal &amp; Ops</h4>
+                  <h4>Document Q&amp;A for Legal &amp; Operations</h4>
                   <p>
-                    Search and ask questions across contracts, policies, and
-                    internal docs—with traceable, cited answers. Ideal for
-                    legal teams, HR, compliance, and operations.
+                    Structured search and question answering across contracts,
+                    policies, and internal documentation, with cited responses.
+                    Ideal for legal teams, HR, compliance, and operations.
                   </p>
                 </div>
               </div>
@@ -892,10 +925,9 @@
                   </div>
                   <h4>Workflow Automation &amp; Integration</h4>
                   <p>
-                    Connect AI to your CRM, helpdesk, scheduling tools, or
-                    internal systems so work actually moves, not just gets
-                    summarized. We design end-to-end flows with humans in the
-                    loop where needed.
+                    End-to-end automation that connects AI to your CRM,
+                    helpdesk, scheduling tools, and internal systems. We design
+                    workflows with humans in the loop where judgement is needed.
                   </p>
                 </div>
               </div>
@@ -905,11 +937,11 @@
                   <div class="icon">
                     <i class="fa fa-code"></i>
                   </div>
-                  <h4>Private / Hybrid Cloud Deployments</h4>
+                  <h4>Private &amp; Hybrid Cloud Deployments</h4>
                   <p>
-                    Architectures where you control hosting and data on AWS,
-                    Kubernetes, or your existing infrastructure. Helpful for
-                    teams with stronger privacy or compliance requirements.
+                    Architectures where you control hosting and data across AWS,
+                    Kubernetes, or your own infrastructure. Suitable for teams
+                    with stronger privacy, security, or compliance requirements.
                   </p>
                 </div>
               </div>
@@ -919,11 +951,11 @@
                   <div class="icon">
                     <i class="fa fa-search"></i>
                   </div>
-                  <h4>Prototyping &amp; Experiments</h4>
+                  <h4>Prototyping &amp; Feasibility</h4>
                   <p>
-                    Short, focused engagements to validate an AI use case
-                    before you commit budget to a full build. We aim for
-                    testable prototypes in weeks, not months.
+                    Short, focused engagements to validate a use case before you
+                    commit to a larger implementation. We aim for usable
+                    prototypes in weeks, not months.
                   </p>
                 </div>
               </div>
@@ -935,9 +967,9 @@
                   </div>
                   <h4>Ongoing Support &amp; Iteration</h4>
                   <p>
-                    We monitor, refine, and extend your AI workflows as your
-                    team and data evolve, so systems stay healthy instead of
-                    quietly degrading.
+                    Monitoring and refinement of your AI workflows as your data
+                    and processes evolve, ensuring systems remain accurate and
+                    aligned with operations.
                   </p>
                 </div>
               </div>
@@ -956,52 +988,56 @@
             </div>
             <div class="row">
               <div class="portfolio-heading padd-15">
-                <h2>Early reference work &amp; demo scenarios</h2>
+                <h2>Reference work &amp; demonstration scenarios</h2>
                 <p class="portfolio-note">
-                  Flowtica is at the beginning of its journey as an AI systems
-                  studio. We&apos;re actively looking for new case studies and
-                  long-term partners—so we&apos;re offering our core packages at
-                  <strong>50% introductory discounts</strong> for a limited
-                  number of projects.
+                  Flowtica is building a portfolio of long-term client
+                  engagements. To support this, we are offering a limited number
+                  of projects at a
+                  <strong>50% introductory discount</strong> in exchange for
+                  detailed case studies and feedback.
                 </p>
               </div>
             </div>
 
             <div class="row">
-              <!-- Case Study 1 -->
+              <!-- Case Study 1: Property Management -->
               <div class="portfolio-item padd-15">
                 <div class="case-card shadow-dark">
                   <div>
                     <div class="case-badge">
-                      <i class="fa-solid fa-scale-balanced"></i>
-                      Case Study · Document Q&amp;A
+                      <i class="fa-solid fa-building"></i>
+                      Case Study · Property Management
                     </div>
-                    <h4>Legal &amp; Ops document assistant prototype</h4>
+                    <h4>Property Management Operations Assistant</h4>
                     <p>
-                      A focused prototype for a small legal/ops team to search,
-                      filter, and ask questions across contracts, policies, and
-                      process docs—with citations and guardrails.
+                      A focused assistant for a mid-sized property management
+                      team to handle tenant questions, building information, and
+                      internal procedures from a single interface.
                     </p>
                     <ul class="case-list">
                       <li>
-                        <strong>Who it&apos;s for:</strong> law firms, legal
-                        clinics, ops-heavy teams with lots of internal docs
+                        <strong>Who it serves:</strong> property management
+                        companies, condo and strata managers, and real estate
+                        operators with multiple buildings.
                       </li>
                       <li>
-                        <strong>What it does:</strong> question answering with
-                        page-level citations, suggested follow-ups, and
-                        &quot;I don&apos;t know&quot; behaviour when needed
+                        <strong>Capabilities:</strong> answers questions about
+                        leases, building rules, maintenance workflows, and
+                        policies, with links back to the underlying documents
+                        and systems.
                       </li>
                       <li>
-                        <strong>Stack:</strong> OpenAI, Python, vector search,
-                        simple web UI or internal chat
+                        <strong>Technology:</strong> OpenAI, Python, vector
+                        search, and a simple web or chat interface connected to
+                        your existing tools.
                       </li>
                     </ul>
                   </div>
                   <p class="discount-note">
-                    <strong>Open for 1–2 more legal/ops teams</strong> at
-                    <strong>50% off</strong> our standard &quot;AI Workflow MVP&quot;
-                    pricing. See offers below or get in touch for details.
+                    <strong>Available for 1–2 additional property management teams</strong>
+                    at a <strong>50% discount</strong> under the
+                    &quot;AI Workflow MVP&quot; offer. See the offers section or
+                    outline your use case via the contact form.
                   </p>
                 </div>
               </div>
@@ -1012,33 +1048,35 @@
                   <div>
                     <div class="case-badge">
                       <i class="fa-solid fa-phone-volume"></i>
-                      Case Study · Phone &amp; chat triage
+                      Case Study · Phone &amp; Chat Triage
                     </div>
-                    <h4>Service business AI receptionist &amp; intake</h4>
+                    <h4>AI Reception &amp; Intake for Service Businesses</h4>
                     <p>
-                      A phone and chat assistant that handles FAQs, intake, and
-                      basic triage for a local service business—so fewer calls
-                      are missed and humans can focus on real work.
+                      A phone and chat assistant that handles common enquiries,
+                      intake, and basic triage for a local service business so
+                      staff can focus on client work.
                     </p>
                     <ul class="case-list">
                       <li>
-                        <strong>Who it&apos;s for:</strong> trades, clinics,
-                        salons, appointment-based services, small offices
+                        <strong>Who it serves:</strong> trades, clinics, salons,
+                        appointment-based services, and small offices
                       </li>
                       <li>
-                        <strong>What it does:</strong> answers common questions,
-                        collects contact details, creates structured &quot;please
-                        call back&quot; tickets via email or chat
+                        <strong>Capabilities:</strong> answers routine
+                        questions, collects contact details, and creates
+                        structured &quot;call-back&quot; tickets via email or
+                        internal chat
                       </li>
                       <li>
-                        <strong>Stack:</strong> telephony platform (Twilio /
-                        similar), OpenAI, email/Telegram or CRM integration
+                        <strong>Technology:</strong> telephony platform (such as
+                        Twilio), OpenAI, and integrations with email, chat, or
+                        CRM tools
                       </li>
                     </ul>
                   </div>
                   <p class="discount-note">
-                    We&apos;re looking for a few more service businesses
-                    interested in an AI receptionist at an
+                    We are seeking a small number of additional service
+                    businesses interested in deploying an AI receptionist at an
                     <strong>introductory, discounted rate</strong>.
                   </p>
                 </div>
@@ -1052,39 +1090,42 @@
                       <i class="fa-solid fa-flask"></i>
                       Demo scenarios
                     </div>
-                    <h4>Example demos we can walk you through</h4>
+                    <h4>Example demo flows</h4>
                     <p>
-                      These are ready-to-customize demo flows that cover many
-                      common use cases. On a discovery call, we can choose the
-                      closest one and adapt it to your reality.
+                      The following demo scenarios can be adapted quickly to
+                      your environment. During a discovery call, we select the
+                      closest match and tailor it to your requirements.
                     </p>
                     <ul class="demo-list">
                       <li>
-                        <strong>AI phone triage for a clinic:</strong> route
-                        calls by topic, capture symptoms, and create tickets for
-                        staff.
+                        <strong>AI phone triage for clinics:</strong> routing
+                        calls by topic, capturing key details, and creating
+                        structured tickets for staff.
                       </li>
                       <li>
                         <strong>Document Q&amp;A for HR policies:</strong>
-                        employees can ask &quot;What is our parental leave policy?&quot;
-                        and get cited answers.
+                        employees ask questions such as
+                        &quot;What is our parental leave policy?&quot; and
+                        receive cited answers.
                       </li>
                       <li>
-                        <strong>Slack or Teams assistant for ops:</strong>
-                        internal helper that answers &quot;how do we…&quot;
-                        questions and surfaces the right doc or runbook.
+                        <strong>Slack or Teams assistant for operations:</strong>
+                        an internal assistant that responds to &quot;how do we
+                        …&quot; questions and surfaces the relevant procedure or
+                        runbook.
                       </li>
                       <li>
-                        <strong>Intake bot for service businesses:</strong>
-                        collect contact info, requested service, and timing via
-                        chat or web form, then email it to your team.
+                        <strong>Intake assistant for service providers:</strong>
+                        collects contact information, requested services, and
+                        scheduling preferences via chat or web form, then sends
+                        the details to your team.
                       </li>
                     </ul>
                   </div>
                   <p class="discount-note">
-                    Interested in seeing one of these in action with your own
-                    data or workflows? Mention the demo you&apos;re curious
-                    about when you contact us.
+                    If any of these scenarios aligns with your needs, mention it
+                    in your message and we will incorporate it into the initial
+                    discussion.
                   </p>
                 </div>
               </div>
@@ -1104,11 +1145,11 @@
             <div class="row">
               <div class="padd-15">
                 <p>
-                  To build out our early case studies and long-term relationships,
-                  we&apos;re offering a small number of projects at
-                  <strong>50% discounted pricing</strong>. These prices reflect
-                  our current &quot;early partner&quot; stage and will increase as our
-                  portfolio grows.
+                  To support early partners and build high-quality case
+                  studies, Flowtica is offering a limited number of projects at
+                  a <strong>50% discount</strong> on standard pricing. These
+                  offers are designed for organisations that can provide clear
+                  feedback and are open to sharing non-sensitive results.
                 </p>
               </div>
             </div>
@@ -1117,25 +1158,25 @@
               <div class="offer-card padd-15">
                 <h3>AI Workflow MVP</h3>
                 <p class="offer-tagline">
-                  A scoped, end-to-end AI assistant or workflow that solves one
-                  concrete problem in your business.
+                  A scoped, end-to-end AI assistant or workflow designed to
+                  address one clearly-defined operational problem.
                 </p>
                 <p class="offer-price">
                   <strong>$2,000 USD flat</strong>
                   <span class="strike">$4,000 regular</span>
                 </p>
                 <ul class="demo-list">
-                  <li>Discovery &amp; workflow mapping (1–2 sessions)</li>
+                  <li>Discovery and workflow mapping (1–2 sessions)</li>
                   <li>
                     Prototype of a single assistant or workflow (phone, chat, or
                     document Q&amp;A)
                   </li>
                   <li>Simple integration (email, chat, or basic API)</li>
-                  <li>Handover + light documentation</li>
+                  <li>Handover and light documentation</li>
                 </ul>
                 <p class="offer-tagline">
-                  Ideal if you want to prove value quickly before rolling out
-                  more automation.
+                  Suitable for organisations that want to validate one use case
+                  before investing in broader automation.
                 </p>
               </div>
 
@@ -1143,8 +1184,8 @@
               <div class="offer-card padd-15">
                 <h3>Custom AI Agent Build</h3>
                 <p class="offer-tagline">
-                  A more flexible engagement for teams that need a deeper
-                  integration or more complex behaviour.
+                  A flexible engagement for teams that require deeper
+                  integrations or more advanced behaviour from their AI systems.
                 </p>
                 <p class="offer-price">
                   <strong>$3,500–$5,000 USD</strong>
@@ -1152,20 +1193,24 @@
                 </p>
                 <ul class="demo-list">
                   <li>
-                    Custom logic &amp; multi-step workflows (e.g. routing,
-                    approvals, fallbacks)
+                    Multi-step workflows and routing logic, including
+                    approvals and fallbacks
                   </li>
                   <li>
-                    Multiple channels (phone + chat, or chat + internal tool)
+                    Support for multiple channels (for example, phone plus chat
+                    or chat plus internal tools)
                   </li>
-                  <li>Integration with your existing systems/stack</li>
                   <li>
-                    Basic monitoring and iteration pass after initial go-live
+                    Integration with existing systems such as CRMs, ticketing
+                    tools, and internal APIs
+                  </li>
+                  <li>
+                    Initial monitoring and iteration pass after go-live
                   </li>
                 </ul>
                 <p class="offer-tagline">
-                  Good for teams who already know where AI should plug in and
-                  need an implementation partner.
+                  Best for organisations that already understand where AI should
+                  sit in their processes and require an implementation partner.
                 </p>
               </div>
 
@@ -1173,22 +1218,22 @@
               <div class="offer-card padd-15">
                 <h3>Support &amp; Iteration Retainer</h3>
                 <p class="offer-tagline">
-                  Ongoing help to keep your AI systems healthy as your data and
-                  workflows change.
+                  Ongoing support to keep AI systems aligned with evolving data,
+                  processes, and business priorities.
                 </p>
                 <p class="offer-price">
                   <strong>$300–$1,000 USD / month</strong>
                   <span class="strike">$600–$2,000 regular</span>
                 </p>
                 <ul class="demo-list">
-                  <li>Monitoring &amp; basic incident response</li>
-                  <li>Prompt &amp; workflow tweaks based on feedback</li>
-                  <li>Light feature improvements over time</li>
-                  <li>Priority support via email</li>
+                  <li>Monitoring and basic incident response</li>
+                  <li>Prompt and workflow adjustments based on feedback</li>
+                  <li>Incremental feature improvements over time</li>
+                  <li>Priority communication channel for requests</li>
                 </ul>
                 <p class="offer-tagline">
-                  Perfect if you want a small, reliable AI partner rather than
-                  one-off projects.
+                  Ideal for teams that view AI as a long-term capability rather
+                  than a one-time project.
                 </p>
               </div>
             </div>
@@ -1205,17 +1250,22 @@
               </div>
             </div>
             <h3 class="contact-title padd-15">
-              Have a project or workflow in mind?
+              Share your project or workflow challenge
             </h3>
             <h4 class="contact-sub-title padd-15">
-              Tell us a bit about your team and what you&apos;d like to explore.
+              Please use the contact form below to outline your organisation,
+              current tools, and what you would like to explore. We typically
+              respond within 1–2 business days.
             </h4>
             <div class="row">
               <!-- Contact info item-->
               <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-phone"></i></div>
-                <h4>Preferred contact</h4>
-                <p>Email first; we&apos;ll schedule a call if it makes sense.</p>
+                <h4>Preferred first step</h4>
+                <p>
+                  Send us a brief via the form; if there is a good fit, we will
+                  follow up by email to schedule a call.
+                </p>
               </div>
               <!-- Contact info item-->
               <div class="contact-info-item padd-15">
@@ -1227,14 +1277,6 @@
               </div>
               <!-- Contact info item-->
               <div class="contact-info-item padd-15">
-                <div class="icon"><i class="fa fa-envelope"></i></div>
-                <h4>Email</h4>
-                <p>
-                  <a href="mailto:contact@flowtica.ca">contact@flowtica.ca</a>
-                </p>
-              </div>
-              <!-- Contact info item-->
-              <div class="contact-info-item padd-15">
                 <div class="icon">
                   <i class="fa fa-globe-europe"></i>
                 </div>
@@ -1242,9 +1284,10 @@
                 <p><a href="https://flowtica.ca">flowtica.ca</a></p>
               </div>
             </div>
-            <h3 class="contact-title padd-15">Send Flowtica a message</h3>
+            <h3 class="contact-title padd-15">Send a message to Flowtica</h3>
             <h4 class="contact-sub-title padd-15">
-              We usually reply within 1–2 business days.
+              The more context you share about your workflows and systems, the
+              more specific we can be in our reply.
             </h4>
             <!-- Contact form -->
             <div class="row">
@@ -1261,7 +1304,7 @@
                           type="text"
                           class="form-control"
                           name="name"
-                          placeholder="Name"
+                          placeholder="Your name"
                           required
                         />
                       </div>
@@ -1272,7 +1315,7 @@
                           type="email"
                           class="form-control"
                           name="email"
-                          placeholder="Email"
+                          placeholder="Work email"
                           required
                         />
                       </div>
@@ -1285,7 +1328,7 @@
                           type="text"
                           class="form-control"
                           name="subject"
-                          placeholder="Subject"
+                          placeholder="Topic or project name"
                           required
                         />
                       </div>
@@ -1297,7 +1340,7 @@
                         <textarea
                           class="form-control"
                           name="message"
-                          placeholder="Tell us about your business, current tools, and what you&apos;d like to automate."
+                          placeholder="Tell us about your organisation, current tools, and what you would like to automate or augment."
                           rows="5"
                           required
                         ></textarea>
@@ -1307,7 +1350,9 @@
                   <div class="row">
                     <div class="form-item col-12 padd-15">
                       <div class="form-group">
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">
+                          Submit message
+                        </button>
                       </div>
                     </div>
                   </div>
