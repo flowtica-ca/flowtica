@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowtica | AI Reception & Intake for Service Businesses</title>
+
+    <meta
+      name="description"
+      content="How Flowtica designs AI reception and intake workflows for clinics, trades, and multi-location service businesses, running in environments you control."
+    />
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-single.css" />
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Alternate skins -->
+    <link
+      rel="stylesheet"
+      href="css/skins/color-1.css"
+      class="alternate-style"
+      title="color-1"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-2.css"
+      class="alternate-style"
+      title="color-2"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-3.css"
+      class="alternate-style"
+      title="color-3"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-4.css"
+      class="alternate-style"
+      title="color-4"
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-5.css"
+      class="alternate-style"
+      title="color-5"
+      disabled
+    />
+
+    <link rel="stylesheet" href="css/style-switcher.css" />
+
+    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .case-section p,
+      .case-section ul,
+      .case-section ol {
+        font-size: 0.95rem;
+      }
+
+      .case-diagram {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .case-diagram-node {
+        flex: 1 1 210px;
+        min-width: 0;
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f7f7f7;
+        font-size: 0.85rem;
+      }
+
+      .case-diagram-node h4 {
+        margin-top: 0;
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+      }
+
+      .case-diagram-node ul {
+        padding-left: 1.1rem;
+        margin: 0;
+      }
+
+      .case-diagram-node li {
+        margin-bottom: 0.25rem;
+      }
+
+      .case-diagram-arrow {
+        align-self: center;
+        font-size: 1.3rem;
+        opacity: 0.85;
+        padding: 0 0.3rem;
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .case-diagram {
+          flex-direction: column;
+        }
+
+        .case-diagram-arrow {
+          text-align: center;
+        }
+      }
+            /* Mobile layout: make case pages behave like the homepage */
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="aside">
+        <div class="logo">
+          <a href="index.html"><span>F</span>lowtica</a>
+        </div>
+        <div class="nav-toggler">
+          <span></span>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="index.html#home"><i class="fa fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="index.html#about"><i class="fa fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="index.html#service"><i class="fa fa-list"></i> Services</a>
+          </li>
+          <li>
+            <a href="index.html#portfolio" class="active"
+              ><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a
+            >
+          </li>
+          <li>
+            <a href="index.html#offers"><i class="fa fa-tag"></i> Offers</a>
+          </li>
+          <li>
+            <a href="index.html#contact"><i class="fa fa-comments"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>AI Reception &amp; Intake for Service Businesses</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    Example · Service Businesses
+                  </span>
+                </p>
+                <h3>Context</h3>
+                <p>
+                  Clinics, trades, and other appointment-based businesses juggle
+                  phone calls, emails, and website messages throughout the day.
+                  Staff are interrupted to answer routine questions, and important
+                  enquiries can be lost in voicemail or unstructured inboxes.
+                </p>
+
+                <h3>What this workflow does</h3>
+                <p>
+                  Flowtica designs a reception and intake workflow that captures
+                  the essential information from each contact, answers common
+                  questions, and delivers structured requests into the tools your
+                  team already uses. The focus is on:
+                </p>
+                <ul>
+                  <li>fewer missed calls and messages,</li>
+                  <li>cleaner intake data, and</li>
+                  <li>a simple way to prioritise who needs a call-back.</li>
+                </ul>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The workflow sits between your channels and your internal tools.
+                  It is built so you can choose the telephony or chat providers,
+                  and change them later if needed.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Customer channels</h4>
+                    <ul>
+                      <li>Phone calls (inbound, optionally outbound)</li>
+                      <li>Website chat or contact form</li>
+                      <li>Optional social / messaging channels</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>
+                        Runs in an environment you control (your cloud account or
+                        a dedicated hosted instance)
+                      </li>
+                      <li>Normalises calls and messages into a common format</li>
+                      <li>
+                        Orchestrates a short series of questions to collect the
+                        right details
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>Helps phrase questions and responses naturally</li>
+                      <li>
+                        Summarises conversations into a structured record (name,
+                        contact, reason, urgency, location, etc.)
+                      </li>
+                      <li>
+                        Flags sensitive or unclear cases for manual review instead
+                        of acting alone
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Your tools &amp; team</h4>
+                    <ul>
+                      <li>Creates tickets or tasks in your existing tools</li>
+                      <li>Sends summaries into a shared inbox or chat channel</li>
+                      <li>
+                        Provides a queue your team can work through and update
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How it behaves in practice</h3>
+                <ol>
+                  <li>
+                    A caller phones outside of peak hours or when staff are busy.
+                  </li>
+                  <li>
+                    The assistant clearly introduces itself as an automated
+                    system, asks a small set of questions you define, and answers
+                    simple, factual queries (such as opening hours or location).
+                  </li>
+                  <li>
+                    At the end, the workflow creates a structured summary: who
+                    called, how to contact them, why they called, and how urgent
+                    it is.
+                  </li>
+                  <li>
+                    That summary is delivered into your ticketing tool, CRM, or
+                    internal chat, where your team can respond and update the
+                    record.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  The workflow engine runs on a small private server that is
+                  either inside your cloud environment or on a dedicated hosted
+                  instance for your organisation. We connect it to the telephony
+                  and chat providers you already use, and to your downstream
+                  systems, without locking you into a single vendor stack.
+                </p>
+                <p>
+                  Only the information required to handle the interaction is
+                  passed to the language model provider you select. The rest of
+                  the orchestration and data storage stays inside your environment,
+                  where your normal access controls and retention policies apply.
+                </p>
+
+                <h3>Where we fit in</h3>
+                <p>
+                  Flowtica works with you to define what &ldquo;good intake&rdquo;
+                  looks like: which questions to ask, which topics the assistant
+                  can safely handle, and where humans should always be in the
+                  loop. We then implement and iterate the workflow so it becomes a
+                  reliable part of your operations, not a one-off experiment.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar project
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="style-switcher">
+      <div class="style-switcher-toggler s-icon">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-night s-icon">
+        <i class="fas"></i>
+      </div>
+      <h4>Theme Colors</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
+    <script src="js/style-switcher.js"></script>
+  </body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowtica | Property Management Operations Assistant</title>
+
+    <meta
+      name="description"
+      content="How Flowtica designs a private operations assistant for property management teams, with document-aware answers and workflows that run in your own environment."
+    />
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-single.css" />
+    <!-- Use color-4 as the main skin -->
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Alternate skins (same as index) -->
+    <link
+      rel="stylesheet"
+      href="css/skins/color-1.css"
+      class="alternate-style"
+      title="color-1"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-2.css"
+      class="alternate-style"
+      title="color-2"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-3.css"
+      class="alternate-style"
+      title="color-3"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-4.css"
+      class="alternate-style"
+      title="color-4"
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-5.css"
+      class="alternate-style"
+      title="color-5"
+      disabled
+    />
+
+    <link rel="stylesheet" href="css/style-switcher.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <!-- Page tweaks -->
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .case-section p {
+        font-size: 0.95rem;
+      }
+
+      .case-section ul,
+      .case-section ol {
+        font-size: 0.95rem;
+      }
+
+      .case-diagram {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .case-diagram-node {
+        flex: 1 1 210px;
+        min-width: 0;
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f7f7f7;
+        font-size: 0.85rem;
+      }
+
+      .case-diagram-node h4 {
+        margin-top: 0;
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+      }
+
+      .case-diagram-node ul {
+        padding-left: 1.1rem;
+        margin: 0;
+      }
+
+      .case-diagram-node li {
+        margin-bottom: 0.25rem;
+      }
+
+      .case-diagram-arrow {
+        align-self: center;
+        font-size: 1.3rem;
+        opacity: 0.85;
+        padding: 0 0.3rem;
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .case-diagram {
+          flex-direction: column;
+        }
+
+        .case-diagram-arrow {
+          text-align: center;
+        }
+      }
+            /* Mobile layout: make case pages behave like the homepage */
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Container Start -->
+    <div class="main-container">
+      <!-- Aside Start -->
+      <div class="aside">
+        <div class="logo">
+          <a href="index.html"><span>F</span>lowtica</a>
+        </div>
+        <div class="nav-toggler">
+          <span></span>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="index.html#home"><i class="fa fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="index.html#about"><i class="fa fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="index.html#service"><i class="fa fa-list"></i> Services</a>
+          </li>
+          <li>
+            <a href="index.html#portfolio" class="active"
+              ><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a
+            >
+          </li>
+          <li>
+            <a href="index.html#offers"><i class="fa fa-tag"></i> Offers</a>
+          </li>
+          <li>
+            <a href="index.html#contact"><i class="fa fa-comments"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Aside End -->
+
+      <!-- Main Content Start -->
+      <div class="main-content">
+        <section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Property Management Operations Assistant</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-building"></i>
+                    Example · Property Management
+                  </span>
+                </p>
+                <h3>Context</h3>
+                <p>
+                  Property management teams often have information spread across
+                  leases, building manuals, email threads, ticketing systems, and
+                  internal documents. Coordinators and managers spend time
+                  re-answering similar questions and manually stitching together
+                  context.
+                </p>
+
+                <h3>What this assistant does</h3>
+                <p>
+                  Flowtica designs a private operations assistant that helps your
+                  team answer building and workflow questions quickly and
+                  consistently. Instead of browsing folders or asking a colleague,
+                  your team can ask:
+                </p>
+                <ul>
+                  <li>&ldquo;What are the quiet hours in Building C?&rdquo;</li>
+                  <li>&ldquo;What is the pet policy for new tenants?&rdquo;</li>
+                  <li>
+                    &ldquo;How do we handle an after-hours elevator outage in this
+                    building?&rdquo;
+                  </li>
+                  <li>
+                    &ldquo;Which vendor is responsible for HVAC maintenance at this
+                    property?&rdquo;
+                  </li>
+                </ul>
+                <p>
+                  The assistant responds with grounded answers and links back to
+                  the underlying documents or procedures, and can also draft
+                  structured maintenance tickets for your existing system.
+                </p>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The diagram below shows the high-level pattern we use. It is
+                  intentionally tool-agnostic: the same approach works whether your
+                  documents live in shared drives, a DMS, or other repositories,
+                  and whether you prefer one language model provider or another.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Your documents &amp; systems</h4>
+                    <ul>
+                      <li>Leases and addendums</li>
+                      <li>Building manuals and emergency procedures</li>
+                      <li>Policy / SOP documents</li>
+                      <li>Existing ticketing or work-order tools</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>
+                        Runs on a small server you own (your cloud or a dedicated
+                        hosted instance)
+                      </li>
+                      <li>Ingests and keeps an index of your documents</li>
+                      <li>
+                        Defines how to react to different question types and
+                        triggers
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>
+                        Receives only the relevant document snippets and the
+                        user’s question
+                      </li>
+                      <li>Drafts clear, grounded answers with citations</li>
+                      <li>
+                        Can propose actions (for example, create a maintenance
+                        ticket) instead of acting alone
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Your team &amp; tools</h4>
+                    <ul>
+                      <li>
+                        Staff use a simple web or chat interface to ask questions
+                      </li>
+                      <li>
+                        Draft tickets or emails are sent into your existing tools
+                        for review
+                      </li>
+                      <li>
+                        Feedback is captured so the workflows and prompts can be
+                        refined
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How it behaves in practice</h3>
+                <ol>
+                  <li>
+                    A coordinator asks a free-text question, such as:
+                    &ldquo;Tenant in unit 804 reports water coming from the
+                    ceiling. What should we do?&rdquo;
+                  </li>
+                  <li>
+                    The workflow engine retrieves the relevant sections from your
+                    emergency procedures and building notes.
+                  </li>
+                  <li>
+                    A language model drafts a step-by-step plan grounded in those
+                    documents and cites where each step came from.
+                  </li>
+                  <li>
+                    The workflow prepares a draft work order with building, unit,
+                    category, and suggested urgency, ready for human approval in
+                    your existing system.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  We avoid tying you to a single, opaque stack. Instead, we deploy
+                  a small workflow engine in an environment that you control:
+                </p>
+                <ul>
+                  <li>
+                    either in your own cloud account, or on an isolated hosted
+                    instance dedicated to you;
+                  </li>
+                  <li>
+                    connected to your existing document storage and ticketing
+                    tools;
+                  </li>
+                  <li>
+                    using a language model provider you are comfortable with,
+                    which can be changed later if needed.
+                  </li>
+                </ul>
+                <p>
+                  Your documents remain in your environment. The assistant only
+                  sends the minimum necessary text snippets to the model, and the
+                  workflow can be inspected, monitored, and adjusted over time.
+                </p>
+
+                <h3>Where we fit in</h3>
+                <p>
+                  Flowtica’s role is to work with your team to define which
+                  questions matter most, which documents are considered
+                  authoritative, and how the assistant should behave when it is
+                  not confident. We then design, implement, and operate the
+                  workflow so that it behaves like part of your infrastructure,
+                  not a one-off experiment.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar project
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Main Content End -->
+    </div>
+    <!-- Main Container End -->
+
+    <!-- Style Switcher Start (same widget as index) -->
+    <div class="style-switcher">
+      <div class="style-switcher-toggler s-icon">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-night s-icon">
+        <i class="fas"></i>
+      </div>
+      <h4>Theme Colors</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
+    <!-- Style Switcher End -->
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
+    <script src="js/style-switcher.js"></script>
+  </body>
+</html>

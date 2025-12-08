@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowtica | Policy & HR Knowledge Copilot</title>
+
+    <meta
+      name="description"
+      content="How Flowtica designs a policy and HR knowledge copilot, giving employees grounded answers from your own documentation while keeping data inside your environment."
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-single.css" />
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="css/skins/color-1.css"
+      class="alternate-style"
+      title="color-1"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-2.css"
+      class="alternate-style"
+      title="color-2"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-3.css"
+      class="alternate-style"
+      title="color-3"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-4.css"
+      class="alternate-style"
+      title="color-4"
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-5.css"
+      class="alternate-style"
+      title="color-5"
+      disabled
+    />
+
+    <link rel="stylesheet" href="css/style-switcher.css" />
+    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .case-section p,
+      .case-section ul,
+      .case-section ol {
+        font-size: 0.95rem;
+      }
+
+      .case-diagram {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .case-diagram-node {
+        flex: 1 1 210px;
+        min-width: 0;
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f7f7f7;
+        font-size: 0.85rem;
+      }
+
+      .case-diagram-node h4 {
+        margin-top: 0;
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+      }
+
+      .case-diagram-node ul {
+        padding-left: 1.1rem;
+        margin: 0;
+      }
+
+      .case-diagram-node li {
+        margin-bottom: 0.25rem;
+      }
+
+      .case-diagram-arrow {
+        align-self: center;
+        font-size: 1.3rem;
+        opacity: 0.85;
+        padding: 0 0.3rem;
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .case-diagram {
+          flex-direction: column;
+        }
+
+        .case-diagram-arrow {
+          text-align: center;
+        }
+      }
+            /* Mobile layout: make case pages behave like the homepage */
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="aside">
+        <div class="logo">
+          <a href="index.html"><span>F</span>lowtica</a>
+        </div>
+        <div class="nav-toggler">
+          <span></span>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="index.html#home"><i class="fa fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="index.html#about"><i class="fa fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="index.html#service"><i class="fa fa-list"></i> Services</a>
+          </li>
+          <li>
+            <a href="index.html#portfolio" class="active"
+              ><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a
+            >
+          </li>
+          <li>
+            <a href="index.html#offers"><i class="fa fa-tag"></i> Offers</a>
+          </li>
+          <li>
+            <a href="index.html#contact"><i class="fa fa-comments"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Policy &amp; HR Knowledge Copilot</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-users"></i>
+                    Example · Internal Operations
+                  </span>
+                </p>
+                <h3>Context</h3>
+                <p>
+                  As organisations grow, it becomes harder for employees to know
+                  where to find the latest policy or HR information. Handbooks,
+                  PDFs, and wiki pages live in multiple places, and HR teams spend
+                  time answering the same questions repeatedly.
+                </p>
+
+                <h3>What this copilot does</h3>
+                <p>
+                  Flowtica designs an internal assistant that helps employees
+                  self-serve answers to policy and HR questions, grounded in your
+                  official documentation. Employees can ask natural language
+                  questions like:
+                </p>
+                <ul>
+                  <li>&ldquo;What is our parental leave policy?&rdquo;</li>
+                  <li>&ldquo;How do I submit an expense for this trip?&rdquo;</li>
+                  <li>&ldquo;What is the process for changing my working hours?&rdquo;</li>
+                </ul>
+                <p>
+                  The copilot responds with answers linked directly to the
+                  relevant sections of your policies, and knows when to hand off
+                  to HR instead of improvising.
+                </p>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The pattern is similar to our other document-centric workflows:
+                  a private workflow engine keeps an index of your policies and
+                  mediates between employees and a language model.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Your policy library</h4>
+                    <ul>
+                      <li>Employee handbook and addendums</li>
+                      <li>Benefits and leave policies</li>
+                      <li>Travel and expense guidelines</li>
+                      <li>Internal FAQ or wiki pages</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>
+                        Runs inside your environment (your cloud or a dedicated
+                        hosted instance)
+                      </li>
+                      <li>
+                        Monitors and indexes the documents you mark as &ldquo;source
+                        of truth&rdquo;
+                      </li>
+                      <li>
+                        Applies your governance rules and escalation logic
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>
+                        Receives only relevant policy snippets and the employee’s
+                        question
+                      </li>
+                      <li>
+                        Drafts an answer explicitly grounded in those snippets
+                      </li>
+                      <li>
+                        Includes links back to the original documents for
+                        transparency
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Employees &amp; HR</h4>
+                    <ul>
+                      <li>Employees access the copilot via chat or a web view</li>
+                      <li>
+                        HR sees difficult or sensitive questions routed to them
+                      </li>
+                      <li>
+                        Feedback is captured to improve prompts and coverage over
+                        time
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How it behaves in practice</h3>
+                <ol>
+                  <li>
+                    An employee asks a question in their usual tool (for example,
+                    an internal chat channel connected to the copilot).
+                  </li>
+                  <li>
+                    The workflow engine retrieves the most relevant parts of the
+                    policies and sends them, with the question, to the language
+                    model.
+                  </li>
+                  <li>
+                    The model returns an answer that cites which documents were
+                    used; the copilot shows both the answer and the policy links.
+                  </li>
+                  <li>
+                    If the question is outside documented policy or marked as
+                    sensitive, the workflow routes it to HR with a summary instead
+                    of answering directly.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  Your policy documents stay where they are today—shared drives,
+                  internal wikis, or document management systems. The workflow
+                  engine that monitors and indexes them runs in an environment you
+                  control, and only small, relevant snippets are sent to the
+                  language model provider you choose.
+                </p>
+                <p>
+                  This means you can revise your policies, change model providers,
+                  or add new categories (for example, IT or compliance) without
+                  redesigning the system from scratch.
+                </p>
+
+                <h3>Where we fit in</h3>
+                <p>
+                  Flowtica helps you choose the right scope for an initial
+                  deployment—often HR or a specific policy domain—and then expand
+                  gradually. We focus on making the assistant observable,
+                  maintainable, and predictable, so it behaves like a part of your
+                  internal infrastructure rather than a one-off pilot.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar project
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="style-switcher">
+      <div class="style-switcher-toggler s-icon">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-night s-icon">
+        <i class="fas"></i>
+      </div>
+      <h4>Theme Colors</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
+    <script src="js/style-switcher.js"></script>
+  </body>
+</html>

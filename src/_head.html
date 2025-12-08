@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowtica | AI Systems Studio for Assistants & Workflow Automation</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Flowtica is an AI systems studio that designs, builds, and maintains custom AI assistants, phone agents, and workflow automations for service-focused businesses."
+    />
+    <meta
+      name="keywords"
+      content="Flowtica, AI systems studio, AI automation, AI assistants, AI workflows, AI consulting, phone agents, document Q&A, RAG, Canada"
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://flowtica.ca/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Flowtica | AI Assistants & Workflow Automation" />
+    <meta
+      property="og:description"
+      content="Flowtica partners with businesses to design and operate reliable AI assistants and workflow automation that integrate with existing tools."
+    />
+    <meta property="og:url" content="https://flowtica.ca/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Flowtica" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Flowtica",
+        "url": "https://flowtica.ca/",
+        "description": "AI systems studio specializing in custom AI assistants, phone agents, and workflow automation for service-oriented businesses.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CA"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "availableLanguage": ["en"]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-single.css" />
+    <!-- Use color-4 as the main skin -->
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Style Switcher (color-4 as default active) -->
+    <link
+      rel="stylesheet"
+      href="css/skins/color-1.css"
+      class="alternate-style"
+      title="color-1"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-2.css"
+      class="alternate-style"
+      title="color-2"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-3.css"
+      class="alternate-style"
+      title="color-3"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-4.css"
+      class="alternate-style"
+      title="color-4"
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-5.css"
+      class="alternate-style"
+      title="color-5"
+      disabled
+    />
+
+    <link rel="stylesheet" href="css/style-switcher.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <!-- Component-level + MOBILE layout fixes -->
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .home .hello {
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.75rem;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .home-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .home-img-inner {
+        width: 100%;
+        max-width: 360px;
+        border-radius: 18px;
+        padding: 1.5rem;
+        background: radial-gradient(
+            circle at top left,
+            rgba(74, 144, 226, 0.2),
+            transparent 55%
+          ),
+          rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .home-img-inner h4 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .home-img-inner p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .home-img-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 1.25rem;
+      }
+
+      .metric-card {
+        border-radius: 12px;
+        padding: 0.9rem;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.8rem;
+      }
+
+      .metric-label {
+        opacity: 0.7;
+        font-size: 0.78rem;
+      }
+
+      .metric-value {
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
+
+      .skills-list {
+        margin-top: 0.5rem;
+      }
+
+      .skills-list ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .skills-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .skills-list li i {
+        font-size: 0.7rem;
+      }
+
+      .portfolio-note {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+      }
+
+      .case-card {
+        padding: 1.25rem 1.35rem;
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 0.8rem;
+      }
+
+      /* ensure readable text on dark background (case studies & demos) */
+      .case-card,
+      .case-card p,
+      .case-card li,
+      .demo-list li {
+        color: #f7f7f7;
+      }
+
+      .case-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        margin-bottom: 0.6rem;
+      }
+
+      .case-badge i {
+        font-size: 0.8rem;
+      }
+
+      .case-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .case-list li {
+        margin-bottom: 0.25rem;
+      }
+
+      .discount-note {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .offer-card {
+        border-radius: 14px;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .offer-price {
+        margin: 0.5rem 0 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      .offer-price strong {
+        font-size: 1.1rem;
+      }
+
+      .offer-price .strike {
+        margin-left: 0.4rem;
+        font-size: 0.85rem;
+      }
+
+      .offer-tagline {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        margin-bottom: 0.6rem;
+      }
+
+      .demo-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+
+      .demo-list li {
+        margin-bottom: 0.3rem;
+      }
+
+      .contact-form .form-control {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      /* Fix dark-mode text visibility in Offers section */
+      body.dark #offers p,
+      body.dark #offers li {
+        color: #f7f7f7;
+      }
+
+      /* ================================
+         MOBILE OVERRIDES (LAYOUT)
+         ================================ */
+
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .home .container {
+          padding-top: 2.5rem;
+        }
+
+        .home-info,
+        .home-img,
+        .service .service-item,
+        .portfolio .portfolio-item,
+        .contact .contact-info-item,
+        #offers .offer-card {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+
+        .home-img {
+          margin-top: 1.5rem;
+        }
+
+        .home-img-inner {
+          max-width: 100%;
+        }
+
+        .home-img-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .metric-card {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.5rem;
+        }
+
+        .home-img-inner,
+        .case-card,
+        .offer-card {
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .home-img-inner p,
+        .case-card p,
+        .offer-card p,
+        .case-card li,
+        .offer-card li,
+        .demo-list li {
+          color: #222;
+        }
+
+        .metric-card {
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          color: #222;
+        }
+
+        .portfolio-note {
+          font-size: 0.88rem;
+        }
+
+        .offers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-form .form-group {
+          margin-bottom: 0.85rem;
+        }
+
+        .contact-info-item {
+          margin-bottom: 1rem;
+        }
+
+        .contact-title {
+          font-size: 1.25rem;
+        }
+
+        .contact-sub-title {
+          font-size: 0.95rem;
+        }
+
+        .tag-pill {
+          font-size: 0.75rem;
+          padding: 0.35rem 0.85rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Container Start -->
+    <div class="main-container">
+      <!-- Aside Start -->
+      <div class="aside">
+        <div class="logo">
+          <a href="index.html"><span>F</span>lowtica</a>
+        </div>
+        <div class="nav-toggler">
+          <span></span>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fa fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="#service"><i class="fa fa-list"></i> Services</a>
+          </li>
+          <li>
+            <a href="#portfolio"
+              ><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a
+            >
+          </li>
+          <li>
+            <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Aside End -->
+
+      <!-- Main Content Start -->
+      <div class="main-content">
