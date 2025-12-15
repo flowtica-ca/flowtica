@@ -1,531 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Flowtica | AI Consulting in Canada</title>
-
-    <meta
-      name="description"
-      content="How Flowtica works as an AI consultant in Canada for operations-heavy teams, focusing on AI assistants and workflow automation that behave like part of your infrastructure."
-    />
-
-    <!-- Font: Inter -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Base CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/blog-single.css" />
-    <!-- Use color-4 as the main skin -->
-    <link rel="stylesheet" href="css/skins/color-4.css" />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    />
-
-    <!-- Alternate skins (same as index) -->
-    <link
-      rel="stylesheet"
-      href="css/skins/color-1.css"
-      class="alternate-style"
-      title="color-1"
-      disabled
-    />
-    <link
-      rel="stylesheet"
-      href="css/skins/color-2.css"
-      class="alternate-style"
-      title="color-2"
-      disabled
-    />
-    <link
-      rel="stylesheet"
-      href="css/skins/color-3.css"
-      class="alternate-style"
-      title="color-3"
-      disabled
-    />
-    <link
-      rel="stylesheet"
-      href="css/skins/color-4.css"
-      class="alternate-style"
-      title="color-4"
-    />
-    <link
-      rel="stylesheet"
-      href="css/skins/color-5.css"
-      class="alternate-style"
-      title="color-5"
-      disabled
-    />
-
-    <link rel="stylesheet" href="css/style-switcher.css" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
-
-    <!-- Page tweaks -->
-    <style>
-      :root {
-        scroll-behavior: smooth;
-      }
-
-      html,
-      body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-
-      body {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background: #f5f3ff;
-      }
-
-      .btn {
-        border-radius: 999px;
-        padding-inline: 1.75rem;
-        font-weight: 500;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
-      }
-
-      .tag-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        padding: 0.3rem 0.75rem;
-        border-radius: 999px;
-        border: 1px solid var(--skin-color, #4a90e2);
-        color: var(--skin-color, #4a90e2);
-        background: transparent;
-        font-size: 0.78rem;
-      }
-
-      .tag-pill i {
-        font-size: 0.8rem;
-      }
-
-      .case-section p {
-        font-size: 0.95rem;
-      }
-
-      .case-section ul,
-      .case-section ol {
-        font-size: 0.95rem;
-      }
-
-      .case-diagram {
-        margin-top: 1.5rem;
-        padding: 1.4rem;
-        border-radius: 16px;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        align-items: stretch;
-        justify-content: center;
-      }
-
-      .case-diagram-node {
-        flex: 1 1 210px;
-        min-width: 0;
-        border-radius: 12px;
-        padding: 0.9rem 1rem;
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #f7f7f7;
-        font-size: 0.85rem;
-      }
-
-      .case-diagram-node h4 {
-        margin-top: 0;
-        margin-bottom: 0.45rem;
-        font-size: 0.95rem;
-      }
-
-      .case-diagram-node ul {
-        padding-left: 1.1rem;
-        margin: 0;
-      }
-
-      .case-diagram-node li {
-        margin-bottom: 0.25rem;
-      }
-
-      .case-diagram-arrow {
-        align-self: center;
-        font-size: 1.3rem;
-        opacity: 0.85;
-        padding: 0 0.3rem;
-      }
-
-      @media (max-width: 767px) {
-        .section {
-          padding-top: 3rem;
-          padding-bottom: 3rem;
-        }
-
-        .case-diagram {
-          flex-direction: column;
-        }
-
-        .case-diagram-arrow {
-          text-align: center;
-        }
-      }
-
-      /* Mobile layout: make case pages behave like the homepage */
-      @media (max-width: 991px) {
-        body {
-          overflow-x: hidden;
-        }
-
-        .main-container {
-          display: block !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
-        .aside {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          left: -260px !important;
-          width: 260px;
-          z-index: 999;
-          transition: left 0.3s ease;
-        }
-
-        .aside.open {
-          left: 0 !important;
-        }
-
-        .nav-toggler {
-          position: fixed;
-          top: 16px;
-          left: 16px;
-          z-index: 1000;
-        }
-
-        .main-content,
-        .main-content.open {
-          position: relative;
-          margin-left: 0 !important;
-          padding-left: 0 !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
-        .section {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-          margin-left: 0 !important;
-        }
-
-        .section .container {
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 !important;
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-
-        .row {
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: column;
-          margin-left: -15px;
-          margin-right: -15px;
-        }
-
-        .padd-15 {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Main Container Start -->
-    <div class="main-container">
-      <!-- Aside Start -->
-      <div class="aside">
-        <div class="logo">
-          <a href="index.html"><span>F</span>lowtica</a>
-        </div>
-        <div class="nav-toggler">
-          <span></span>
-        </div>
-        <ul class="nav">
-          <li>
-            <a href="index.html#home"><i class="fa fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="index.html#about"><i class="fa fa-user"></i> About</a>
-          </li>
-          <li>
-            <a href="index.html#service"><i class="fa fa-list"></i> Services</a>
-          </li>
-          <li>
-            <a href="index.html#portfolio" class="active"
-              ><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a
-            >
-          </li>
-          <li>
-            <a href="index.html#offers"><i class="fa fa-tag"></i> Offers</a>
-          </li>
-          <li>
-            <a href="index.html#contact"><i class="fa fa-comments"></i> Contact</a>
-          </li>
-        </ul>
+<!-- About Section Start -->
+<section class="about section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>About Flowtica</h2>
       </div>
-      <!-- Aside End -->
+    </div>
+    <div class="row">
+      <div class="about-content padd-15">
+        <div class="row">
+          <div class="about-text padd-15">
+            <h3>
+              Flowtica is an <span>AI systems studio</span>
+            </h3>
+            <p>
+              Flowtica was created to close the gap between impressive AI demos
+              and dependable systems that support day-to-day operations. We
+              approach AI as part of your infrastructure: observable,
+              maintainable, and integrated, rather than a stand-alone tool
+              disconnected from your processes.
+            </p>
+            <p>
+              We work with teams that already experience the cost of manual
+              workflows, scattered knowledge, and constant context switching.
+              Together, we define achievable projects that deliver clear value
+              and build on that foundation over time.
+            </p>
+            <p>
+              For teams specifically exploring how Flowtica can act as an
+              <strong>AI consultant in Canada</strong>, this
+              <a href="case-ai-consultant-canada.html"
+                >example consulting engagement</a
+              >
+              shows how a typical project is structured without exposing
+              client-specific details.
+            </p>
+          </div>
+        </div>
 
-      <!-- Main Content Start -->
-      <div class="main-content">
-        <section class="section case-section">
-          <div class="container">
+        <!-- Snapshot + Who we work with -->
+        <div class="row">
+          <div class="personal-info padd-15">
+            <h3 class="title">Snapshot</h3>
             <div class="row">
-              <div class="section-title padd-15">
-                <h2>AI Consulting in Canada</h2>
+              <div class="info-item padd-15">
+                <p>Founded: <span>2025</span></p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Location:
+                  <span>Remote · Canada</span>
+                </p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Focus:
+                  <span>AI assistants &amp; workflow automation</span>
+                </p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Typical clients:
+                  <span>5–200 people, service and ops-led teams</span>
+                </p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Best fit:
+                  <span
+                    >Organisations beyond experimentation, ready for production
+                    systems</span
+                  >
+                </p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Engagement style:
+                  <span>Engineering-led, collaborative, and lean</span>
+                </p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Data approach:
+                  <span
+                    >Clients retain ownership; we favour deployments in your
+                    cloud or controlled environments</span
+                  >
+                </p>
+              </div>
+              <div class="info-item padd-15">
+                <p>
+                  Capacity:
+                  <span>Limited number of concurrent projects</span>
+                </p>
               </div>
             </div>
             <div class="row">
-              <div class="padd-15">
-                <p>
-                  <span class="tag-pill">
-                    <i class="fa-solid fa-flag"></i>
-                    Example · AI Consulting
-                  </span>
-                </p>
-
-                <h3>Context</h3>
-                <p>
-                  Many organisations in Canada are interested in AI but are
-                  overwhelmed by tooling, buzzwords, and one-off experiments.
-                  Operational teams already feel the pain of manual work,
-                  scattered information, and decisions buried in documents or
-                  people’s heads. They don’t necessarily want another platform –
-                  they want help turning AI into reliable infrastructure.
-                </p>
-
-                <h3>What this engagement focuses on</h3>
-                <p>
-                  In this example, Flowtica works as an
-                  <strong>AI consultant in Canada</strong> for an
-                  operations-heavy team. The goal is to design and implement a
-                  concrete system – such as an internal assistant or workflow –
-                  rather than a generic “AI strategy”.
-                </p>
-                <p>Typical questions we help answer with the system include:</p>
-                <ul>
-                  <li>
-                    “How do we route and answer routine questions consistently,
-                    without creating more tools for staff?”
-                  </li>
-                  <li>
-                    “How do we let people self-serve answers from our policies
-                    and procedures without losing control?”
-                  </li>
-                  <li>
-                    “How can AI draft structured tickets, emails, or summaries
-                    that our team can quickly review and approve?”
-                  </li>
-                  <li>
-                    “How do we monitor and improve this over time instead of
-                    running a one-off pilot?”
-                  </li>
-                </ul>
-
-                <h3>Architecture at a glance</h3>
-                <p>
-                  The diagram below shows a high-level pattern we reuse across
-                  different consulting engagements. It stays tool-agnostic so it
-                  can work with your existing stack and can evolve over time.
-                </p>
-
-                <div class="case-diagram">
-                  <div class="case-diagram-node">
-                    <h4>Your organisation &amp; workflows</h4>
-                    <ul>
-                      <li>Existing tools (CRM, ticketing, intranet, chat)</li>
-                      <li>Policies, procedures, and reference documents</li>
-                      <li>Typical requests, edge cases, and constraints</li>
-                      <li>People and teams responsible for decisions</li>
-                    </ul>
-                  </div>
-
-                  <div class="case-diagram-arrow">→</div>
-
-                  <div class="case-diagram-node">
-                    <h4>Private workflow engine</h4>
-                    <ul>
-                      <li>Runs in an environment that you control</li>
-                      <li>
-                        Connects to your systems and document sources through
-                        APIs or scripted integrations
-                      </li>
-                      <li>
-                        Encodes how to handle different request types and when
-                        to escalate to humans
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="case-diagram-arrow">→</div>
-
-                  <div class="case-diagram-node">
-                    <h4>Language model</h4>
-                    <ul>
-                      <li>
-                        Receives only the relevant context and the user’s
-                        request
-                      </li>
-                      <li>
-                        Drafts grounded answers, summaries, or structured
-                        payloads (tickets, forms)
-                      </li>
-                      <li>
-                        Operates within clear guardrails defined in the
-                        workflow
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="case-diagram-arrow">→</div>
-
-                  <div class="case-diagram-node">
-                    <h4>Your team &amp; tools</h4>
-                    <ul>
-                      <li>
-                        Staff interact via chat, web, or existing channels
-                      </li>
-                      <li>
-                        Draft outputs appear in your tools for review and
-                        approval
-                      </li>
-                      <li>
-                        Feedback is captured so behaviour can be tuned over
-                        time
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <h3>How the consulting process behaves in practice</h3>
-                <ol>
-                  <li>
-                    We start by mapping a specific workflow or assistant use
-                    case, including inputs, decisions, and handoffs.
-                  </li>
-                  <li>
-                    We design how the workflow engine and language model should
-                    interact with your tools, where to retrieve context, and
-                    when to involve humans.
-                  </li>
-                  <li>
-                    We implement a first version that runs in a controlled
-                    environment, with logging and clear ways to review model
-                    outputs.
-                  </li>
-                  <li>
-                    Together with your team, we iterate on prompts, routing, and
-                    UI so the system fits into day-to-day work instead of
-                    sitting on the side.
-                  </li>
-                </ol>
-
-                <h3>Data ownership &amp; deployment model</h3>
-                <p>
-                  We avoid locking you into a single, opaque stack. As much as
-                  possible, the deployment follows these principles:
-                </p>
-                <ul>
-                  <li>
-                    The workflow layer runs in your cloud account or on a
-                    dedicated, isolated instance.
-                  </li>
-                  <li>
-                    The system connects to your existing tools and document
-                    stores, rather than copying everything into a new platform.
-                  </li>
-                  <li>
-                    The choice of language model provider can be revisited later
-                    without redesigning the entire system.
-                  </li>
-                </ul>
-                <p>
-                  This makes it easier to adapt to changing requirements, vendor
-                  options, or internal policies without starting from scratch.
-                </p>
-
-                <h3>Where Flowtica fits in</h3>
-                <p>
-                  As an AI consultant in Canada, Flowtica’s role is to work with
-                  your team to identify the right starting point, design the
-                  underlying architecture, and then implement and operate the
-                  system until it behaves like part of your infrastructure.
-                </p>
-                <p>
-                  We focus on a small number of high-impact workflows, document
-                  our choices, and keep the system observable so your team can
-                  own it in the long run.
-                </p>
-
-                <p style="margin-top: 1.5rem">
-                  <a href="index.html#contact" class="btn">
-                    Discuss a similar engagement
-                  </a>
-                </p>
+              <div class="buttons padd-15">
+                <a href="#contact" class="btn">Discuss a potential project</a>
               </div>
             </div>
           </div>
-        </section>
-      </div>
-      <!-- Main Content End -->
-    </div>
-    <!-- Main Container End -->
 
-    <!-- Style Switcher Start (same widget as index) -->
-    <div class="style-switcher">
-      <div class="style-switcher-toggler s-icon">
-        <i class="fas fa-cog fa-spin"></i>
-      </div>
-      <div class="day-night s-icon">
-        <i class="fas"></i>
-      </div>
-      <h4>Theme Colors</h4>
-      <div class="colors">
-        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+          <div class="skills padd-15">
+            <h3 class="title">What we do best</h3>
+            <div class="skills-list">
+              <ul>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  AI phone and chat assistants that hand off cleanly to people
+                  when required
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  Document Q&amp;A / RAG systems for contracts, policies, and
+                  runbooks, with transparent citations
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  Workflow automation that connects AI to CRMs, ticketing tools,
+                  and internal systems
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  Architectures on AWS or Kubernetes that respect privacy and
+                  compliance constraints
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  Monitoring and feedback loops so systems improve over time
+                  rather than quietly degrading
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- How we work & Principles -->
+        <div class="row">
+          <div class="education padd-15">
+            <h3 class="title">How we work</h3>
+            <div class="row">
+              <div class="timeline-box padd-15">
+                <div class="timeline shadow-dark">
+                  <!-- Timeline item -->
+                  <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                      <i class="fa fa-calendar"></i> Phase 1
+                    </h3>
+                    <h4 class="timeline-title">
+                      Discovery &amp; workflow mapping
+                    </h4>
+                    <p class="timeline-text">
+                      We begin by understanding how your team operates
+                      today—systems, constraints, and the edge cases that
+                      commonly break automation—so we can design a realistic
+                      solution.
+                    </p>
+                  </div>
+                  <!-- Timeline item -->
+                  <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                      <i class="fa fa-calendar"></i> Phase 2
+                    </h3>
+                    <h4 class="timeline-title">
+                      Prototype in weeks, not months
+                    </h4>
+                    <p class="timeline-text">
+                      We implement a focused AI assistant or workflow that plugs
+                      into your existing stack. Every prototype is tied to clear
+                      success metrics.
+                    </p>
+                  </div>
+                  <!-- Timeline item -->
+                  <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                      <i class="fa fa-calendar"></i> Phase 3
+                    </h3>
+                    <h4 class="timeline-title">Harden &amp; scale</h4>
+                    <p class="timeline-text">
+                      Once value is demonstrated, we invest in monitoring,
+                      guardrails, fallbacks, and performance tuning so the
+                      solution behaves like dependable infrastructure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="experience padd-15">
+            <h3 class="title">Principles</h3>
+            <div class="row">
+              <div class="timeline-box padd-15">
+                <div class="timeline shadow-dark">
+                  <!-- Timeline item -->
+                  <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                      <i class="fa fa-calendar"></i> Principle 1
+                    </h3>
+                    <h4 class="timeline-title">Your data, your control</h4>
+                    <p class="timeline-text">
+                      Data ownership remains with you. Wherever possible, we
+                      design deployments in your infrastructure or in controlled
+                      environments you administer.
+                    </p>
+                  </div>
+                  <!-- Timeline item -->
+                  <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                      <i class="fa fa-calendar"></i> Principle 2
+                    </h3>
+                    <h4 class="timeline-title">
+                      Integrate with existing systems
+                    </h4>
+                    <p class="timeline-text">
+                      We align with the tools you already rely on—CRMs,
+                      ticketing systems, data stores—rather than introducing
+                      unnecessary platforms.
+                    </p>
+                  </div>
+                  <!-- Timeline item -->
+                  <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                      <i class="fa fa-calendar"></i> Principle 3
+                    </h3>
+                    <h4 class="timeline-title">
+                      Targeted projects, tangible results
+                    </h4>
+                    <p class="timeline-text">
+                      We favour focused, high-impact initiatives instead of
+                      broad programmes that are difficult to deliver and
+                      maintain.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Style Switcher End -->
-
-    <!-- Scripts -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="js/script.js"></script>
-    <script src="js/style-switcher.js"></script>
-  </body>
-</html>
+  </div>
+</section>
+<!-- About Section End -->
