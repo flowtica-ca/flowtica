@@ -1,0 +1,168 @@
+<section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Policy &amp; HR Knowledge Copilot</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-users"></i>
+                    Example · Internal Operations
+                  </span>
+                </p>
+                <h3>Context</h3>
+                <p>
+                  As organisations grow, it becomes harder for employees to know
+                  where to find the latest policy or HR information. Handbooks,
+                  PDFs, and wiki pages live in multiple places, and HR teams spend
+                  time answering the same questions repeatedly.
+                </p>
+
+                <h3>What this copilot does</h3>
+                <p>
+                  Flowtica designs an internal assistant that helps employees
+                  self-serve answers to policy and HR questions, grounded in your
+                  official documentation. Employees can ask natural language
+                  questions like:
+                </p>
+                <ul>
+                  <li>&ldquo;What is our parental leave policy?&rdquo;</li>
+                  <li>&ldquo;How do I submit an expense for this trip?&rdquo;</li>
+                  <li>&ldquo;What is the process for changing my working hours?&rdquo;</li>
+                </ul>
+                <p>
+                  The copilot responds with answers linked directly to the
+                  relevant sections of your policies, and knows when to hand off
+                  to HR instead of improvising.
+                </p>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The pattern is similar to our other document-centric workflows:
+                  a private workflow engine keeps an index of your policies and
+                  mediates between employees and a language model.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Your policy library</h4>
+                    <ul>
+                      <li>Employee handbook and addendums</li>
+                      <li>Benefits and leave policies</li>
+                      <li>Travel and expense guidelines</li>
+                      <li>Internal FAQ or wiki pages</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>
+                        Runs inside your environment (your cloud or a dedicated
+                        hosted instance)
+                      </li>
+                      <li>
+                        Monitors and indexes the documents you mark as &ldquo;source
+                        of truth&rdquo;
+                      </li>
+                      <li>
+                        Applies your governance rules and escalation logic
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>
+                        Receives only relevant policy snippets and the employee’s
+                        question
+                      </li>
+                      <li>
+                        Drafts an answer explicitly grounded in those snippets
+                      </li>
+                      <li>
+                        Includes links back to the original documents for
+                        transparency
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Employees &amp; HR</h4>
+                    <ul>
+                      <li>Employees access the copilot via chat or a web view</li>
+                      <li>
+                        HR sees difficult or sensitive questions routed to them
+                      </li>
+                      <li>
+                        Feedback is captured to improve prompts and coverage over
+                        time
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How it behaves in practice</h3>
+                <ol>
+                  <li>
+                    An employee asks a question in their usual tool (for example,
+                    an internal chat channel connected to the copilot).
+                  </li>
+                  <li>
+                    The workflow engine retrieves the most relevant parts of the
+                    policies and sends them, with the question, to the language
+                    model.
+                  </li>
+                  <li>
+                    The model returns an answer that cites which documents were
+                    used; the copilot shows both the answer and the policy links.
+                  </li>
+                  <li>
+                    If the question is outside documented policy or marked as
+                    sensitive, the workflow routes it to HR with a summary instead
+                    of answering directly.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  Your policy documents stay where they are today, shared drives,
+                  internal wikis, or document management systems. The workflow
+                  engine that monitors and indexes them runs in an environment you
+                  control, and only small, relevant snippets are sent to the
+                  language model provider you choose.
+                </p>
+                <p>
+                  This means you can revise your policies, change model providers,
+                  or add new categories (for example, IT or compliance) without
+                  redesigning the system from scratch.
+                </p>
+
+                <h3>Where we fit in</h3>
+                <p>
+                  Flowtica helps you choose the right scope for an initial
+                  deployment, often HR or a specific policy domain, and then expand
+                  gradually. We focus on making the assistant observable,
+                  maintainable, and predictable, so it behaves like a part of your
+                  internal infrastructure rather than a one-off pilot.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar project
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>

@@ -1,0 +1,200 @@
+<section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>AI Consulting in Canada</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-flag"></i>
+                    Example · AI Consulting
+                  </span>
+                </p>
+
+                <h3>Context</h3>
+                <p>
+                  Many organisations in Canada are interested in AI but are
+                  overwhelmed by tooling, buzzwords, and one-off experiments.
+                  Operational teams already feel the pain of manual work,
+                  scattered information, and decisions buried in documents or
+                  people’s heads. They don’t necessarily want another platform –
+                  they want help turning AI into reliable infrastructure.
+                </p>
+
+                <h3>What this engagement focuses on</h3>
+                <p>
+                  In this example, Flowtica works as an
+                  <strong>AI consultant in Canada</strong> for an
+                  operations-heavy team. The goal is to design and implement a
+                  concrete system – such as an internal assistant or workflow –
+                  rather than a generic “AI strategy”.
+                </p>
+                <p>
+                  Typical questions we help answer with the system include:
+                </p>
+                <ul>
+                  <li>
+                    “How do we route and answer routine questions consistently,
+                    without creating more tools for staff?”
+                  </li>
+                  <li>
+                    “How do we let people self-serve answers from our policies
+                    and procedures without losing control?”
+                  </li>
+                  <li>
+                    “How can AI draft structured tickets, emails, or summaries
+                    that our team can quickly review and approve?”
+                  </li>
+                  <li>
+                    “How do we monitor and improve this over time instead of
+                    running a one-off pilot?”
+                  </li>
+                </ul>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The diagram below shows a high-level pattern we reuse across
+                  different consulting engagements. It stays tool-agnostic so it
+                  can work with your existing stack and can evolve over time.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Your organisation &amp; workflows</h4>
+                    <ul>
+                      <li>Existing tools (CRM, ticketing, intranet, chat)</li>
+                      <li>Policies, procedures, and reference documents</li>
+                      <li>Typical requests, edge cases, and constraints</li>
+                      <li>People and teams responsible for decisions</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>Runs in an environment that you control</li>
+                      <li>
+                        Connects to your systems and document sources through
+                        APIs or scripted integrations
+                      </li>
+                      <li>
+                        Encodes how to handle different request types and when
+                        to escalate to humans
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>
+                        Receives only the relevant context and the user’s
+                        request
+                      </li>
+                      <li>
+                        Drafts grounded answers, summaries, or structured
+                        payloads (tickets, forms)
+                      </li>
+                      <li>
+                        Operates within clear guardrails defined in the
+                        workflow
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Your team &amp; tools</h4>
+                    <ul>
+                      <li>
+                        Staff interact via chat, web, or existing channels
+                      </li>
+                      <li>
+                        Draft outputs appear in your tools for review and
+                        approval
+                      </li>
+                      <li>
+                        Feedback is captured so behaviour can be tuned over
+                        time
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How the consulting process behaves in practice</h3>
+                <ol>
+                  <li>
+                    We start by mapping a specific workflow or assistant use
+                    case, including inputs, decisions, and handoffs.
+                  </li>
+                  <li>
+                    We design how the workflow engine and language model should
+                    interact with your tools, where to retrieve context, and
+                    when to involve humans.
+                  </li>
+                  <li>
+                    We implement a first version that runs in a controlled
+                    environment, with logging and clear ways to review model
+                    outputs.
+                  </li>
+                  <li>
+                    Together with your team, we iterate on prompts, routing, and
+                    UI so the system fits into day-to-day work instead of
+                    sitting on the side.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  We avoid locking you into a single, opaque stack. As much as
+                  possible, the deployment follows these principles:
+                </p>
+                <ul>
+                  <li>
+                    The workflow layer runs in your cloud account or on a
+                    dedicated, isolated instance.
+                  </li>
+                  <li>
+                    The system connects to your existing tools and document
+                    stores, rather than copying everything into a new platform.
+                  </li>
+                  <li>
+                    The choice of language model provider can be revisited later
+                    without redesigning the entire system.
+                  </li>
+                </ul>
+                <p>
+                  This makes it easier to adapt to changing requirements, vendor
+                  options, or internal policies without starting from scratch.
+                </p>
+
+                <h3>Where Flowtica fits in</h3>
+                <p>
+                  As an AI consultant in Canada, Flowtica’s role is to work with
+                  your team to identify the right starting point, design the
+                  underlying architecture, and then implement and operate the
+                  system until it behaves like part of your infrastructure.
+                </p>
+                <p>
+                  We focus on a small number of high-impact workflows, document
+                  our choices, and keep the system observable so your team can
+                  own it in the long run.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar engagement
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>

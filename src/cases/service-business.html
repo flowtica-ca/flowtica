@@ -1,0 +1,156 @@
+<section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>AI Reception &amp; Intake for Service Businesses</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    Example · Service Businesses
+                  </span>
+                </p>
+                <h3>Context</h3>
+                <p>
+                  Clinics, trades, and other appointment-based businesses juggle
+                  phone calls, emails, and website messages throughout the day.
+                  Staff are interrupted to answer routine questions, and important
+                  enquiries can be lost in voicemail or unstructured inboxes.
+                </p>
+
+                <h3>What this workflow does</h3>
+                <p>
+                  Flowtica designs a reception and intake workflow that captures
+                  the essential information from each contact, answers common
+                  questions, and delivers structured requests into the tools your
+                  team already uses. The focus is on:
+                </p>
+                <ul>
+                  <li>fewer missed calls and messages,</li>
+                  <li>cleaner intake data, and</li>
+                  <li>a simple way to prioritise who needs a call-back.</li>
+                </ul>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The workflow sits between your channels and your internal tools.
+                  It is built so you can choose the telephony or chat providers,
+                  and change them later if needed.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Customer channels</h4>
+                    <ul>
+                      <li>Phone calls (inbound, optionally outbound)</li>
+                      <li>Website chat or contact form</li>
+                      <li>Optional social / messaging channels</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>
+                        Runs in an environment you control (your cloud account or
+                        a dedicated hosted instance)
+                      </li>
+                      <li>Normalises calls and messages into a common format</li>
+                      <li>
+                        Orchestrates a short series of questions to collect the
+                        right details
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>Helps phrase questions and responses naturally</li>
+                      <li>
+                        Summarises conversations into a structured record (name,
+                        contact, reason, urgency, location, etc.)
+                      </li>
+                      <li>
+                        Flags sensitive or unclear cases for manual review instead
+                        of acting alone
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Your tools &amp; team</h4>
+                    <ul>
+                      <li>Creates tickets or tasks in your existing tools</li>
+                      <li>Sends summaries into a shared inbox or chat channel</li>
+                      <li>
+                        Provides a queue your team can work through and update
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How it behaves in practice</h3>
+                <ol>
+                  <li>
+                    A caller phones outside of peak hours or when staff are busy.
+                  </li>
+                  <li>
+                    The assistant clearly introduces itself as an automated
+                    system, asks a small set of questions you define, and answers
+                    simple, factual queries (such as opening hours or location).
+                  </li>
+                  <li>
+                    At the end, the workflow creates a structured summary: who
+                    called, how to contact them, why they called, and how urgent
+                    it is.
+                  </li>
+                  <li>
+                    That summary is delivered into your ticketing tool, CRM, or
+                    internal chat, where your team can respond and update the
+                    record.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  The workflow engine runs on a small private server that is
+                  either inside your cloud environment or on a dedicated hosted
+                  instance for your organisation. We connect it to the telephony
+                  and chat providers you already use, and to your downstream
+                  systems, without locking you into a single vendor stack.
+                </p>
+                <p>
+                  Only the information required to handle the interaction is
+                  passed to the language model provider you select. The rest of
+                  the orchestration and data storage stays inside your environment,
+                  where your normal access controls and retention policies apply.
+                </p>
+
+                <h3>Where we fit in</h3>
+                <p>
+                  Flowtica works with you to define what &ldquo;good intake&rdquo;
+                  looks like: which questions to ask, which topics the assistant
+                  can safely handle, and where humans should always be in the
+                  loop. We then implement and iterate the workflow so it becomes a
+                  reliable part of your operations, not a one-off experiment.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar project
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>

@@ -1,0 +1,188 @@
+<section class="section case-section">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Property Management Operations Assistant</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="padd-15">
+                <p>
+                  <span class="tag-pill">
+                    <i class="fa-solid fa-building"></i>
+                    Example · Property Management
+                  </span>
+                </p>
+                <h3>Context</h3>
+                <p>
+                  Property management teams often have information spread across
+                  leases, building manuals, email threads, ticketing systems, and
+                  internal documents. Coordinators and managers spend time
+                  re-answering similar questions and manually stitching together
+                  context.
+                </p>
+
+                <h3>What this assistant does</h3>
+                <p>
+                  Flowtica designs a private operations assistant that helps your
+                  team answer building and workflow questions quickly and
+                  consistently. Instead of browsing folders or asking a colleague,
+                  your team can ask:
+                </p>
+                <ul>
+                  <li>&ldquo;What are the quiet hours in Building C?&rdquo;</li>
+                  <li>&ldquo;What is the pet policy for new tenants?&rdquo;</li>
+                  <li>
+                    &ldquo;How do we handle an after-hours elevator outage in this
+                    building?&rdquo;
+                  </li>
+                  <li>
+                    &ldquo;Which vendor is responsible for HVAC maintenance at this
+                    property?&rdquo;
+                  </li>
+                </ul>
+                <p>
+                  The assistant responds with grounded answers and links back to
+                  the underlying documents or procedures, and can also draft
+                  structured maintenance tickets for your existing system.
+                </p>
+
+                <h3>Architecture at a glance</h3>
+                <p>
+                  The diagram below shows the high-level pattern we use. It is
+                  intentionally tool-agnostic: the same approach works whether your
+                  documents live in shared drives, a DMS, or other repositories,
+                  and whether you prefer one language model provider or another.
+                </p>
+
+                <div class="case-diagram">
+                  <div class="case-diagram-node">
+                    <h4>Your documents &amp; systems</h4>
+                    <ul>
+                      <li>Leases and addendums</li>
+                      <li>Building manuals and emergency procedures</li>
+                      <li>Policy / SOP documents</li>
+                      <li>Existing ticketing or work-order tools</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Private workflow engine</h4>
+                    <ul>
+                      <li>
+                        Runs on a small server you own (your cloud or a dedicated
+                        hosted instance)
+                      </li>
+                      <li>Ingests and keeps an index of your documents</li>
+                      <li>
+                        Defines how to react to different question types and
+                        triggers
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Language model</h4>
+                    <ul>
+                      <li>
+                        Receives only the relevant document snippets and the
+                        user’s question
+                      </li>
+                      <li>Drafts clear, grounded answers with citations</li>
+                      <li>
+                        Can propose actions (for example, create a maintenance
+                        ticket) instead of acting alone
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="case-diagram-arrow">→</div>
+
+                  <div class="case-diagram-node">
+                    <h4>Your team &amp; tools</h4>
+                    <ul>
+                      <li>
+                        Staff use a simple web or chat interface to ask questions
+                      </li>
+                      <li>
+                        Draft tickets or emails are sent into your existing tools
+                        for review
+                      </li>
+                      <li>
+                        Feedback is captured so the workflows and prompts can be
+                        refined
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3>How it behaves in practice</h3>
+                <ol>
+                  <li>
+                    A coordinator asks a free-text question, such as:
+                    &ldquo;Tenant in unit 804 reports water coming from the
+                    ceiling. What should we do?&rdquo;
+                  </li>
+                  <li>
+                    The workflow engine retrieves the relevant sections from your
+                    emergency procedures and building notes.
+                  </li>
+                  <li>
+                    A language model drafts a step-by-step plan grounded in those
+                    documents and cites where each step came from.
+                  </li>
+                  <li>
+                    The workflow prepares a draft work order with building, unit,
+                    category, and suggested urgency, ready for human approval in
+                    your existing system.
+                  </li>
+                </ol>
+
+                <h3>Data ownership &amp; deployment model</h3>
+                <p>
+                  We avoid tying you to a single, opaque stack. Instead, we deploy
+                  a small workflow engine in an environment that you control:
+                </p>
+                <ul>
+                  <li>
+                    either in your own cloud account, or on an isolated hosted
+                    instance dedicated to you;
+                  </li>
+                  <li>
+                    connected to your existing document storage and ticketing
+                    tools;
+                  </li>
+                  <li>
+                    using a language model provider you are comfortable with,
+                    which can be changed later if needed.
+                  </li>
+                </ul>
+                <p>
+                  Your documents remain in your environment. The assistant only
+                  sends the minimum necessary text snippets to the model, and the
+                  workflow can be inspected, monitored, and adjusted over time.
+                </p>
+
+                <h3>Where we fit in</h3>
+                <p>
+                  Flowtica’s role is to work with your team to define which
+                  questions matter most, which documents are considered
+                  authoritative, and how the assistant should behave when it is
+                  not confident. We then design, implement, and operate the
+                  workflow so that it behaves like part of your infrastructure,
+                  not a one-off experiment.
+                </p>
+
+                <p style="margin-top: 1.5rem;">
+                  <a href="index.html#contact" class="btn">
+                    Discuss a similar project
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>

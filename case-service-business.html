@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Flowtica | AI Reception & Intake for Service Businesses</title>
+    <title>Flowtica | Service Business Co-Pilot</title>
 
     <meta
       name="description"
-      content="How Flowtica designs AI reception and intake workflows for clinics, trades, and multi-location service businesses, running in environments you control."
+      content="How Flowtica builds AI co-pilots for service businesses to triage inquiries, surface knowledge, and keep operations moving."
     />
 
     <!-- Font: Inter -->
@@ -22,6 +22,7 @@
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/blog-single.css" />
+    <!-- Use color-4 as the main skin -->
     <link rel="stylesheet" href="css/skins/color-4.css" />
 
     <!-- Font Awesome -->
@@ -30,7 +31,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
 
-    <!-- Alternate skins -->
+    <!-- Alternate skins (same as index) -->
     <link
       rel="stylesheet"
       href="css/skins/color-1.css"
@@ -68,8 +69,10 @@
 
     <link rel="stylesheet" href="css/style-switcher.css" />
 
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
 
+    <!-- Page tweaks -->
     <style>
       :root {
         scroll-behavior: smooth;
@@ -115,7 +118,10 @@
         font-size: 0.8rem;
       }
 
-      .case-section p,
+      .case-section p {
+        font-size: 0.95rem;
+      }
+
       .case-section ul,
       .case-section ol {
         font-size: 0.95rem;
@@ -181,7 +187,8 @@
           text-align: center;
         }
       }
-            /* Mobile layout: make case pages behave like the homepage */
+
+      /* Mobile layout: make case pages behave like the homepage */
       @media (max-width: 991px) {
         body {
           overflow-x: hidden;
@@ -250,12 +257,13 @@
           padding-right: 15px;
         }
       }
-
     </style>
   </head>
 
   <body>
+    <!-- Main Container Start -->
     <div class="main-container">
+      <!-- Aside Start -->
       <div class="aside">
         <div class="logo">
           <a href="index.html"><span>F</span>lowtica</a>
@@ -286,7 +294,9 @@
           </li>
         </ul>
       </div>
+      <!-- Aside End -->
 
+      <!-- Main Content Start -->
       <div class="main-content">
         <section class="section case-section">
           <div class="container">
@@ -445,8 +455,11 @@
           </div>
         </section>
       </div>
+      <!-- Main Content End -->
     </div>
+    <!-- Main Container End -->
 
+    <!-- Style Switcher Start (same widget as index) -->
     <div class="style-switcher">
       <div class="style-switcher-toggler s-icon">
         <i class="fas fa-cog fa-spin"></i>
@@ -463,7 +476,9 @@
         <span class="color-5" onclick="setActiveStyle('color-5')"></span>
       </div>
     </div>
+    <!-- Style Switcher End -->
 
+    <!-- Scripts -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
       referrerpolicy="no-referrer"
@@ -472,3 +487,4 @@
     <script src="js/style-switcher.js"></script>
   </body>
 </html>
+
