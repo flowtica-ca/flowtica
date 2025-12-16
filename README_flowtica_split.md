@@ -6,6 +6,7 @@ This repo has been refactored so `index.html` is built from smaller section file
 
 - `index.html` – generated file used by GitHub Pages
 - `src/_head.html` – `<head>` and layout shell up to the Home section
+- `src/_nav.html` – shared navigation sidebar partial used by both index and case pages
 - `src/home.html` – Home section
 - `src/about.html` – About section
 - `src/services.html` – Services section

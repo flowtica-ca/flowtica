@@ -40,6 +40,21 @@ CASES = [
 
 SRC_DIR = pathlib.Path("src/cases")
 TEMPLATE_FILE = SRC_DIR / "_case_template.html"
+NAV_FILE = pathlib.Path("src/_nav.html")
+
+
+def render_nav(prefix: str, portfolio_active: bool) -> str:
+    if not NAV_FILE.exists():
+        raise FileNotFoundError("Missing nav partial: src/_nav.html")
+
+    nav_template = NAV_FILE.read_text(encoding="utf-8").strip()
+    return (
+        nav_template.replace("{{PREFIX}}", prefix)
+        .replace("{{HOME_ACTIVE}}", " class=\"active\"" if not portfolio_active else "")
+        .replace(
+            "{{PORTFOLIO_ACTIVE}}", " class=\"active\"" if portfolio_active else ""
+        )
+    )
 
 
 def build_case(config: dict, template: str) -> None:
@@ -48,8 +63,10 @@ def build_case(config: dict, template: str) -> None:
         raise FileNotFoundError(f"Missing case content: {content_path}")
 
     content = content_path.read_text(encoding="utf-8").strip()
+    nav = render_nav(prefix="index.html", portfolio_active=True)
     html = (
-        template.replace("{{TITLE}}", config["title"])
+        template.replace("{{NAV}}", nav)
+        .replace("{{TITLE}}", config["title"])
         .replace("{{DESCRIPTION}}", config["description"])
         .replace("{{CONTENT}}", content)
     )
