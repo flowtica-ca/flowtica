@@ -1,51 +1,120 @@
 <!-- Career Section Start -->
 <section class="service section" id="career">
   <style>
-    #career .career-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-      align-items: start;
-    }
-
     #career .career-card {
       background: var(--bg-black-100);
       border: 1px solid var(--bg-black-50);
       border-radius: 12px;
-      padding: 20px;
+      padding: 0;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-      height: 100%;
+      overflow: hidden;
     }
 
-    #career .career-card h3 {
-      margin-top: 10px;
+    #career .career-details {
+      margin: 0;
+    }
+
+    #career .career-summary {
+      list-style: none;
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #career .career-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #career .summary-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #career .career-summary h3 {
+      margin: 0;
+      color: var(--text-black-900);
+      font-size: 1.4rem;
+    }
+
+    #career .career-summary p {
+      margin: 0;
+      color: var(--text-black-700);
+    }
+
+    #career .summary-cta {
+      color: var(--skin-color);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+
+    #career .summary-cta i {
+      font-size: 0.85rem;
+    }
+
+    #career .career-body {
+      border-top: 1px solid var(--bg-black-50);
+      padding: 20px;
+      display: none;
+      gap: 24px;
+      flex-direction: column;
+    }
+
+    #career details[open] .career-body {
+      display: flex;
+    }
+
+    #career .career-content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    #career .career-column,
+    #career .career-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #career .career-card-inner {
+      background: var(--bg-black-50);
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    #career .career-card-inner h4 {
+      margin-top: 0;
       margin-bottom: 8px;
       color: var(--text-black-900);
     }
 
-    #career .career-card h4 {
-      margin-top: 12px;
-      margin-bottom: 8px;
-      color: var(--text-black-900);
-    }
-
-    #career .career-card p {
+    #career .career-card-inner p,
+    #career .career-card-inner li {
       color: var(--text-black-700);
     }
 
     #career .career-meta {
       list-style: none;
       padding: 0;
-      margin: 12px 0 18px;
+      margin: 4px 0 0;
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     #career .career-meta li {
-      background: var(--bg-black-50);
-      border-radius: 10px;
-      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 6px 10px;
       font-weight: 600;
       color: var(--text-black-900);
       font-size: 0.95rem;
@@ -64,20 +133,8 @@
       color: var(--text-black-900);
     }
 
-    #career .sidebar-column {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    #career .cta-card {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
     @media (max-width: 900px) {
-      #career .career-grid {
+      #career .career-content-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -94,99 +151,117 @@
       <div class="padd-15">
         <p>
           Flowtica is growing and looking for people who enjoy pairing hands-on implementation with customer-facing work.
-          Our current opening is listed below. If you thrive in small teams and like owning delivery end-to-end, we would love to hear from you.
+          Click below to view details for our current opening.
         </p>
       </div>
     </div>
 
-    <div class="row career-grid">
+    <div class="row">
       <div class="padd-15">
         <div class="career-card">
-          <div class="tag-pill">
-            <i class="fa fa-bolt"></i>
-            Now hiring
-          </div>
-          <h3>Automation Implementation Specialist (Junior–Mid)</h3>
-          <p class="offer-tagline">On-site • Kingston, ON</p>
-          <p class="offer-price">
-            <strong>~$50,000 base + stock options</strong>
-            <span class="offer-note">Performance-based raises</span>
-          </p>
+          <details class="career-details">
+            <summary class="career-summary">
+              <div class="summary-header">
+                <div class="tag-pill">
+                  <i class="fa fa-bolt"></i>
+                  Now hiring
+                </div>
+                <h3>Automation Implementation Specialist (Junior–Mid)</h3>
+              </div>
+              <ul class="career-meta">
+                <li>On-site • Kingston, ON</li>
+                <li>~$50,000 base + stock options</li>
+                <li>Performance-based raises</li>
+              </ul>
+              <span class="summary-cta">
+                View full job description
+                <i class="fa fa-chevron-down"></i>
+              </span>
+            </summary>
 
-          <h4>TL;DR</h4>
-          <ul class="demo-list">
-            <li>1–3 years in automation/integrations, internal tools, technical ops/RevOps, or junior dev.</li>
-            <li>Comfortable with REST APIs, JSON, and basic JavaScript/Python.</li>
-            <li>Enjoys talking to customers and owning delivery end-to-end (discovery → plan → build → iterate).</li>
-            <li>Happy to work on-site in Kingston for $50K + options with clear upside.</li>
-          </ul>
-        </div>
+            <div class="career-body">
+              <div class="career-content-grid">
+                <div class="career-column">
+                  <div class="career-card-inner">
+                    <h4>TL;DR</h4>
+                    <ul class="demo-list">
+                      <li>1–3 years in automation/integrations, internal tools, technical ops/RevOps, or junior dev.</li>
+                      <li>Comfortable with REST APIs, JSON, and basic JavaScript/Python.</li>
+                      <li>Enjoys talking to customers and owning delivery end-to-end (discovery → plan → build → iterate).</li>
+                      <li>Happy to work on-site in Kingston for $50K + options with clear upside.</li>
+                    </ul>
+                  </div>
 
-        <div class="career-card">
-          <h4>What you’ll do</h4>
-          <p class="subheading">Customer ownership</p>
-          <ul class="demo-list">
-            <li>Run discovery calls to understand workflows, constraints, and success metrics.</li>
-            <li>Capture requirements and turn conversations into clear notes, scope, and acceptance criteria.</li>
-            <li>Lead internal scoping with the founder to align on the technical approach and delivery plan.</li>
-            <li>Own delivery end-to-end: track next steps, drive progress, communicate clearly, and manage expectations.</li>
-          </ul>
+                  <div class="career-card-inner">
+                    <h4>What you’ll do</h4>
+                    <p class="subheading">Customer ownership</p>
+                    <ul class="demo-list">
+                      <li>Run discovery calls to understand workflows, constraints, and success metrics.</li>
+                      <li>Capture requirements and turn conversations into clear notes, scope, and acceptance criteria.</li>
+                      <li>Lead internal scoping with the founder to align on the technical approach and delivery plan.</li>
+                      <li>Own delivery end-to-end: track next steps, drive progress, communicate clearly, and manage expectations.</li>
+                    </ul>
 
-          <p class="subheading">Implementation (you build and ship with mentorship)</p>
-          <ul class="demo-list">
-            <li>Build workflows in an automation platform (currently n8n; similar tools relevant).</li>
-            <li>Connect systems via REST APIs (CRMs, ERPs, PMS, ATS, email/SMS, Slack, Google/Microsoft 365).</li>
-            <li>Write small JavaScript/Python helpers to transform, validate, and route data.</li>
-            <li>Use LLMs to parse and classify unstructured text (emails, forms, messages).</li>
-            <li>Add logging, basic monitoring, and simple runbooks so workflows are reliable and debuggable.</li>
-            <li>Support iterations after launch based on real usage and customer feedback.</li>
-          </ul>
-        </div>
-      </div>
+                    <p class="subheading">Implementation (you build and ship with mentorship)</p>
+                    <ul class="demo-list">
+                      <li>Build workflows in an automation platform (currently n8n; similar tools relevant).</li>
+                      <li>Connect systems via REST APIs (CRMs, ERPs, PMS, ATS, email/SMS, Slack, Google/Microsoft 365).</li>
+                      <li>Write small JavaScript/Python helpers to transform, validate, and route data.</li>
+                      <li>Use LLMs to parse and classify unstructured text (emails, forms, messages).</li>
+                      <li>Add logging, basic monitoring, and simple runbooks so workflows are reliable and debuggable.</li>
+                      <li>Support iterations after launch based on real usage and customer feedback.</li>
+                    </ul>
+                  </div>
+                </div>
 
-      <div class="padd-15 sidebar-column">
-        <div class="career-card">
-          <h4>About Flowtica</h4>
-          <p>
-            Flowtica helps traditional businesses (distributors, property managers, staffing agencies, etc.) automate messy, manual workflows using automation platforms, APIs, and AI/LLMs.
-            We’re early-stage and hands-on. You’ll work closely with the founder and see the full customer journey from first call to a workflow running in production.
-          </p>
-        </div>
+                <div class="career-sidebar">
+                  <div class="career-card-inner">
+                    <h4>About Flowtica</h4>
+                    <p>
+                      Flowtica helps traditional businesses (distributors, property managers, staffing agencies, etc.) automate messy, manual workflows using automation platforms, APIs, and AI/LLMs.
+                      We’re early-stage and hands-on. You’ll work closely with the founder and see the full customer journey from first call to a workflow running in production.
+                    </p>
+                  </div>
 
-        <div class="career-card">
-          <h4>Must-have qualifications</h4>
-          <ul class="demo-list">
-            <li>1–3 years of relevant experience (automation/integration engineering, technical ops/RevOps, internal tools, or junior software dev).</li>
-            <li>Practical experience with at least one automation/integration tool or approach (n8n, Zapier, Make, Integromat, or scripting).</li>
-            <li>Comfortable with REST APIs and JSON, including auth such as API keys or bearer tokens.</li>
-            <li>Ability to write basic JavaScript or Python (arrays/objects, loops, conditionals, simple helpers).</li>
-            <li>Familiarity with webhooks or event-driven flows, or ability to pick it up quickly.</li>
-            <li>Strong communication: can run a customer call, ask good questions, and write clean summaries.</li>
-          </ul>
-        </div>
+                  <div class="career-card-inner">
+                    <h4>Must-have qualifications</h4>
+                    <ul class="demo-list">
+                      <li>1–3 years of relevant experience (automation/integration engineering, technical ops/RevOps, internal tools, or junior software dev).</li>
+                      <li>Practical experience with at least one automation/integration tool or approach (n8n, Zapier, Make, Integromat, or scripting).</li>
+                      <li>Comfortable with REST APIs and JSON, including auth such as API keys or bearer tokens.</li>
+                      <li>Ability to write basic JavaScript or Python (arrays/objects, loops, conditionals, simple helpers).</li>
+                      <li>Familiarity with webhooks or event-driven flows, or ability to pick it up quickly.</li>
+                      <li>Strong communication: can run a customer call, ask good questions, and write clean summaries.</li>
+                    </ul>
+                  </div>
 
-        <div class="career-card">
-          <h4>Nice-to-have</h4>
-          <ul class="demo-list">
-            <li>n8n experience specifically.</li>
-            <li>Workflows spanning multiple systems (CRM + email + Slack/SMS, etc.).</li>
-            <li>Hands-on use of LLMs for extraction/classification and structured outputs.</li>
-            <li>Basic SQL (Postgres/MySQL) for logging/analytics.</li>
-            <li>Experience with tools like Twilio, Slack, SendGrid, HubSpot, Salesforce.</li>
-            <li>Exposure to B2B ops domains like property management, staffing, or distribution.</li>
-          </ul>
-        </div>
+                  <div class="career-card-inner">
+                    <h4>Nice-to-have</h4>
+                    <ul class="demo-list">
+                      <li>n8n experience specifically.</li>
+                      <li>Workflows spanning multiple systems (CRM + email + Slack/SMS, etc.).</li>
+                      <li>Hands-on use of LLMs for extraction/classification and structured outputs.</li>
+                      <li>Basic SQL (Postgres/MySQL) for logging/analytics.</li>
+                      <li>Experience with tools like Twilio, Slack, SendGrid, HubSpot, Salesforce.</li>
+                      <li>Exposure to B2B ops domains like property management, staffing, or distribution.</li>
+                    </ul>
+                  </div>
 
-        <div class="career-card cta-card">
-          <h4>What we offer</h4>
-          <ul class="demo-list">
-            <li>~$50,000 base salary depending on experience.</li>
-            <li>Stock options and performance-based raises as you deliver impact and take on more ownership.</li>
-            <li>On-site in Kingston, ON working closely with the founder.</li>
-            <li>Ownership of end-to-end implementations, not just small tickets.</li>
-            <li>Fast learning curve in automation, integrations, and practical AI for real businesses.</li>
-          </ul>
-          <a href="#contact" class="btn">Apply and talk with us</a>
+                  <div class="career-card-inner">
+                    <h4>What we offer</h4>
+                    <ul class="demo-list">
+                      <li>~$50,000 base salary depending on experience.</li>
+                      <li>Stock options and performance-based raises as you deliver impact and take on more ownership.</li>
+                      <li>On-site in Kingston, ON working closely with the founder.</li>
+                      <li>Ownership of end-to-end implementations, not just small tickets.</li>
+                      <li>Fast learning curve in automation, integrations, and practical AI for real businesses.</li>
+                    </ul>
+                    <a href="#contact" class="btn">Apply and talk with us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </div>
