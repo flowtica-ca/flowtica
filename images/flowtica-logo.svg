@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="title desc">
+  <title id="title">Flowtica logo</title>
+  <desc id="desc">Wordmark reading Flowtica with blue brackets and a soft wave underline.</desc>
+  <defs>
+    <linearGradient id="bracket" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0057c2" />
+      <stop offset="1" stop-color="#4aa0e6" />
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dfe8f5" />
+      <stop offset="0.3" stop-color="#d3def0" />
+      <stop offset="0.6" stop-color="#b4c9e3" />
+      <stop offset="1" stop-color="#9fbad7" />
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M80 95 h70 v25 h-40 v70 h-30z" fill="url(#bracket)" />
+    <path d="M720 95 h-70 v25 h40 v70 h30z" fill="url(#bracket)" />
+    <text x="120" y="205" font-family="Georgia, 'Times New Roman', serif" font-size="120" fill="#0b2a73" font-weight="700">Flowtica</text>
+    <path d="M210 250c60 40 140 50 210 25 74-26 136-28 190-10" stroke="url(#wave)" stroke-width="30" fill="none" stroke-linecap="round" />
+    <path d="M220 255c58 35 134 44 198 22 72-25 133-25 182-6" stroke="#1b4f9c" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.35" />
+  </g>
+</svg>
