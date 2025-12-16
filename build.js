@@ -8,6 +8,7 @@ const parts = [
   "services.html",
   "portfolio.html",
   "offers.html",
+  "career.html",
   "contact.html",
   "_footer.html",
 ];
