@@ -49,6 +49,8 @@ def main():
     # Join sections with a newline between them and write index.html
     OUT_FILE.write_text("\n".join(chunks) + "\n", encoding="utf-8")
     print("✅ Rebuilt index.html from src/*.html")
+    import build_cases
+    build_cases.main()
 
 
 if __name__ == "__main__":
