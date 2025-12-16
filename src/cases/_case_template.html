@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{TITLE}}</title>
+
+    <meta
+      name="description"
+      content="{{DESCRIPTION}}"
+    />
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-single.css" />
+    <!-- Use color-4 as the main skin -->
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Alternate skins (same as index) -->
+    <link
+      rel="stylesheet"
+      href="css/skins/color-1.css"
+      class="alternate-style"
+      title="color-1"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-2.css"
+      class="alternate-style"
+      title="color-2"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-3.css"
+      class="alternate-style"
+      title="color-3"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-4.css"
+      class="alternate-style"
+      title="color-4"
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-5.css"
+      class="alternate-style"
+      title="color-5"
+      disabled
+    />
+
+    <link rel="stylesheet" href="css/style-switcher.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <!-- Page tweaks -->
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .case-section p {
+        font-size: 0.95rem;
+      }
+
+      .case-section ul,
+      .case-section ol {
+        font-size: 0.95rem;
+      }
+
+      .case-diagram {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .case-diagram-node {
+        flex: 1 1 210px;
+        min-width: 0;
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f7f7f7;
+        font-size: 0.85rem;
+      }
+
+      .case-diagram-node h4 {
+        margin-top: 0;
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+      }
+
+      .case-diagram-node ul {
+        padding-left: 1.1rem;
+        margin: 0;
+      }
+
+      .case-diagram-node li {
+        margin-bottom: 0.25rem;
+      }
+
+      .case-diagram-arrow {
+        align-self: center;
+        font-size: 1.3rem;
+        opacity: 0.85;
+        padding: 0 0.3rem;
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .case-diagram {
+          flex-direction: column;
+        }
+
+        .case-diagram-arrow {
+          text-align: center;
+        }
+      }
+
+      /* Mobile layout: make case pages behave like the homepage */
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Container Start -->
+    <div class="main-container">
+      {{NAV}}
+      
+      <!-- Main Content Start -->
+      <div class="main-content">
+        {{CONTENT}}
+      </div>
+      <!-- Main Content End -->
+    </div>
+    <!-- Main Container End -->
+
+    <!-- Style Switcher Start (same widget as index) -->
+    <div class="style-switcher">
+      <div class="style-switcher-toggler s-icon">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-night s-icon">
+        <i class="fas"></i>
+      </div>
+      <h4>Theme Colors</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
+    <!-- Style Switcher End -->
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
+    <script src="js/style-switcher.js"></script>
+  </body>
+</html>

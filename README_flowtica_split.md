@@ -6,6 +6,7 @@ This repo has been refactored so `index.html` is built from smaller section file
 
 - `index.html` – generated file used by GitHub Pages
 - `src/_head.html` – `<head>` and layout shell up to the Home section
+- `src/_nav.html` – shared navigation sidebar partial used by both index and case pages
 - `src/home.html` – Home section
 - `src/about.html` – About section
 - `src/services.html` – Services section
@@ -14,6 +15,7 @@ This repo has been refactored so `index.html` is built from smaller section file
 - `src/contact.html` – Contact section + form
 - `src/_footer.html` – layout closing markup, style switcher, and scripts
 - `build.js` – small Node script that concatenates the pieces into `index.html`
+- `build_cases.py` – rebuilds the case study HTML files from a shared template in `src/cases`
 
 ## Usage
 
@@ -24,5 +26,11 @@ This repo has been refactored so `index.html` is built from smaller section file
    node build.js
    ```
 
-3. Commit the updated `index.html` for deployment (for example, to GitHub Pages).
+3. Rebuild the case study pages (to keep the navigation and shell consistent) by running:
+
+   ```bash
+   python build_cases.py
+   ```
+
+4. Commit the updated `index.html` and the generated `case-*.html` files for deployment (for example, to GitHub Pages).
 
