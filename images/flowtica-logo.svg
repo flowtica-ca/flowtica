@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="title desc">
+  <title id="title">Flowtica logo</title>
+  <desc id="desc">Blue Flowtica logotype with wave underline and corner brackets.</desc>
+  <defs>
+    <linearGradient id="cornerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c2e77" />
+      <stop offset="100%" stop-color="#3e8ad1" />
+    </linearGradient>
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5ba7e8" />
+      <stop offset="40%" stop-color="#d3e3f6" />
+      <stop offset="75%" stop-color="#6aa6e1" />
+      <stop offset="100%" stop-color="#2f73b9" />
+    </linearGradient>
+  </defs>
+  <rect x="24" y="52" width="36" height="120" fill="url(#cornerGradient)" rx="6" />
+  <rect x="24" y="52" width="120" height="36" fill="url(#cornerGradient)" rx="6" />
+  <rect x="740" y="52" width="36" height="120" fill="url(#cornerGradient)" rx="6" />
+  <rect x="656" y="52" width="120" height="36" fill="url(#cornerGradient)" rx="6" />
+  <text x="130" y="170" fill="#0c2e77" font-family="'Playfair Display', 'Times New Roman', serif" font-size="122" font-weight="600">Flowtica</text>
+  <path d="M124 194c76 44 151 48 224 12 68-33 124-32 192 6 62 36 116 38 186 2" fill="none" stroke="url(#waveGradient)" stroke-width="22" stroke-linecap="round" />
+  <path d="M124 214c76 44 151 48 224 12 68-33 124-32 192 6 62 36 116 38 186 2" fill="none" stroke="#0c2e77" stroke-width="4" stroke-opacity="0.18" stroke-linecap="round" />
+</svg>
