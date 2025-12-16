@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Flowtica logo</title>
+  <desc id="desc">Flowtica wordmark with blue brackets and a silver-blue wave underline on white background.</desc>
+  <defs>
+    <linearGradient id="bracket" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a4aa5" />
+      <stop offset="50%" stop-color="#1b6bd0" />
+      <stop offset="100%" stop-color="#58a6f3" />
+    </linearGradient>
+    <linearGradient id="wave-fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f0f4fb" />
+      <stop offset="25%" stop-color="#dfe9f7" />
+      <stop offset="60%" stop-color="#c5d3ea" />
+      <stop offset="100%" stop-color="#a8bddf" />
+    </linearGradient>
+    <linearGradient id="wave-stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#164b9b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#164b9b" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+      <feOffset in="blur" dx="0" dy="5" result="offsetBlur" />
+      <feFlood flood-color="#0d397e" flood-opacity="0.2" />
+      <feComposite in2="offsetBlur" operator="in" />
+      <feComposite in2="SourceGraphic" operator="over" />
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="#fff" />
+  <g fill="url(#bracket)">
+    <path d="M190 260 h250 v60 h-190 v230 h-60z" />
+    <path d="M1410 260 h-250 v60 h190 v230 h60z" />
+  </g>
+  <g filter="url(#softShadow)">
+    <path d="M320 750 c160 140 410 160 640 90 190-58 290-61 370-36" fill="none" stroke="url(#wave-fill)" stroke-width="90" stroke-linecap="round" />
+    <path d="M340 752 c150 120 390 145 600 85 175-51 280-57 360-36" fill="none" stroke="url(#wave-stroke)" stroke-width="16" stroke-linecap="round" />
+  </g>
+  <text x="300" y="620" font-family="'Playfair Display', 'Times New Roman', serif" font-size="240" font-weight="700" font-style="italic" fill="#0d2d72" stroke="#0d2d72" stroke-width="2" paint-order="stroke">
+    Flowtica
+  </text>
+</svg>
