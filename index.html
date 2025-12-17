@@ -1251,6 +1251,281 @@
   </div>
 </section>
 <!-- Offers / Pricing Section End -->
+<!-- Careers Section Start -->
+<section class="service section" id="careers">
+  <style>
+    #careers .career-intro {
+      max-width: 780px;
+      margin-bottom: 10px;
+    }
+
+    #careers .job-card {
+      background: var(--bg-black-100);
+      border: 1px solid var(--border-color, rgba(255, 255, 255, 0.05));
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 10px 0 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    #careers .career-card {
+      background: var(--bg-black-100);
+      border: 1px solid var(--border-color, rgba(255, 255, 255, 0.05));
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 10px 0 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    #careers .job-card summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #careers .job-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #careers .job-card:hover {
+      border-color: var(--skin-color);
+      transform: translateY(-2px);
+    }
+
+    #careers .job-title {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    #careers .job-meta {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted, #c3c7d1);
+    }
+
+    #careers .job-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: var(--skin-color);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    #careers details[open] .job-toggle i {
+      transform: rotate(180deg);
+    }
+
+    #careers .job-body {
+      margin-top: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    #careers .career-card h3,
+    #careers .job-section h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    #careers .job-section p {
+      margin: 0 0 8px;
+      line-height: 1.55;
+    }
+
+    #careers .job-section ul {
+      margin: 0 0 6px 16px;
+      padding: 0;
+      line-height: 1.55;
+    }
+
+    #careers .job-section li + li {
+      margin-top: 4px;
+    }
+
+    #careers .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.55;
+    }
+
+    #careers .bullet-list li + li {
+      margin-top: 6px;
+    }
+
+    #careers .job-highlight {
+      background: rgba(74, 144, 226, 0.08);
+      border: 1px solid rgba(74, 144, 226, 0.3);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-top: 6px;
+    }
+
+    #careers .cta-text {
+      font-weight: 600;
+      margin: 0;
+      color: var(--skin-color);
+    }
+  </style>
+
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Careers</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15" style="width: 100%;">
+        <div class="career-card">
+          <h3>Careers at Flowtica</h3>
+          <p>
+            Flowtica is a Canadian AI consultancy focused on getting real AI and automation into production for businesses.
+            Our work is delivery-first: we ship workflows, assistants, and integrations that run in real environments, not demo
+            sandboxes. Roles are senior-leaning, impact-driven, and client-facing.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15" style="width: 100%;">
+        <div class="career-card">
+          <h3>What it’s like to work at Flowtica</h3>
+          <ul class="bullet-list">
+            <li>Small senior team that ships production systems for customers.</li>
+            <li>High ownership with autonomy to choose approaches that keep deployments reliable.</li>
+            <li>Direct collaboration with business clients to understand operations and outcomes.</li>
+            <li>Bias toward deploying AI and automation, not research experiments or demos.</li>
+            <li>Clear expectations, accountability, and quick feedback from the founder.</li>
+            <li>Remote-friendly for collaboration, with time on-site when needed for delivery.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15" style="width: 100%;">
+        <details class="job-card">
+          <summary>
+            <div>
+              <h3 class="job-title">Automation Implementation Specialist (Junior–Mid)</h3>
+              <p class="job-meta">Work model: On-site (Kingston, ON) • Engagement: Full-time • Location: Canada</p>
+              <p class="job-meta">Compensation: ~$50,000 base + stock options</p>
+            </div>
+            <div class="job-toggle">
+              View details
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </summary>
+
+          <div class="job-body">
+            <div class="job-section">
+              <h4>TL;DR</h4>
+              <div class="job-highlight">
+                <ul>
+                  <li>Own delivery of production automations with 1–3 years in integrations, internal tools, or technical ops.</li>
+                  <li>Comfortable with REST APIs, JSON, and writing small JavaScript/Python helpers.</li>
+                  <li>Client-facing and able to translate discovery into scoped plans, then build and iterate.</li>
+                  <li>Based on-site in Kingston, ON with clear upside through options and performance raises.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="job-section">
+              <h4>Role overview</h4>
+              <p>
+                You will own end-to-end implementations: run discovery with customers, align technical plans with the founder,
+                build the workflows, and keep them reliable in production.
+              </p>
+            </div>
+
+            <div class="job-section">
+              <h4>How you’ll work with clients</h4>
+              <ul>
+                <li>Lead discovery calls to map workflows, constraints, and success criteria.</li>
+                <li>Document requirements crisply and propose delivery plans that balance speed and stability.</li>
+                <li>Communicate progress, risks, and decisions directly with customers and the founder.</li>
+              </ul>
+            </div>
+
+            <div class="job-section">
+              <h4>Ownership and delivery</h4>
+              <ul>
+                <li>Build automations in n8n (or similar), connect systems via REST APIs, and write targeted helpers in JavaScript/Python.</li>
+                <li>Use LLMs pragmatically for parsing and classification when it improves production workflows.</li>
+                <li>Add logging, monitoring, and simple runbooks so deployments are observable and debuggable.</li>
+                <li>Ship iterations based on real usage while keeping systems stable.</li>
+              </ul>
+              <p class="job-highlight">
+                You will have close mentorship and review from the founder, but are expected to solve problems independently and
+                keep projects moving.
+              </p>
+            </div>
+
+            <div class="job-section">
+              <h4>Must-have qualifications</h4>
+              <ul>
+                <li>1–3 years in automation/integration engineering, technical ops/RevOps, internal tools, or software delivery.</li>
+                <li>Practical experience with at least one automation approach (n8n, Zapier, Make/Integromat, or scripting).</li>
+                <li>Confident reading API docs, making authenticated REST requests, and handling JSON payloads.</li>
+                <li>Ability to write basic JavaScript or Python, including data transforms and webhook/event handling.</li>
+                <li>Strong communication: can run client calls, ask precise questions, and write clear updates.</li>
+              </ul>
+            </div>
+
+            <div class="job-section">
+              <h4>Nice-to-have</h4>
+              <ul>
+                <li>n8n experience and multi-system workflows (e.g., CRM + email + Slack/SMS).</li>
+                <li>LLM usage for extraction/classification with structured outputs.</li>
+                <li>Basic SQL for logging/analytics and familiarity with tools like Twilio, Slack, SendGrid, HubSpot, or Salesforce.</li>
+                <li>Exposure to B2B ops domains such as property management, staffing, or distribution.</li>
+              </ul>
+            </div>
+
+            <div class="job-section">
+              <h4>What we offer</h4>
+              <ul>
+                <li>~$50,000 base salary depending on experience, plus stock options.</li>
+                <li>Performance-based raises tied to delivery and ownership.</li>
+                <li>On-site collaboration in Kingston, ON with hands-on support from the founder.</li>
+                <li>End-to-end ownership of production implementations and practical AI work.</li>
+              </ul>
+            </div>
+
+            <div class="job-section">
+              <h4>How to apply</h4>
+              <p class="cta-text">Apply by emailing careers@flowtica.ca.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15" style="width: 100%;">
+        <div class="career-card">
+          <h3>Don’t see a role that fits?</h3>
+          <p>Strong candidates who want to deliver production AI and automation should email careers@flowtica.ca with a brief introduction.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15" style="width: 100%;">
+        <p class="cta-text">Apply by emailing careers@flowtica.ca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Careers Section End -->
 <!-- Contact Section Start -->
 <section class="contact section" id="contact">
   <div class="container">
@@ -1395,6 +1670,12 @@
       <!-- Main Content End -->
     </div>
     <!-- Main Container End -->
+
+    <footer class="site-footer">
+      <div class="padd-15" style="text-align: center;">
+        <a href="#careers">Careers</a>
+      </div>
+    </footer>
 
     <!-- Style Switcher Start -->
     <div class="style-switcher">
