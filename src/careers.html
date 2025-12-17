@@ -3,13 +3,22 @@
   <style>
     #careers .career-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 30px;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 25px;
       align-items: start;
     }
 
-    #careers .career-card {
+    #careers .career-card,
+    #careers .intro-card {
       height: 100%;
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.35rem 1.5rem;
+    }
+
+    #careers .intro-card p {
+      margin: 0;
     }
 
     #careers .career-meta {
@@ -22,7 +31,7 @@
     #careers .meta-item {
       border-radius: 10px;
       padding: 0.75rem 0.9rem;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -37,7 +46,11 @@
     }
 
     #careers .demo-list {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #careers h5 {
+      margin-bottom: 0.45rem;
     }
 
     @media (max-width: 991px) {
@@ -56,18 +69,20 @@
 
     <div class="row">
       <div class="padd-15">
-        <p>
-          Flowtica builds dependable AI assistants and automation for operations-heavy teams. We pair hands-on discovery
-          with rigorous implementation so workflows run reliably in production, with clear ownership from initial scope
-          to iteration.
-        </p>
+        <div class="intro-card">
+          <p>
+            Flowtica builds dependable AI assistants and automation for operations-heavy teams. We pair hands-on discovery
+            with rigorous implementation so workflows run reliably in production, with clear ownership from initial scope to
+            iteration.
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="padd-15">
         <div class="career-grid">
-          <div class="career-card offer-card">
+          <div class="career-card">
             <h3>Automation Implementation Specialist (Junior–Mid)</h3>
 
             <div class="career-meta">
@@ -100,7 +115,7 @@
             </p>
           </div>
 
-          <div class="career-card offer-card">
+          <div class="career-card">
             <h4 class="title">What You’ll Do</h4>
             <h5>Customer ownership</h5>
             <ul class="demo-list">
@@ -135,7 +150,8 @@
               <li>n8n experience</li>
               <li>Multi-system workflows (CRM + email + Slack/SMS, etc.)</li>
               <li>Hands-on LLM usage for extraction/classification</li>
-              <li>Basic SQL (Postgres/MySQL)</li>
+              <li>Basic SQL (Postgres/MySQL)
+              </li>
               <li>Experience with Twilio, Slack, SendGrid, HubSpot, Salesforce</li>
               <li>Exposure to B2B ops domains (property management, staffing, distribution)</li>
             </ul>
