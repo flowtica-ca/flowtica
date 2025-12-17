@@ -8,6 +8,7 @@ PARTS = [
     "services.html",
     "portfolio.html",
     "offers.html",
+    "careers.html",
     "contact.html",
     "_footer.html",
 ]
