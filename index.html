@@ -559,6 +559,9 @@
       <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
     </li>
     <li>
+      <a href="#careers"><i class="fa fa-rocket"></i> Careers</a>
+    </li>
+    <li>
       <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
     </li>
   </ul>
@@ -1251,6 +1254,211 @@
   </div>
 </section>
 <!-- Offers / Pricing Section End -->
+<!-- Careers Section Start -->
+<section class="service section" id="careers">
+  <style>
+    #careers .career-intro {
+      max-width: 780px;
+      margin-bottom: 10px;
+    }
+
+    #careers .job-card {
+      background: var(--bg-black-100);
+      border: 1px solid var(--border-color, rgba(255, 255, 255, 0.05));
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 10px 0 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    #careers .job-card summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #careers .job-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #careers .job-card:hover {
+      border-color: var(--skin-color);
+      transform: translateY(-2px);
+    }
+
+    #careers .job-title {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    #careers .job-meta {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted, #c3c7d1);
+    }
+
+    #careers .job-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: var(--skin-color);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    #careers details[open] .job-toggle i {
+      transform: rotate(180deg);
+    }
+
+    #careers .job-body {
+      margin-top: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    #careers .job-section h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    #careers .job-section p {
+      margin: 0 0 8px;
+      line-height: 1.55;
+    }
+
+    #careers .job-section ul {
+      margin: 0 0 6px 16px;
+      padding: 0;
+      line-height: 1.55;
+    }
+
+    #careers .job-section li + li {
+      margin-top: 4px;
+    }
+
+    #careers .job-highlight {
+      background: rgba(74, 144, 226, 0.08);
+      border: 1px solid rgba(74, 144, 226, 0.3);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-top: 6px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Careers at Flowtica</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15 career-intro">
+        <p>
+          We’re hiring builders who enjoy pairing with customers and shipping reliable automation. Roles are hands-on and
+          collaborative with the founder.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15" style="width: 100%;">
+        <details class="job-card">
+          <summary>
+            <div>
+              <h3 class="job-title">Automation Implementation Specialist (Junior–Mid)</h3>
+              <p class="job-meta">On-site in Kingston, ON • ~$50,000 base + stock options</p>
+            </div>
+            <div class="job-toggle">
+              View details
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </summary>
+
+          <div class="job-body">
+            <div class="job-section">
+              <h4>TL;DR</h4>
+              <div class="job-highlight">
+                <ul>
+                  <li>1–3 years in automation/integrations, internal tools, technical ops/RevOps, or junior dev.</li>
+                  <li>Comfortable with REST APIs, JSON, and basic JavaScript/Python.</li>
+                  <li>Enjoys talking to customers and owning delivery end-to-end (discovery → build → iterate).</li>
+                  <li>Happy to work on-site in Kingston for $50K + options with clear upside.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="job-section">
+              <h4>About Flowtica</h4>
+              <p>
+                Flowtica helps traditional businesses automate manual workflows using automation platforms, APIs, and AI/LLMs.
+                You’ll work closely with the founder and see the full customer journey from first call to a workflow in
+                production.
+              </p>
+            </div>
+
+            <div class="job-section">
+              <h4>What you’ll do</h4>
+              <p>This role blends customer discovery with technical implementation.</p>
+              <ul>
+                <li>Run discovery calls, capture requirements, and align delivery plans with the founder.</li>
+                <li>Own delivery: track next steps, communicate clearly, and manage expectations.</li>
+                <li>
+                  Build workflows in n8n (or similar), connect systems via REST APIs, and write small JavaScript/Python helpers
+                  for data transformations.
+                </li>
+                <li>Use LLMs to parse unstructured text, add logging/monitoring, and support iterations after launch.</li>
+              </ul>
+              <p class="job-highlight">
+                The founder is hands-on for mentorship, pairing, and reviews—you’re expected to learn quickly and keep delivery
+                moving.
+              </p>
+            </div>
+
+            <div class="job-section">
+              <h4>Must-have qualifications</h4>
+              <ul>
+                <li>1–3 years in automation/integration engineering, technical ops/RevOps, internal tools, or junior software development.</li>
+                <li>Experience with an automation tool or scripting (n8n, Zapier, Make/Integromat, or equivalent).</li>
+                <li>Comfortable reading docs and making authenticated REST API requests with JSON payloads.</li>
+                <li>Ability to write basic JavaScript or Python and work with webhooks or event-driven flows.</li>
+                <li>Strong communication: can run customer calls, ask good questions, and write clear summaries.</li>
+              </ul>
+            </div>
+
+            <div class="job-section">
+              <h4>Nice-to-have</h4>
+              <ul>
+                <li>n8n experience.</li>
+                <li>Multi-system workflows (CRM + email + Slack/SMS, etc.).</li>
+                <li>Hands-on use of LLMs for extraction/classification and structured outputs.</li>
+                <li>Basic SQL for logging/analytics and tools like Twilio, Slack, SendGrid, HubSpot, Salesforce.</li>
+                <li>Exposure to B2B ops domains like property management, staffing, or distribution.</li>
+              </ul>
+            </div>
+
+            <div class="job-section">
+              <h4>What we offer</h4>
+              <ul>
+                <li>~$50,000 base salary depending on experience, plus stock options.</li>
+                <li>Performance-based raises as you deliver impact and take on more ownership.</li>
+                <li>On-site in Kingston, ON working closely with the founder.</li>
+                <li>Ownership of end-to-end implementations with a fast learning curve in automation and AI.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Careers Section End -->
 <!-- Contact Section Start -->
 <section class="contact section" id="contact">
   <div class="container">
