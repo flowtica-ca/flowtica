@@ -251,6 +251,150 @@
         margin-bottom: 1.5rem;
       }
 
+      .career-card {
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      }
+
+      .career-toggle {
+        width: 100%;
+        border: none;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 1.25rem 1.35rem;
+        cursor: pointer;
+        color: inherit;
+        gap: 1rem;
+      }
+
+      .career-toggle:focus-visible {
+        outline: 2px solid var(--skin-color, #4a90e2);
+        outline-offset: 4px;
+      }
+
+      .career-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+
+      .career-title {
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+
+      .career-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .career-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .career-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: transform 0.25s ease;
+      }
+
+      .career-toggle[aria-expanded="true"] .career-icon {
+        transform: rotate(180deg);
+      }
+
+      .career-panel {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease, opacity 0.25s ease;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .career-panel.open {
+        max-height: 3000px;
+        opacity: 1;
+      }
+
+      .career-content {
+        padding: 0 1.35rem 1.35rem;
+        display: grid;
+        gap: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .career-section h4 {
+        margin-bottom: 0.35rem;
+      }
+
+      .career-section ul {
+        padding-left: 1.1rem;
+        margin: 0.35rem 0 0;
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .career-section p {
+        margin: 0;
+      }
+
+      .careers .section-title h2 {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .careers .section-title h2::after {
+        content: "New";
+        font-size: 0.75rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+      }
+
+      body.dark .career-card,
+      body.dark .career-panel {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      @media (max-width: 767px) {
+        .career-toggle {
+          align-items: flex-start;
+        }
+
+        .career-icon {
+          margin-top: 0.2rem;
+        }
+
+        .career-title {
+          font-size: 1rem;
+        }
+
+        .career-pill {
+          font-size: 0.82rem;
+        }
+      }
+
       .case-card {
         padding: 1.25rem 1.35rem;
         border-radius: 14px;
@@ -557,6 +701,9 @@
     </li>
     <li>
       <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
+    </li>
+    <li>
+      <a href="#careers"><i class="fa fa-users"></i> Careers</a>
     </li>
     <li>
       <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
@@ -1251,6 +1398,132 @@
   </div>
 </section>
 <!-- Offers / Pricing Section End -->
+<!-- Careers Section Start -->
+        <section class="careers section" id="careers">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Careers</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="careers-list padd-15">
+                <article class="career-card">
+                  <button
+                    class="career-toggle"
+                    aria-expanded="false"
+                    aria-controls="career-details-1"
+                    type="button"
+                  >
+                    <div class="career-summary">
+                      <div class="career-title">Automation Implementation Specialist (Junior–Mid)</div>
+                      <div class="career-meta">
+                        <span class="career-pill">On-site — Kingston, ON</span>
+                        <span class="career-pill">~$50,000 base + stock options</span>
+                      </div>
+                    </div>
+                    <span class="career-icon" aria-hidden="true">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                  </button>
+                  <div class="career-panel" id="career-details-1" aria-hidden="true">
+                    <div class="career-content">
+                      <div class="career-section">
+                        <h4>TL;DR</h4>
+                        <p>
+                          Early-stage role for someone who enjoys mapping business processes,
+                          implementing automations, and working directly with clients. You’ll work
+                          on-site in Kingston, ON to design, build, and support reliable AI-driven
+                          workflows for service-focused teams.
+                        </p>
+                      </div>
+                      <div class="career-section">
+                        <h4>About Flowtica</h4>
+                        <p>
+                          Flowtica is an AI systems studio that designs, builds, and operates AI
+                          assistants and workflow automations for service businesses and
+                          operations-heavy teams. We focus on dependable systems, measurable
+                          outcomes, and clear handoffs to the teams that use them.
+                        </p>
+                      </div>
+                      <div class="career-section">
+                        <h4>What You’ll Do</h4>
+                        <ul>
+                          <li>Map client processes and translate them into automation workflows.</li>
+                          <li>
+                            Configure and test AI assistants, integrations, and handoffs across
+                            phone, chat, and internal tools.
+                          </li>
+                          <li>
+                            Collaborate closely with the founder to scope, deliver, and iterate on
+                            client implementations.
+                          </li>
+                          <li>
+                            Create documentation, runbooks, and training materials that keep
+                            systems maintainable.
+                          </li>
+                          <li>
+                            Spend time on-site with clients in Kingston to gather feedback and
+                            ensure deployments fit real-world operations.
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="career-section">
+                        <h4>Must-Have Qualifications</h4>
+                        <ul>
+                          <li>Comfort translating messy processes into clear, testable steps.</li>
+                          <li>
+                            Hands-on experience with automation tools or scripting (Zapier, n8n,
+                            Make, Python, JavaScript, or similar).
+                          </li>
+                          <li>
+                            Strong written communication for documenting workflows and client
+                            updates.
+                          </li>
+                          <li>
+                            Ability to work on-site in Kingston, ON and visit client locations when
+                            needed.
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="career-section">
+                        <h4>Nice-to-Have</h4>
+                        <ul>
+                          <li>
+                            Familiarity with AI assistant design (LLMs, prompt engineering,
+                            retrieval, evaluation).
+                          </li>
+                          <li>Experience integrating CRMs, phone systems, or helpdesk tools.</li>
+                          <li>Comfort testing APIs and using developer tools or Postman.</li>
+                          <li>Background in operations, support, or process improvement roles.</li>
+                        </ul>
+                      </div>
+                      <div class="career-section">
+                        <h4>What We Offer</h4>
+                        <ul>
+                          <li>~$50,000 base salary plus stock options.</li>
+                          <li>Direct mentorship and visibility into how client systems are built.</li>
+                          <li>
+                            Meaningful ownership over implementations that ship quickly and improve
+                            real workflows.
+                          </li>
+                          <li>A collaborative on-site environment in Kingston with clients nearby.</li>
+                        </ul>
+                      </div>
+                      <div class="career-section">
+                        <h4>Application</h4>
+                        <p>
+                          Apply by emailing: <a href="mailto:careers@flowtica.ca">careers@flowtica.ca</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Careers Section End -->
 <!-- Contact Section Start -->
 <section class="contact section" id="contact">
   <div class="container">
@@ -1422,5 +1695,27 @@
     ></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".career-toggle");
+
+        toggles.forEach((toggle) => {
+          const panelId = toggle.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          const setState = (expanded) => {
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+            panel.classList.toggle("open", expanded);
+            panel.setAttribute("aria-hidden", expanded ? "false" : "true");
+          };
+
+          toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            setState(!expanded);
+          });
+        });
+      });
+    </script>
   </body>
 </html>

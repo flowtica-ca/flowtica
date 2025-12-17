@@ -29,5 +29,27 @@
     ></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".career-toggle");
+
+        toggles.forEach((toggle) => {
+          const panelId = toggle.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          const setState = (expanded) => {
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+            panel.classList.toggle("open", expanded);
+            panel.setAttribute("aria-hidden", expanded ? "false" : "true");
+          };
+
+          toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            setState(!expanded);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
