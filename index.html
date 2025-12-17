@@ -353,6 +353,109 @@
         margin-bottom: 0.3rem;
       }
 
+      /* Careers */
+      .careers .container {
+        padding-bottom: 40px;
+      }
+
+      .career-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .career-card-inner {
+        background: var(--bg-black-100);
+        border: 1px solid var(--bg-black-50);
+        border-radius: 14px;
+        padding: 1.5rem;
+      }
+
+      .career-toggle {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        border: none;
+        background: transparent;
+        padding: 0;
+        color: inherit;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .career-toggle:focus-visible {
+        outline: 2px solid var(--skin-color);
+        outline-offset: 4px;
+        border-radius: 10px;
+      }
+
+      .career-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .career-heading h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--text-black-900);
+      }
+
+      .career-heading .career-location {
+        margin: 0;
+        color: var(--text-black-700);
+        font-size: 0.95rem;
+      }
+
+      .career-toggle-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: 600;
+        color: var(--skin-color);
+        padding-top: 0.15rem;
+      }
+
+      .career-details {
+        margin-top: 1.1rem;
+        color: var(--text-black-700);
+        line-height: 1.7;
+      }
+
+      .career-details h4 {
+        margin: 0.85rem 0 0.35rem;
+        font-size: 1rem;
+        color: var(--text-black-900);
+      }
+
+      .career-details h5 {
+        margin: 0.75rem 0 0.35rem;
+        font-size: 0.95rem;
+        color: var(--text-black-900);
+      }
+
+      .career-details p {
+        margin: 0.35rem 0;
+      }
+
+      .career-details ul {
+        margin: 0.35rem 0 0.75rem 1.15rem;
+      }
+
+      .career-details li {
+        margin-bottom: 0.35rem;
+      }
+
+      .career-cta {
+        margin-top: 1.25rem;
+      }
+
+      body.dark .career-card-inner {
+        background: rgba(0, 0, 0, 0.35);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
       .contact-form .form-control {
         font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
@@ -557,6 +660,9 @@
     </li>
     <li>
       <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
+    </li>
+    <li>
+      <a href="#careers"><i class="fa fa-people-group"></i> Careers</a>
     </li>
     <li>
       <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
@@ -1251,6 +1357,201 @@
   </div>
 </section>
 <!-- Offers / Pricing Section End -->
+<!-- Careers Section Start -->
+        <section class="careers section" id="careers">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Careers</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="career-card padd-15">
+                <div class="career-card-inner shadow-dark">
+                  <button
+                    class="career-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="career-details"
+                  >
+                    <div class="career-heading">
+                      <h4>Automation Implementation Specialist (Junior–Mid)</h4>
+                      <p class="career-location">Location: On-site, Kingston, ON</p>
+                    </div>
+                    <div class="career-toggle-indicator">
+                      <span class="career-indicator-label">View details</span>
+                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                  </button>
+                  <div class="career-details" id="career-details" hidden>
+                    <p><strong>TL;DR</strong></p>
+                    <ul>
+                      <li>
+                        1–3 years experience in automation/integrations, internal tools,
+                        technical ops/RevOps, or junior software development
+                      </li>
+                      <li>
+                        Comfortable with REST APIs, JSON, and basic JavaScript or Python
+                      </li>
+                      <li>
+                        Enjoys talking to customers and owning delivery end-to-end
+                        (discovery → plan → build → iterate)
+                      </li>
+                      <li>Happy to work on-site in Kingston with clear upside</li>
+                    </ul>
+
+                    <h4>About Flowtica</h4>
+                    <p>
+                      Flowtica helps traditional businesses (distributors, property
+                      managers, staffing agencies, etc.) automate messy, manual workflows
+                      using automation platforms, APIs, and AI/LLMs.
+                    </p>
+                    <p>
+                      We are early-stage and hands-on. You will work closely with the
+                      founder and see the full customer journey — from first call to a
+                      workflow running in production.
+                    </p>
+
+                    <h4>What You’ll Do</h4>
+                    <h5>Customer ownership</h5>
+                    <ul>
+                      <li>
+                        Run customer discovery calls to understand workflows, constraints,
+                        and success metrics
+                      </li>
+                      <li>
+                        Capture requirements and turn conversations into clear notes,
+                        scope, and acceptance criteria
+                      </li>
+                      <li>
+                        Lead internal scoping with the founder to align on technical
+                        approach and delivery plan
+                      </li>
+                      <li>
+                        Own delivery end-to-end: track next steps, drive progress,
+                        communicate clearly, manage expectations
+                      </li>
+                    </ul>
+                    <h5>Implementation (with mentorship)</h5>
+                    <ul>
+                      <li>
+                        Build workflows in an automation platform (currently n8n; similar
+                        tools relevant)
+                      </li>
+                      <li>
+                        Connect systems via REST APIs (CRMs, ERPs, PMS, ATS, email/SMS,
+                        Slack, Google/Microsoft 365)
+                      </li>
+                      <li>
+                        Write small JavaScript/Python helpers to transform, validate, and
+                        route data
+                      </li>
+                      <li>
+                        Use LLMs to parse and classify unstructured text (emails, forms,
+                        messages)
+                      </li>
+                      <li>Add logging, basic monitoring, and simple runbooks</li>
+                      <li>
+                        Support post-launch iterations based on real usage and customer
+                        feedback
+                      </li>
+                    </ul>
+
+                    <h4>Must-Have Qualifications</h4>
+                    <ul>
+                      <li>
+                        1–3 years relevant experience (automation/integration engineering,
+                        technical ops/RevOps, internal tools, or junior software dev)
+                      </li>
+                      <li>
+                        Hands-on experience with at least one automation tool (n8n, Zapier,
+                        Make, Integromat, or equivalent)
+                      </li>
+                      <li>
+                        Comfortable with REST APIs and JSON (auth, GET/POST, reading docs)
+                      </li>
+                      <li>
+                        Ability to write basic JavaScript or Python (loops, conditionals,
+                        simple helpers)
+                      </li>
+                      <li>Familiarity with webhooks or event-driven flows</li>
+                      <li>
+                        Strong communication skills: can run customer calls and write clear
+                        summaries
+                      </li>
+                    </ul>
+
+                    <h4>Nice-to-Have</h4>
+                    <ul>
+                      <li>n8n experience</li>
+                      <li>Multi-system workflows (CRM + email + Slack/SMS, etc.)</li>
+                      <li>Hands-on LLM usage for extraction/classification</li>
+                      <li>Basic SQL (Postgres/MySQL)</li>
+                      <li>Experience with Twilio, Slack, SendGrid, HubSpot, Salesforce</li>
+                      <li>Exposure to B2B ops domains (property management, staffing, distribution)</li>
+                    </ul>
+
+                    <h4>What We Offer</h4>
+                    <ul>
+                      <li>Stock options and performance-based raises</li>
+                      <li>On-site role in Kingston, ON working closely with the founder</li>
+                      <li>Ownership of full implementations, not just small tickets</li>
+                      <li>
+                        Fast learning curve in automation, integrations, and practical AI
+                        for real businesses
+                      </li>
+                    </ul>
+
+                    <div class="career-cta">
+                      <a class="btn" href="mailto:careers@flowtica.ca">Apply</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            (() => {
+              const toggle = document.querySelector(".career-toggle");
+              const details = document.getElementById("career-details");
+              const indicatorLabel = document.querySelector(
+                ".career-indicator-label"
+              );
+              const indicatorIcon = document.querySelector(
+                ".career-toggle-indicator i"
+              );
+
+              if (!toggle || !details || !indicatorLabel) return;
+
+              const setExpanded = (expanded) => {
+                toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+                details.hidden = !expanded;
+                indicatorLabel.textContent = expanded ? "Hide details" : "View details";
+
+                if (indicatorIcon) {
+                  indicatorIcon.classList.toggle("fa-chevron-up", expanded);
+                  indicatorIcon.classList.toggle("fa-chevron-down", !expanded);
+                }
+              };
+
+              setExpanded(false);
+
+              toggle.addEventListener("click", () => {
+                const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+                setExpanded(!isExpanded);
+              });
+
+              toggle.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  toggle.click();
+                }
+              });
+            })();
+          </script>
+        </section>
+        <!-- Careers Section End -->
 <!-- Contact Section Start -->
 <section class="contact section" id="contact">
   <div class="container">
