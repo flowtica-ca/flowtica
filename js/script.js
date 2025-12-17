@@ -39,11 +39,9 @@ navLinks.forEach((link) => {
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
 
-    const y = targetEl.offsetTop;
-
-    window.scrollTo({
-      top: y,
+    targetEl.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
 
     setActiveNav(targetId);
@@ -65,9 +63,9 @@ if (hireMeBtn) {
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
 
-    window.scrollTo({
-      top: targetEl.offsetTop,
+    targetEl.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
 
     setActiveNav(targetId);
