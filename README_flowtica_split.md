@@ -11,6 +11,7 @@ This repo has been refactored so `index.html` is built from smaller section file
 - `src/services.html` – Services section
 - `src/portfolio.html` – Case Studies & Demos section
 - `src/offers.html` – Introductory Offers section
+- `src/career.html` – Careers section
 - `src/contact.html` – Contact section + form
 - `src/_footer.html` – layout closing markup, style switcher, and scripts
 - `build.js` – small Node script that concatenates the pieces into `index.html`
