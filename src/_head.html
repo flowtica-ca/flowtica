@@ -353,6 +353,109 @@
         margin-bottom: 0.3rem;
       }
 
+      /* Careers */
+      .careers .container {
+        padding-bottom: 40px;
+      }
+
+      .career-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .career-card-inner {
+        background: var(--bg-black-100);
+        border: 1px solid var(--bg-black-50);
+        border-radius: 14px;
+        padding: 1.5rem;
+      }
+
+      .career-toggle {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        border: none;
+        background: transparent;
+        padding: 0;
+        color: inherit;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .career-toggle:focus-visible {
+        outline: 2px solid var(--skin-color);
+        outline-offset: 4px;
+        border-radius: 10px;
+      }
+
+      .career-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .career-heading h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--text-black-900);
+      }
+
+      .career-heading .career-location {
+        margin: 0;
+        color: var(--text-black-700);
+        font-size: 0.95rem;
+      }
+
+      .career-toggle-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: 600;
+        color: var(--skin-color);
+        padding-top: 0.15rem;
+      }
+
+      .career-details {
+        margin-top: 1.1rem;
+        color: var(--text-black-700);
+        line-height: 1.7;
+      }
+
+      .career-details h4 {
+        margin: 0.85rem 0 0.35rem;
+        font-size: 1rem;
+        color: var(--text-black-900);
+      }
+
+      .career-details h5 {
+        margin: 0.75rem 0 0.35rem;
+        font-size: 0.95rem;
+        color: var(--text-black-900);
+      }
+
+      .career-details p {
+        margin: 0.35rem 0;
+      }
+
+      .career-details ul {
+        margin: 0.35rem 0 0.75rem 1.15rem;
+      }
+
+      .career-details li {
+        margin-bottom: 0.35rem;
+      }
+
+      .career-cta {
+        margin-top: 1.25rem;
+      }
+
+      body.dark .career-card-inner {
+        background: rgba(0, 0, 0, 0.35);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
       .contact-form .form-control {
         font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
