@@ -5,22 +5,32 @@ Author: Md Al Amin Hossen (template) + Flowtica customization
 */
 
 // ---------------- Typing animation ----------------
-if (document.querySelector(".typing")) {
-  // Typed.js is loaded via script tag in index.html
+(() => {
+  const typingEl = document.querySelector(".typing");
+  if (!typingEl) return;
+
+  // Ensure Typed.js is available (loaded via script tag in index.html)
+  if (typeof Typed === "undefined") return;
+
+  // If the element already has text, Typed.js will overwrite it.
+  // Prefer keeping the HTML as: <span class="typing"></span>
   // eslint-disable-next-line no-undef
-  new Typed(".typing", {
-    strings: [
-      "",
-      "AI systems",
-      "AI assistants",
-      "workflow automation",
-      "document Q&A",
-    ],
-    typeSpeed: 100,
-    BackSpeed: 60,
-    loop: true,
-  });
-}
+new Typed(".typing", {
+  strings: [
+"reliable workflow automation",
+"operational automation that lasts",
+"document intelligence with citations",
+"intake systems your team can trust",
+"integrations that fit your stack",
+
+  ],
+  typeSpeed: 70,
+  backSpeed: 35,
+  backDelay: 1400,
+  loop: true,
+  showCursor: false,
+});
+})();
 
 // ---------------- Smooth scroll & scroll spy ----------------
 const nav = document.querySelector(".nav");
