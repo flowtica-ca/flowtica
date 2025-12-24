@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Flowtica | Workflow Automation for Operations Teams (Canada)</title>
+    <title>{{PAGE_TITLE}}</title>
 
     <!-- SEO -->
     <meta
       name="description"
-      content="Flowtica helps operational teams automate routine work with dependable AI assistants and workflow integrations. We deliver outcomes quickly, integrating with the tools you already use."
+      content="{{PAGE_DESCRIPTION}}"
     />
     <meta
       name="keywords"
-      content="Flowtica, AI workflow automation, AI assistants, AI consultant, AI consultant Canada, phone agents, document Q&A, RAG, operations"
+      content="{{PAGE_KEYWORDS}}"
     />
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://flowtica.ca/" />
+    <link rel="canonical" href="{{PAGE_CANONICAL}}" />
 
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Flowtica | Workflow Automation for Operations Teams (Canada)"
+      content="{{OG_TITLE}}"
     />
     <meta
       property="og:description"
-      content="Flowtica designs and operates AI assistants and workflow automation that integrate with your existing tools so teams save time, reduce errors, and move faster."
+      content="{{OG_DESCRIPTION}}"
     />
-    <meta property="og:url" content="https://flowtica.ca/" />
+    <meta property="og:url" content="{{OG_URL}}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Flowtica" />
     <meta property="og:locale" content="en_CA" />
@@ -64,10 +64,10 @@
     />
 
     <!-- Base CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/blog-single.css" />
+    <link rel="stylesheet" href="{{ASSET_PREFIX}}css/style.css" />
+    <link rel="stylesheet" href="{{ASSET_PREFIX}}css/blog-single.css" />
     <!-- Use color-4 as the main skin -->
-    <link rel="stylesheet" href="css/skins/color-4.css" />
+    <link rel="stylesheet" href="{{ASSET_PREFIX}}css/skins/color-4.css" />
 
     <!-- Font Awesome -->
     <link
@@ -78,34 +78,34 @@
     <!-- Style Switcher (color-4 as default active) -->
     <link
       rel="stylesheet"
-      href="css/skins/color-1.css"
+      href="{{ASSET_PREFIX}}css/skins/color-1.css"
       class="alternate-style"
       title="color-1"
       disabled
     />
     <link
       rel="stylesheet"
-      href="css/skins/color-2.css"
+      href="{{ASSET_PREFIX}}css/skins/color-2.css"
       class="alternate-style"
       title="color-2"
       disabled
     />
     <link
       rel="stylesheet"
-      href="css/skins/color-3.css"
+      href="{{ASSET_PREFIX}}css/skins/color-3.css"
       class="alternate-style"
       title="color-3"
       disabled
     />
     <link
       rel="stylesheet"
-      href="css/skins/color-4.css"
+      href="{{ASSET_PREFIX}}css/skins/color-4.css"
       class="alternate-style"
       title="color-4"
     />
     <link
       rel="stylesheet"
-      href="css/skins/color-5.css"
+      href="{{ASSET_PREFIX}}css/skins/color-5.css"
       class="alternate-style"
       title="color-5"
       disabled
@@ -113,7 +113,7 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+    <link rel="icon" type="image/x-icon" href="{{ASSET_PREFIX}}images/fabicon.png" />
 
     <!-- Component-level + MOBILE layout fixes -->
     <style>
@@ -632,6 +632,7 @@
         }
       }
     </style>
+    {{EXTRA_HEAD}}
   </head>
 
   <body>
