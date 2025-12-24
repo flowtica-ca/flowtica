@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="canonical" href="{{CANONICAL}}" />
+
+    <!-- JobPosting structured data (no salary) -->
+    <script type="application/ld+json">
+{{JOB_JSONLD}}
+    </script>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS (relative to /jobs/) -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/skins/color-1.css" />
+  </head>
+
+  <body>
+    <div class="main-container">
+      {{NAV}}
+
+      <div class="main-content">
+        <section class="section">
+          <div class="container">
+            <div class="row">
+              <div class="padd-15">
+                <h1>Automation Implementation Specialist (Junior–Mid)</h1>
+                <p><strong>Location:</strong> On-site, Kingston, ON</p>
+
+                <div class="shadow-dark" style="padding: 18px; border-radius: 14px;">
+                  {{CONTENT}}
+                  <hr style="margin: 18px 0;" />
+                  <p>
+                    <strong>Apply:</strong>
+                    <a href="mailto:{{APPLY_EMAIL}}">{{APPLY_EMAIL}}</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
+

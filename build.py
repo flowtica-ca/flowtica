@@ -1,4 +1,5 @@
 import pathlib
+import build_jobs
 
 # Files will be concatenated in this order
 PARTS = [
@@ -52,6 +53,7 @@ def main():
     print("✅ Rebuilt index.html from src/*.html")
     import build_cases
     build_cases.main()
+    build_jobs.main()
 
 
 if __name__ == "__main__":
