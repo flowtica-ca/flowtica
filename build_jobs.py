@@ -93,9 +93,20 @@ def build_job(config: dict, template: str) -> None:
     "@type": "Place",
     "address": {{
       "@type": "PostalAddress",
+      "streetAddress": "829 Norwest Road",
       "addressLocality": "Kingston",
       "addressRegion": "ON",
+      "postalCode": "K7P 2N3",
       "addressCountry": "CA"
+    }}
+  }},
+  "baseSalary": {{
+    "@type": "MonetaryAmount",
+    "currency": "CAD",
+    "value": {{
+      "@type": "QuantitativeValue",
+      "value": 50000,
+      "unitText": "YEAR"
     }}
   }},
   "directApply": true,
