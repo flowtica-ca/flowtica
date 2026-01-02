@@ -2,6 +2,24 @@ import pathlib
 
 CASES = [
     {
+        "slug": "case-property-management-maintenance-automation",
+        "title": "Flowtica | Maintenance Request Automation for Property Managers",
+        "description": (
+            "A practical example of automating maintenance request intake, triage, vendor dispatch, and tenant updates "
+            "so property management teams move faster with fewer escalations."
+        ),
+        "content": "property-management-maintenance-automation.html",
+    },
+    {
+        "slug": "case-staffing-last-minute-shift-fill",
+        "title": "Flowtica | Last Minute Shift Fill Automation for Staffing Agencies",
+        "description": (
+            "A practical example of automating last-minute shift broadcast, confirmations, allocation, and client updates "
+            "so staffing agencies fill roles faster with less coordinator effort."
+        ),
+        "content": "staffing-last-minute-shift-fill.html",
+    },
+    {
         "slug": "case-ai-consultant-canada",
         "title": "Flowtica | AI Consulting in Canada",
         "description": (

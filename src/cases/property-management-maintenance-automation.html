@@ -1,0 +1,138 @@
+<section class="section case-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Maintenance Request Automation</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15">
+        <p>
+          <span class="tag-pill">
+            <i class="fa-solid fa-building"></i>
+            Example · Property Management
+          </span>
+        </p>
+
+        <h3>Context</h3>
+        <p>
+          Maintenance requests arrive through email, portals, and phone calls, then get re-typed into tickets, routed by
+          memory, and followed up manually. The work is constant: triage, vendor coordination, tenant updates, and
+          escalation handling. When requests fall through the cracks, tenants escalate and staff lose time to reactive
+          follow-up.
+        </p>
+
+        <h3>What this MVP automates</h3>
+        <p>
+          This demo shows a fixed-scope MVP that turns maintenance operations into a reliable workflow:
+        </p>
+        <ul>
+          <li>Intake from email, portal exports, or a simple web form</li>
+          <li>Extract key fields: property, unit, issue, urgency, tenant contact, preferred access window</li>
+          <li>Classify issue type and route to the right vendor category</li>
+          <li>Dispatch a structured request to the vendor with the details they need</li>
+          <li>Send tenant updates automatically at each stage: received, scheduled, completed</li>
+          <li>Track status, aging, and escalations in a single view for operations</li>
+        </ul>
+
+        <h3>Architecture at a glance</h3>
+        <p>
+          The diagram below shows how we structure the workflow so it behaves like infrastructure: observable,
+          maintainable, and integrated with your existing tools.
+        </p>
+
+        <div class="case-diagram">
+          <div class="case-diagram-node">
+            <h4>Request intake</h4>
+            <ul>
+              <li>Email inbox and forwarded requests</li>
+              <li>Web form or portal submissions</li>
+              <li>Attachments and photos</li>
+              <li>Validation for missing fields</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Workflow engine</h4>
+            <ul>
+              <li>Routing rules by property and category</li>
+              <li>SLA timers and escalations</li>
+              <li>Human review path for edge cases</li>
+              <li>Audit-friendly logging</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>AI extraction and classification</h4>
+            <ul>
+              <li>Turns messy text into structured fields</li>
+              <li>Strict JSON outputs for reliability</li>
+              <li>Flags uncertainty and missing info</li>
+              <li>Supports safe fallbacks</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Dispatch and updates</h4>
+            <ul>
+              <li>Vendor dispatch via email or SMS</li>
+              <li>Tenant status updates and reminders</li>
+              <li>Internal tracking dashboard or table</li>
+              <li>Escalation notifications to staff</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>How it behaves in practice</h3>
+        <ol>
+          <li>A tenant emails: &ldquo;Kitchen sink is leaking in unit 804. Water under the cabinet.&rdquo;</li>
+          <li>The workflow extracts property and unit, classifies the issue, and sets urgency based on rules.</li>
+          <li>A structured dispatch is sent to the correct vendor category with the details and photos.</li>
+          <li>The tenant receives an automatic update that the request was received and is being scheduled.</li>
+          <li>Status updates are logged and escalations trigger if the ticket ages past the agreed threshold.</li>
+        </ol>
+
+        <h3>What success looks like</h3>
+        <p>
+          This MVP is measurable using operational metrics most teams already track:
+        </p>
+        <ul>
+          <li>Time to first response</li>
+          <li>Manual touches per ticket</li>
+          <li>Escalations per 100 requests</li>
+          <li>Average time open by category</li>
+          <li>Percentage of requests auto-routed correctly</li>
+        </ul>
+
+        <h3>Typical delivery plan</h3>
+        <ol>
+          <li>Map current intake channels and routing rules</li>
+          <li>Implement extraction, classification, and vendor routing</li>
+          <li>Connect dispatch and tenant updates</li>
+          <li>Add logging, alerts, and a runbook for the common failure modes</li>
+          <li>Launch with real tickets and iterate based on outcomes</li>
+        </ol>
+
+        <h3>Where we fit in</h3>
+        <p>
+          Flowtica builds and hardens this workflow so it is dependable. We start with one clearly defined process,
+          integrate with your tools, and ship an MVP you can operate confidently. Once maintenance is stable, we can
+          expand into adjacent workflows.
+        </p>
+
+        <p style="margin-top: 1.5rem;">
+          <a href="index.html#contact" class="btn">
+            Discuss a maintenance automation MVP
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
