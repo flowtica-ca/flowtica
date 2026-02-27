@@ -2,6 +2,15 @@ import pathlib
 
 CASES = [
     {
+        "slug": "case-finance-ops-ap-automation",
+        "title": "Flowtica | Accounts Payable Automation for Finance Teams",
+        "description": (
+            "A practical example of automating invoice intake, validation, approval routing, and posting/export "
+            "so finance teams reduce manual AP effort, prevent duplicates, and improve auditability."
+        ),
+        "content": "finance-ops-ap-automation.html",
+    },
+    {
         "slug": "case-property-management-maintenance-automation",
         "title": "Flowtica | Maintenance Request Automation for Property Managers",
         "description": (

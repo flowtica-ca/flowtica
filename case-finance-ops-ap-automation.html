@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flowtica | Accounts Payable Automation for Finance Teams</title>
+
+    <meta
+      name="description"
+      content="A practical example of automating invoice intake, validation, approval routing, and posting/export so finance teams reduce manual AP effort, prevent duplicates, and improve auditability."
+    />
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-single.css" />
+    <!-- Use color-4 as the main skin -->
+    <link rel="stylesheet" href="css/skins/color-4.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Alternate skins (same as index) -->
+    <link
+      rel="stylesheet"
+      href="css/skins/color-1.css"
+      class="alternate-style"
+      title="color-1"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-2.css"
+      class="alternate-style"
+      title="color-2"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-3.css"
+      class="alternate-style"
+      title="color-3"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-4.css"
+      class="alternate-style"
+      title="color-4"
+    />
+    <link
+      rel="stylesheet"
+      href="css/skins/color-5.css"
+      class="alternate-style"
+      title="color-5"
+      disabled
+    />
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
+
+    <!-- Page tweaks -->
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f5f3ff;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding-inline: 1.75rem;
+        font-weight: 500;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+      }
+
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--skin-color, #4a90e2);
+        color: var(--skin-color, #4a90e2);
+        background: transparent;
+        font-size: 0.78rem;
+      }
+
+      .tag-pill i {
+        font-size: 0.8rem;
+      }
+
+      .case-section p {
+        font-size: 0.95rem;
+      }
+
+      .case-section ul,
+      .case-section ol {
+        font-size: 0.95rem;
+      }
+
+      .case-diagram {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .case-diagram-node {
+        flex: 1 1 210px;
+        min-width: 0;
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f7f7f7;
+        font-size: 0.85rem;
+      }
+
+      .case-diagram-node h4 {
+        margin-top: 0;
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+      }
+
+      .case-diagram-node ul {
+        padding-left: 1.1rem;
+        margin: 0;
+      }
+
+      .case-diagram-node li {
+        margin-bottom: 0.25rem;
+      }
+
+      .case-diagram-arrow {
+        align-self: center;
+        font-size: 1.3rem;
+        opacity: 0.85;
+        padding: 0 0.3rem;
+      }
+
+      @media (max-width: 767px) {
+        .section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        .case-diagram {
+          flex-direction: column;
+        }
+
+        .case-diagram-arrow {
+          text-align: center;
+        }
+      }
+
+      /* Mobile layout: make case pages behave like the homepage */
+      @media (max-width: 991px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .main-container {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .aside {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: -260px !important;
+          width: 260px;
+          z-index: 999;
+          transition: left 0.3s ease;
+        }
+
+        .aside.open {
+          left: 0 !important;
+        }
+
+        .nav-toggler {
+          position: fixed;
+          top: 16px;
+          left: 16px;
+          z-index: 1000;
+        }
+
+        .main-content,
+        .main-content.open {
+          position: relative;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .section {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .section .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-left: -15px;
+          margin-right: -15px;
+        }
+
+        .padd-15 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Container Start -->
+    <div class="main-container">
+      <!-- Aside Start -->
+  <div class="aside">
+    <div class="logo">
+      <a href="index.html#home"><span>F</span>lowtica</a>
+    </div>
+  <div class="nav-toggler">
+    <span></span>
+  </div>
+  <ul class="nav">
+    <li>
+      <a href="index.html#home"><i class="fa fa-home"></i> Home</a>
+    </li>
+    <li>
+      <a href="index.html#about"><i class="fa fa-user"></i> About</a>
+    </li>
+    <li>
+      <a href="index.html#service"><i class="fa fa-list"></i> Services</a>
+    </li>
+    <li>
+      <a href="index.html#portfolio" class="active"><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a>
+    </li>
+    <li>
+      <a href="index.html#offers"><i class="fa fa-tag"></i> Offers</a>
+    </li>
+    <li>
+      <a href="index.html#careers"><i class="fa fa-people-group"></i> Careers</a>
+    </li>
+    <li>
+      <a href="index.html#contact"><i class="fa fa-comments"></i> Contact</a>
+    </li>
+  </ul>
+</div>
+<!-- Aside End -->
+      
+      <!-- Main Content Start -->
+      <div class="main-content">
+        <section class="section case-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Accounts Payable Automation</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15">
+        <p>
+          <span class="tag-pill">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            Example · Finance Ops
+          </span>
+        </p>
+
+        <h3>Context</h3>
+        <p>
+          Invoices arrive through email and vendor portals, then get re-keyed into accounting, routed by memory, and
+          approved through scattered threads. The work is constant: manual entry, approval chasing, exception handling,
+          and month-end cleanup. When invoices get stuck, teams pay late fees, miss discounts, and lose visibility into
+          what is pending and why.
+        </p>
+
+        <h3>What this MVP automates</h3>
+        <p>
+          This demo shows a fixed-scope MVP that turns accounts payable into a reliable workflow:
+        </p>
+        <ul>
+          <li>Intake from an AP inbox, forwarded invoices, or a simple upload path</li>
+          <li>Extract key fields: vendor, invoice number, dates, totals, tax, due date (optional line items)</li>
+          <li>Validate and flag issues: duplicates, missing fields, mismatched totals, vendor mismatches</li>
+          <li>Route approvals based on your rules: entity, department, amount thresholds, cost center</li>
+          <li>Provide an exception queue for safe human review when confidence is low or data is missing</li>
+          <li>Export or sync approved invoices into accounting, with audit-friendly logging of every decision</li>
+        </ul>
+
+        <h3>Architecture at a glance</h3>
+        <p>
+          The diagram below shows how we structure the workflow so it behaves like infrastructure: observable,
+          maintainable, and integrated with your existing tools.
+        </p>
+
+        <div class="case-diagram">
+          <div class="case-diagram-node">
+            <h4>Invoice intake</h4>
+            <ul>
+              <li>AP inbox and forwarded invoices</li>
+              <li>PDF attachments and vendor emails</li>
+              <li>Attachment hashing for dedupe</li>
+              <li>Validation for missing fields</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Workflow engine</h4>
+            <ul>
+              <li>Routing rules by entity, vendor, and thresholds</li>
+              <li>SLA timers, reminders, and escalations</li>
+              <li>Human review path for edge cases</li>
+              <li>Audit-friendly logging of state changes</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>AI extraction and validation</h4>
+            <ul>
+              <li>Turns invoices into structured fields</li>
+              <li>Strict JSON outputs for reliability</li>
+              <li>Flags uncertainty and missing info</li>
+              <li>Supports safe fallbacks to review</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Approvals and posting</h4>
+            <ul>
+              <li>Approver notifications via email or Teams</li>
+              <li>One-click approve/reject with reason codes</li>
+              <li>Export/sync to accounting (QBO/Xero/Sage/ERP)</li>
+              <li>Status tracking: pending, approved, posted, failed-post (retryable)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>How it behaves in practice</h3>
+        <ol>
+          <li>A vendor emails a PDF invoice: &ldquo;Invoice #10492, due in 14 days.&rdquo;</li>
+          <li>The workflow extracts key fields, matches the vendor, and checks for duplicates.</li>
+          <li>Approval routing assigns the invoice to the correct approver based on amount and cost center.</li>
+          <li>The approver clicks approve; the decision is logged with timestamp and identity.</li>
+          <li>The invoice is exported/synced into accounting. Failures route to an exception queue with retry rules.</li>
+        </ol>
+
+        <h3>What success looks like</h3>
+        <p>
+          This MVP is measurable using finance ops metrics most teams already recognize:
+        </p>
+        <ul>
+          <li>Cycle time: received → approved/postable</li>
+          <li>Manual touches per invoice</li>
+          <li>Exception rate and top exception causes</li>
+          <li>Duplicate invoices prevented before posting/payment</li>
+          <li>Percentage of invoices routed correctly without manual triage</li>
+        </ul>
+
+        <h3>Typical delivery plan</h3>
+        <ol>
+          <li>Map invoice sources and approval matrix</li>
+          <li>Implement extraction, validation, and dedupe on real sample invoices</li>
+          <li>Build approval routing rules and reminder/escalation paths</li>
+          <li>Connect export/sync to accounting and add posting audit logs</li>
+          <li>Launch with real invoices and iterate based on outcomes</li>
+        </ol>
+
+        <h3>Where we fit in</h3>
+        <p>
+          Flowtica builds and hardens this workflow so it is dependable. We start with one clearly defined process,
+          integrate with your tools, and ship an MVP you can operate confidently. Once AP is stable, we can expand into
+          adjacent finance workflows.
+        </p>
+
+        <p style="margin-top: 1.5rem;">
+          <a href="index.html#contact" class="btn">
+            Discuss an AP automation MVP
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <section class="section case-cta">
+          <div class="container">
+            <div class="row">
+              <div class="padd-15">
+                <h3>See this in your environment</h3>
+                <p>
+                  Start with a free workflow assessment. If it’s a fit, we’ll build a 2-week MVP connected to your
+                  tools so you can validate impact quickly.
+                </p>
+                <a href="/#contact" class="btn">Request a Free Workflow Assessment</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Main Content End -->
+    </div>
+    <!-- Main Container End -->
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
