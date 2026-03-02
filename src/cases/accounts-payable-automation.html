@@ -1,0 +1,117 @@
+<section class="section case-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Accounts Payable Automation in 2 Weeks</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15">
+        <p>
+          <span class="tag-pill">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            Example · Finance Ops
+          </span>
+        </p>
+
+        <h3>Context</h3>
+        <p>
+          AP teams are often buried in invoice email threads, manual re-keying, and approval chasing across tools.
+          The result is slow cycle time, inconsistent controls, and poor visibility into what is stuck and why.
+        </p>
+
+        <h3>What the MVP automates</h3>
+        <ul>
+          <li>Invoice intake from AP inbox and attachments</li>
+          <li>Field extraction and validation checks</li>
+          <li>Rule-based routing to the right approver</li>
+          <li>Approval and rejection capture with reason codes</li>
+          <li>Posting/sync to accounting with status tracking</li>
+          <li>Exception queue for low-confidence or policy-break cases</li>
+        </ul>
+
+        <h3>Architecture at a glance</h3>
+        <p>
+          End-to-end path: intake → validation → approvals → posting → updates.
+        </p>
+
+        <div class="case-diagram">
+          <div class="case-diagram-node">
+            <h4>Intake</h4>
+            <ul>
+              <li>AP inbox capture</li>
+              <li>Attachment parsing</li>
+              <li>Deduping by hash and invoice ID</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Validation</h4>
+            <ul>
+              <li>Required-field checks</li>
+              <li>Vendor and amount validation</li>
+              <li>Exception flags for review</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Approvals</h4>
+            <ul>
+              <li>Rules by threshold/cost center</li>
+              <li>Approver notifications</li>
+              <li>Timestamped decision logging</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Posting + updates</h4>
+            <ul>
+              <li>Post/sync to accounting</li>
+              <li>Status updates and retries</li>
+              <li>Audit log for every step</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>How it behaves in practice (example invoice)</h3>
+        <ol>
+          <li>A vendor emails Invoice #8843 for $12,420 due in 14 days.</li>
+          <li>The workflow extracts fields, validates totals, and checks duplicates.</li>
+          <li>Routing sends it to the correct approver based on threshold and cost center.</li>
+          <li>The approver approves in one click; decision and timestamp are logged.</li>
+          <li>The invoice is posted/synced and status is updated automatically.</li>
+        </ol>
+
+        <h3>What success looks like</h3>
+        <ul>
+          <li>Lower cycle time from invoice received to approved/postable</li>
+          <li>Fewer manual touches per invoice</li>
+          <li>Smaller exception backlog with clearer causes</li>
+          <li>Reliable audit trail for review and compliance</li>
+        </ul>
+
+        <h3>Typical delivery plan</h3>
+        <ol>
+          <li>Map one AP workflow and approval matrix</li>
+          <li>Configure intake, extraction, and validation on real invoices</li>
+          <li>Implement routing, approvals, and posting/sync</li>
+          <li>Launch with logs, runbook, and exception handling</li>
+          <li>Review outcomes and scope next improvements</li>
+        </ol>
+
+        <p style="margin-top: 1.5rem;">
+          <a href="index.html#contact" class="btn">
+            Start an AP automation sprint
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

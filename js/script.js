@@ -17,12 +17,10 @@ Author: Md Al Amin Hossen (template) + Flowtica customization
   // eslint-disable-next-line no-undef
 new Typed(".typing", {
   strings: [
-"reliable workflow automation",
-"operational automation that lasts",
-"document intelligence with citations",
-"intake systems your team can trust",
-"integrations that fit your stack",
-
+"back-office process automation",
+"accounts payable automation",
+"exception-driven workflows",
+"clerical workflow automation",
   ],
   typeSpeed: 70,
   backSpeed: 35,
