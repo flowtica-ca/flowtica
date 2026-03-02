@@ -1,0 +1,135 @@
+<section class="section case-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Accounts Payable Automation</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15">
+        <p>
+          <span class="tag-pill">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            Example · Accounts Payable
+          </span>
+        </p>
+
+        <h3>Context</h3>
+        <p>
+          Invoices arrive through shared inboxes, vendor portals, PDFs, and forwarded emails. A clerk then re-keys data, checks for missing
+          fields, confirms PO/GL details, chases approvals, and updates statuses across systems. The work is essential—but repetitive,
+          rules-driven, and hard to keep consistent at scale.
+        </p>
+
+        <h3>What this 2-week sprint automates</h3>
+        <p>
+          This example shows a fixed-scope automation that runs the happy path end-to-end while routing true exceptions to humans:
+        </p>
+        <ul>
+          <li>Intake invoices from a shared inbox or upload folder (PDFs and email threads)</li>
+          <li>Extract invoice fields (vendor, amount, date, line items, PO, tax) into a consistent format</li>
+          <li>Validate required fields; detect duplicates; enforce basic controls (e.g., vendor allowlist)</li>
+          <li>Enrich using your reference data (vendor master, PO list, GL mappings, cost centers)</li>
+          <li>Route for approval based on rules (amount thresholds, department, vendor, PO match)</li>
+          <li>Post/sync to your accounting system (or export in the format your system expects)</li>
+          <li>Send status updates to internal stakeholders and (optionally) vendors</li>
+          <li>Log every step with an audit trail and maintain an exception queue for edge cases</li>
+        </ul>
+
+        <h3>Architecture at a glance</h3>
+        <p>
+          The workflow is designed to be controlled and auditable, with clear exception paths and measurable outcomes.
+        </p>
+
+        <div class="case-diagram">
+          <div class="case-diagram-node">
+            <h4>Invoice intake</h4>
+            <ul>
+              <li>Shared inbox / folder intake</li>
+              <li>Normalization to a structured record</li>
+              <li>Attachment + thread capture</li>
+              <li>Initial validation</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Validation &amp; enrichment</h4>
+            <ul>
+              <li>Required fields checks</li>
+              <li>Duplicate detection</li>
+              <li>PO/vendor/GL validation</li>
+              <li>Exception routing if unclear</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Approvals &amp; exception queue</h4>
+            <ul>
+              <li>Rule-based approver routing</li>
+              <li>Follow-ups for missing info</li>
+              <li>Human decisions for edge cases</li>
+              <li>Audit log of decisions</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Posting &amp; updates</h4>
+            <ul>
+              <li>Post/sync to accounting</li>
+              <li>Status updates + notifications</li>
+              <li>Export to downstream systems</li>
+              <li>Metrics + observability</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>How it behaves in practice</h3>
+        <ol>
+          <li>A vendor emails an invoice PDF to ap@company.com.</li>
+          <li>The workflow extracts the invoice, validates fields, and checks for duplicates.</li>
+          <li>If a PO is missing or doesn’t match, the item is routed to an exception queue and a follow-up is sent to request the missing info.</li>
+          <li>If validation passes, the invoice is routed for approval based on rules (e.g., department + threshold).</li>
+          <li>Once approved, the workflow posts/syncs to the accounting system and notifies stakeholders.</li>
+        </ol>
+
+        <h3>What success looks like</h3>
+        <p>This sprint is measurable using standard finance ops metrics:</p>
+        <ul>
+          <li>Cycle time (invoice received → posted)</li>
+          <li>Touches per invoice (manual interventions)</li>
+          <li>Exception rate (and exception resolution time)</li>
+          <li>Backlog size / aging</li>
+          <li>Error rate (duplicate payments, coding errors, missing approvals)</li>
+        </ul>
+
+        <h3>Typical delivery plan</h3>
+        <ol>
+          <li>Map the current AP workflow and identify rules + exception types</li>
+          <li>Implement intake + extraction + validation controls</li>
+          <li>Integrate reference data (vendor/PO/GL) and define routing rules</li>
+          <li>Build approvals + exception queue + follow-ups for missing info</li>
+          <li>Add logging, alerts, and a runbook, then launch and iterate</li>
+        </ol>
+
+        <h3>Where we fit in</h3>
+        <p>
+          Flowtica builds AP automation so it’s dependable, debuggable, and auditable. The goal isn’t to replace your team—it’s to remove repetitive
+          clerical touches and leave only true exceptions for humans.
+        </p>
+
+        <p style="margin-top: 1.5rem;">
+          <a href="index.html#contact" class="btn">
+            Discuss an accounts payable automation sprint
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

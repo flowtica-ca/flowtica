@@ -20,18 +20,17 @@ PARTS = [
 ]
 
 HEAD_DEFAULTS = {
-    "PAGE_TITLE": "Flowtica | Workflow Automation for Operations Teams (Canada)",
+    "PAGE_TITLE": "Flowtica | Back-Office Clerk Automation Sprint (Canada)",
     "PAGE_DESCRIPTION": (
-        "Flowtica helps operational teams automate routine work with dependable AI assistants and workflow integrations. "
-        "We deliver outcomes quickly, integrating with the tools you already use."
+        "Flowtica automates the clerical layer of back-office processes in 2 weeks—intake → validation → routing → updates → sync—leaving only true exceptions to humans. Deployed on a private, client-owned workflow stack that integrates with your existing tools."
     ),
     "PAGE_KEYWORDS": (
-        "Flowtica, AI workflow automation, AI assistants, AI consultant, AI consultant Canada, phone agents, document Q&A, RAG, operations"
+        "Flowtica, back office automation, clerk automation, accounts payable automation, accounts receivable automation, vendor compliance automation, workflow automation Canada, approvals automation, exception queue, audit logging, systems integration"
     ),
     "PAGE_CANONICAL": "https://flowtica.ca/",
-    "OG_TITLE": "Flowtica | Workflow Automation for Operations Teams (Canada)",
+    "OG_TITLE": "Flowtica | Back-Office Clerk Automation Sprint (Canada)",
     "OG_DESCRIPTION": (
-        "Flowtica designs and operates AI assistants and workflow automation that integrate with your existing tools so teams save time, reduce errors, and move faster."
+        "Automate one clerical process in 2 weeks (intake → validation → approvals → updates → sync), with exception handling and audit logs. Deployed in your environment."
     ),
     "OG_URL": "https://flowtica.ca/",
     "EXTRA_HEAD": "",
