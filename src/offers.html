@@ -1,144 +1,93 @@
-<!-- Offers / Pricing Section Start -->
+<!-- Offers / Sprint Offer Section Start -->
 <section class="service section" id="offers">
-  <style>
-    /* Scoped layout fix: keep the split-screen on desktop, stack on mobile */
-    #offers .offers-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-    #offers .offer-card {
-      height: 100%;
-    }
-    @media (max-width: 900px) {
-      #offers .offers-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
   <div class="container">
     <div class="row">
       <div class="section-title padd-15">
-        <h2>Offers</h2>
+        <h2>Sprint Offer</h2>
       </div>
     </div>
 
     <div class="row">
       <div class="padd-15">
         <p>
-          Flowtica offers <strong>workflow automation programs</strong> that start with a low-risk assessment and MVP,
-          then scale into full production delivery. Ship quickly, measure impact, and keep improving what’s live.
+          Flowtica’s core offer is a fixed-scope sprint that automates the <strong>clerical layer</strong> of one back-office process.
+          The workflow handles the happy path end-to-end (intake → validation → routing → updates → sync), and routes true exceptions
+          to humans with a clean queue, logging, and controls.
         </p>
         <p>
-          We work best with partners who can move quickly and provide feedback.
-          For hands-on delivery, we work with a small number of partners at a time.
+          The pitch is not “we replace your clerk.” It’s “we remove repetitive touches so your team can redeploy time to exceptions,
+          customer service, and higher-leverage work”—without changing your core systems or asking you to adopt a new platform.
         </p>
       </div>
     </div>
 
     <div class="row offers-grid">
-      <!-- Offer 0: Free Assessment + MVP -->
+      <!-- Offer 1 -->
       <div class="offer-card padd-15">
-        <h3>Free Workflow Assessment &amp; 2-Week MVP Build</h3>
+        <h3>Back-Office Clerk Automation Sprint (2 weeks)</h3>
         <p class="offer-tagline">
-          <strong>Kickstart your AI project with no long-term commitment.</strong> We begin with a free assessment of
-          one of your workflows to identify a high-impact automation opportunity. Then, in just 2 weeks, we build
-          a functional AI MVP tailored to that use case so you can see real results fast.
+          <strong>Automate one clerical process end-to-end.</strong> Delivered on a private, client-owned workflow stack that integrates
+          into your existing tools and leaves only true exceptions to humans.
         </p>
-        <p class="offer-tagline">
-          After the assessment, you’ll receive a one-page workflow plan: scope, systems involved, success metric,
-          and an MVP build outline.
-        </p>
-        <p class="offer-tagline">
-          Validate value quickly and decide, with evidence, whether to expand into full production.
-        </p>
-        <p class="offer-tagline"><strong>What you get in the MVP:</strong></p>
+
+        <p class="offer-tagline"><strong>Typical lanes:</strong> Accounts Payable, Accounts Receivable follow-ups, vendor compliance/document chasing, scheduling/dispatch coordination, onboarding/admin checklists.</p>
+
+        <p class="offer-tagline"><strong>What you get:</strong></p>
         <ul class="demo-list">
-          <li>A working workflow in your environment (not a slide deck).</li>
-          <li>Integrated with 1–2 systems (e.g., email + helpdesk/CRM).</li>
-          <li>Basic logging + error handling.</li>
-          <li>A short handoff doc: how it works, how to operate it, next improvements.</li>
+          <li><strong>Happy-path automation</strong> from intake to final sync/export (no slide deck).</li>
+          <li><strong>Exception queue</strong> for ambiguous inputs, missing info, and policy edge cases.</li>
+          <li><strong>Integrations</strong> with 1–2 existing systems (e.g., shared inbox + accounting/ERP, or CRM/helpdesk).</li>
+          <li><strong>Audit logs</strong> and observable runs (what happened, when, and why).</li>
+          <li><strong>Runbook + handoff</strong> (how to operate, troubleshoot, and extend).</li>
         </ul>
-        <a href="#contact" class="btn">Request your free assessment</a>
+
+        <p class="offer-tagline"><strong>What we need from you:</strong></p>
+        <ul class="demo-list">
+          <li>A process owner for quick decisions (30–45 min every few days).</li>
+          <li>Sample inputs/outputs (realistic invoices/emails/forms) + current SOP if you have it.</li>
+          <li>Access to the relevant tools (or a safe sandbox/export if required).</li>
+          <li>One success metric (cycle time, touches per item, backlog reduction, error rate).</li>
+        </ul>
+
+        <a href="#contact" class="btn">Request a Sprint Fit Check</a>
       </div>
 
-      <!-- Offer 1: Main 6-Month Program -->
+      <!-- Offer 2 -->
       <div class="offer-card padd-15">
-        <h3>6-Month AI Workflow Program</h3>
+        <h3>Production Hardening &amp; Ops (monthly)</h3>
         <p class="offer-tagline">
-          <strong>Scale up your AI solution with a full-production engagement.</strong> After a successful MVP, this
-          6-month program fully implements and maintains an AI workflow in production. We take end-to-end
-          ownership of one critical process – design, build, launch, and ongoing optimization – to ensure
-          long-term success.
-        </p>
-
-        <p class="offer-price">
-          <strong>Minimum $6,000 CAD / month • 6-month minimum • dedicated delivery</strong>
-        </p>
-
-        <p class="offer-tagline">
-          One production workflow live in weeks, then improved month over month. Built for reliability, not a demo.
+          <strong>Keep automation reliable after launch.</strong> Monitoring, retries, alerting, and small improvements tied to real metrics
+          so workflows behave like infrastructure—not a fragile prototype.
         </p>
 
         <ul class="demo-list">
-          <li>
-            <strong>Design + integrate —</strong> map the process and connect to your existing tools (ticketing, CRM,
-            email/phone, internal systems), including real edge cases.
-          </li>
-          <li>
-            <strong>Launch in weeks —</strong> ship a first production version early, then iterate based on real usage.
-          </li>
-          <li>
-            <strong>Operate + improve —</strong> monitoring, logging, retries, alerting, plus regular reviews tied to
-            agreed metrics (hours saved, cycle time, SLA, error rate).
-          </li>
+          <li>Monitoring + alerting for failures and latency.</li>
+          <li>Retries, fallbacks, and safe handling of upstream system changes.</li>
+          <li>Logging/audit review and continuous reduction of exception volume.</li>
+          <li>Monthly ops review against agreed metrics (cycle time, backlog, touch time).</li>
         </ul>
 
-        <p class="offer-tagline"><strong>How we keep delivery predictable:</strong></p>
-        <ul class="demo-list">
-          <li>One workflow at a time.</li>
-          <li>Clear system boundaries.</li>
-          <li>Changes handled through defined next steps.</li>
-        </ul>
-
-        <p class="offer-tagline">
-          <strong>Best suited for</strong> teams with one painful, mission-critical process that must work reliably in
-          day-to-day operations.
-        </p>
-
-        <a href="#contact" class="btn">Apply for the 6-Month Program</a>
+        <a href="#contact" class="btn">Discuss production support</a>
       </div>
 
-      <!-- Offer 2: Custom / By Request -->
+      <!-- Offer 3 -->
       <div class="offer-card padd-15">
-        <h3>Custom Scope (By request)</h3>
+        <h3>Automation Roadmap (multi-sprint)</h3>
         <p class="offer-tagline">
-          If your needs are unusual, we can design a tailored engagement. This is typically used when the workflow
-          touches multiple teams, requires procurement/security reviews, or needs a different contract structure.
-        </p>
-
-        <p class="offer-price">
-          <strong>Custom pricing</strong>
-          <span class="offer-note">scoped after a short call</span>
+          For workflows that touch multiple teams or systems, we sequence multiple clerk-automation sprints into a roadmap that keeps delivery
+          predictable and avoids unnecessary complexity.
         </p>
 
         <ul class="demo-list">
-          <li>Focused pilots to validate feasibility before a larger rollout.</li>
-          <li>Multi-workflow roadmaps, sequenced to avoid unnecessary complexity.</li>
-          <li>Security or compliance reviews aligned with your internal process.</li>
-          <li>Clear scope, timeline, and success criteria agreed up front.</li>
+          <li>Prioritized list of processes with ROI estimates and dependencies.</li>
+          <li>Governance: controls, auditability, and change management.</li>
+          <li>Security/compliance alignment with your internal review process.</li>
+          <li>Clear scope and milestones per sprint.</li>
         </ul>
 
-        <p class="offer-tagline">
-          Share your workflow, tools, and constraints—we’ll recommend the smallest sensible engagement that can prove
-          value and keep future options open.
-        </p>
-
-        <a href="#contact" class="btn">Discuss a custom scope</a>
+        <a href="#contact" class="btn">Discuss a roadmap</a>
       </div>
     </div>
   </div>
 </section>
-<!-- Offers / Pricing Section End -->
+<!-- Offers / Sprint Offer Section End -->

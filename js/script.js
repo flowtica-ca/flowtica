@@ -15,21 +15,20 @@ Author: Md Al Amin Hossen (template) + Flowtica customization
   // If the element already has text, Typed.js will overwrite it.
   // Prefer keeping the HTML as: <span class="typing"></span>
   // eslint-disable-next-line no-undef
-new Typed(".typing", {
-  strings: [
-"reliable workflow automation",
-"operational automation that lasts",
-"document intelligence with citations",
-"intake systems your team can trust",
-"integrations that fit your stack",
-
-  ],
-  typeSpeed: 70,
-  backSpeed: 35,
-  backDelay: 1400,
-  loop: true,
-  showCursor: false,
-});
+  new Typed(".typing", {
+    strings: [
+      "back-office clerk automation",
+      "accounts payable automation in 2 weeks",
+      "exception-driven workflows with audit logs",
+      "intake → validation → routing → sync",
+      "automation that fits your stack",
+    ],
+    typeSpeed: 70,
+    backSpeed: 35,
+    backDelay: 1400,
+    loop: true,
+    showCursor: false,
+  });
 })();
 
 // ---------------- Smooth scroll & scroll spy ----------------

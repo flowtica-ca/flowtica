@@ -12,21 +12,21 @@ CASES = [
     },
     {
         "slug": "case-property-management-maintenance-automation",
-        "title": "Flowtica | Maintenance Request Automation for Property Managers",
+        "title": "Flowtica | Maintenance Coordination Automation (Intake → Dispatch → Updates)",
         "description": (
-            "A practical example of automating maintenance request intake, triage, vendor dispatch, and tenant updates "
-            "so property management teams move faster with fewer escalations."
+            "A practical example of automating maintenance coordination from intake and triage to dispatch and updates "
+            "so operations teams move faster with fewer escalations and clearer ownership."
         ),
         "content": "property-management-maintenance-automation.html",
     },
     {
-        "slug": "case-staffing-last-minute-shift-fill",
-        "title": "Flowtica | Last Minute Shift Fill Automation for Staffing Agencies",
+        "slug": "case-accounts-payable-automation",
+        "title": "Flowtica | Accounts Payable Automation in 2 Weeks",
         "description": (
-            "A practical example of automating last-minute shift broadcast, confirmations, allocation, and client updates "
-            "so staffing agencies fill roles faster with less coordinator effort."
+            "A practical example of automating accounts payable intake, validation, approvals, posting, and updates "
+            "so finance teams reduce manual touches, shrink backlog, and improve auditability."
         ),
-        "content": "staffing-last-minute-shift-fill.html",
+        "content": "accounts-payable-automation.html",
     },
     {
         "slug": "case-ai-consultant-canada",
