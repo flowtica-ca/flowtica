@@ -1,0 +1,135 @@
+<section class="section case-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Accounts Payable Automation (Back-Office Clerk Sprint)</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15">
+        <p>
+          <span class="tag-pill"><i class="fa-solid fa-file-invoice-dollar"></i> Example · Back Office</span>
+        </p>
+
+        <h3>Context</h3>
+        <p>
+          Invoices arrive through AP inboxes and vendor portals, then details are retyped into accounting systems.
+          Approvals get chased in email or Teams, and missing PO or vendor details trigger constant back-and-forth.
+          Status visibility is usually weak, so teams spend time answering where each invoice sits instead of clearing work.
+        </p>
+        <p>
+          This is clerical layer work: repetitive, rules-driven, and measurable. It is ideal for a fixed-scope sprint that
+          automates the happy path end-to-end and leaves ambiguous cases with people.
+        </p>
+
+        <h3>What this sprint automates</h3>
+        <p>
+          The sprint focuses on complete AP flow coverage for the common path, with exceptions routed to humans.
+        </p>
+        <ul>
+          <li>Intake from an AP inbox and optionally a portal export</li>
+          <li>Attachment handling for invoice PDFs plus vendor identification</li>
+          <li>Data extraction into fields: vendor, invoice number, date, amount, tax, PO or cost center, and due date</li>
+          <li>Validation rules for required fields, duplicate detection, mismatch thresholds, and PO-required logic</li>
+          <li>Approval routing using simple policies (amount threshold, cost center, vendor category)</li>
+          <li>Exception queue for missing or low-confidence data, with a human resolution loop</li>
+          <li>Status updates: acknowledged, needs info, approved, posted, and scheduled for payment</li>
+          <li>Sync or export into accounting plus a searchable audit trail</li>
+        </ul>
+
+        <h3>Architecture at a glance</h3>
+        <p>
+          The design is intentionally straightforward so finance and operations teams can trust and operate it.
+        </p>
+
+        <div class="case-diagram">
+          <div class="case-diagram-node">
+            <h4>Invoice intake</h4>
+            <ul>
+              <li>AP inbox and portal exports</li>
+              <li>Attachment collection and parsing</li>
+              <li>Basic schema and file validation</li>
+              <li>Vendor lookup hints</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Extraction + validation</h4>
+            <ul>
+              <li>Structured JSON output</li>
+              <li>Confidence flags</li>
+              <li>Duplicate checks</li>
+              <li>Policy rule evaluation</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Workflow engine</h4>
+            <ul>
+              <li>Routing and SLA timers</li>
+              <li>Exception queue ownership</li>
+              <li>Status model and transitions</li>
+              <li>Audit log and traceability</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">→</div>
+
+          <div class="case-diagram-node">
+            <h4>Approvals + posting</h4>
+            <ul>
+              <li>Approval routing rules</li>
+              <li>Posting or CSV export</li>
+              <li>Vendor and internal notifications</li>
+              <li>Final state reconciliation</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>How it behaves in practice</h3>
+        <ol>
+          <li>A vendor emails an invoice PDF for $12,480 tied to cost center 410 with PO-99831.</li>
+          <li>The workflow captures the attachment, identifies the vendor, and extracts invoice fields.</li>
+          <li>Validation confirms required fields, checks for duplicates, and verifies amount tolerance against the PO.</li>
+          <li>Because the amount is above threshold, approval is routed to the cost center owner and AP manager.</li>
+          <li>If PO data is missing, the invoice moves to an exception queue with a clear reason and owner.</li>
+          <li>Once approved, the workflow posts to accounting (or exports CSV), updates status, and logs every step.</li>
+        </ol>
+
+        <h3>What success looks like</h3>
+        <ul>
+          <li>Lower manual touches per invoice</li>
+          <li>Shorter cycle time to approved and posted</li>
+          <li>Reduced exception rate over time</li>
+          <li>Fewer duplicate payments and data-entry errors</li>
+          <li>Higher on-time approval completion</li>
+        </ul>
+
+        <h3>Typical delivery plan (2-week sprint)</h3>
+        <ol>
+          <li><strong>Day 1–2:</strong> map current AP flow, define required fields and rules, and lock success metrics.</li>
+          <li><strong>Day 3–6:</strong> build intake, extraction, validation, and an exception queue with ownership.</li>
+          <li><strong>Day 7–9:</strong> implement approval routing, notifications, and status tracking states.</li>
+          <li><strong>Day 10:</strong> add accounting integration or CSV export, plus audit logging and runbook draft.</li>
+          <li><strong>Day 11–14:</strong> harden retries and alerts, test with real data, launch, and hand off operations.</li>
+        </ol>
+
+        <h3>Where we fit in</h3>
+        <p>
+          Flowtica delivers a private, client-owned workflow layer that integrates into your existing tools. We do not ask
+          teams to replace their accounting stack. We remove repetitive clerical touches from the happy path and keep real
+          exceptions with people.
+        </p>
+
+        <p style="margin-top: 1.5rem;">
+          <a href="index.html#contact" class="btn">Discuss an Accounts Payable automation sprint</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

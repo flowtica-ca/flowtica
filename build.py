@@ -23,10 +23,10 @@ HEAD_DEFAULTS = {
     "PAGE_TITLE": "Flowtica | Workflow Automation for Operations Teams (Canada)",
     "PAGE_DESCRIPTION": (
         "Flowtica helps operational teams automate routine work with dependable AI assistants and workflow integrations. "
-        "We deliver outcomes quickly, integrating with the tools you already use."
+        "We deliver outcomes quickly, integrating with the tools you already use, including back-office clerical workflows like AP/AR."
     ),
     "PAGE_KEYWORDS": (
-        "Flowtica, AI workflow automation, AI assistants, AI consultant, AI consultant Canada, phone agents, document Q&A, RAG, operations"
+        "Flowtica, AI workflow automation, AI assistants, AI consultant, AI consultant Canada, phone agents, document Q&A, RAG, operations, back office automation, accounts payable automation, accounts receivable automation, clerical workflow automation"
     ),
     "PAGE_CANONICAL": "https://flowtica.ca/",
     "OG_TITLE": "Flowtica | Workflow Automation for Operations Teams (Canada)",
