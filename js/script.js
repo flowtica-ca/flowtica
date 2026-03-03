@@ -22,6 +22,8 @@ new Typed(".typing", {
 "document intelligence with citations",
 "intake systems your team can trust",
 "integrations that fit your stack",
+"back-office process automation",
+"accounts payable automation in weeks",
 
   ],
   typeSpeed: 70,
