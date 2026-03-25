@@ -263,7 +263,7 @@
         font-size: 0.8rem;
       }
 
-      /* ensure readable text on dark background (case studies & demos) */
+      /* ensure readable text on dark background (solution cards) */
       .case-card,
       .case-card p,
       .case-card li,
@@ -302,6 +302,45 @@
       .discount-note {
         font-size: 0.85rem;
         opacity: 0.9;
+      }
+
+      .case-card-footer {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .more-examples {
+        margin-top: 0.75rem;
+        padding: 1.25rem 1.35rem;
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.28);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .more-examples h4 {
+        margin: 0 0 0.45rem;
+      }
+
+      .example-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .example-link {
+        display: block;
+        padding: 0.85rem 1rem;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #f7f7f7;
+        font-size: 0.88rem;
+      }
+
+      .example-link:hover {
+        color: #f7f7f7;
       }
 
       .strike {
@@ -582,7 +621,9 @@
 
         .home-img-inner,
         .case-card,
-        .offer-card {
+        .offer-card,
+        .more-examples,
+        .example-link {
           background: rgba(255, 255, 255, 0.96);
           border: 1px solid rgba(0, 0, 0, 0.06);
         }
@@ -592,7 +633,8 @@
         .offer-card p,
         .case-card li,
         .offer-card li,
-        .demo-list li {
+        .demo-list li,
+        .example-link {
           color: #222;
         }
 
@@ -701,7 +743,7 @@
       <a href="../index.html#service"><i class="fa fa-list"></i> Services</a>
     </li>
     <li>
-      <a href="../index.html#portfolio"><i class="fa fa-briefcase"></i> Case Studies &amp; Demos</a>
+      <a href="../index.html#solutions"><i class="fa fa-briefcase"></i> Solutions</a>
     </li>
     <li>
       <a href="../index.html#offers"><i class="fa fa-tag"></i> Offers</a>

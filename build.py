@@ -38,16 +38,16 @@ HEAD_DEFAULTS = {
 }
 
 
-def render_nav(prefix: str, portfolio_active: bool) -> str:
+def render_nav(prefix: str, solutions_active: bool) -> str:
     if not NAV_FILE.exists():
         raise FileNotFoundError("Missing nav partial: src/_nav.html")
 
     nav_template = NAV_FILE.read_text(encoding="utf-8").strip()
     return (
         nav_template.replace("{{PREFIX}}", prefix)
-        .replace("{{HOME_ACTIVE}}", " class=\"active\"" if not portfolio_active else "")
+        .replace("{{HOME_ACTIVE}}", " class=\"active\"" if not solutions_active else "")
         .replace(
-            "{{PORTFOLIO_ACTIVE}}", " class=\"active\"" if portfolio_active else ""
+            "{{SOLUTIONS_ACTIVE}}", " class=\"active\"" if solutions_active else ""
         )
     )
 
@@ -95,13 +95,13 @@ def load_part(name: str) -> str:
 
 
 def main():
-    nav = render_nav(prefix="", portfolio_active=False)
+    nav = render_nav(prefix="", solutions_active=False)
     head = render_head(nav=nav, asset_prefix="", meta={})
     body_chunks = [load_part(name) for name in PARTS]
     footer = render_footer(asset_prefix="")
 
     OUT_FILE.write_text("\n".join([head, *body_chunks, footer]) + "\n", encoding="utf-8")
-    print("✅ Rebuilt index.html from src/*.html")
+    print("Rebuilt index.html from src/*.html")
     import build_cases
 
     build_cases.main()

@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Flowtica | Accounts Payable Automation for Finance Teams</title>
+    <title>Flowtica | Accounts Payable and Back-Office Automation</title>
 
     <!-- SEO -->
     <meta
       name="description"
-      content="A practical example of automating invoice intake, validation, approval routing, and posting/export so finance teams reduce manual AP effort, prevent duplicates, and improve auditability."
+      content="Buyer-focused overview of accounts payable automation for finance teams, covering invoice intake, approval routing, exception handling, auditability, and fewer manual touches."
     />
     <meta
       name="keywords"
-      content="Flowtica, workflow automation, case finance ops ap automation"
+      content="Flowtica, workflow automation, accounts payable back office automation"
     />
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://flowtica.ca/case-finance-ops-ap-automation.html" />
+    <link rel="canonical" href="https://flowtica.ca/accounts-payable-back-office-automation.html" />
 
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Flowtica | Accounts Payable Automation for Finance Teams"
+      content="Flowtica | Accounts Payable and Back-Office Automation"
     />
     <meta
       property="og:description"
-      content="A practical example of automating invoice intake, validation, approval routing, and posting/export so finance teams reduce manual AP effort, prevent duplicates, and improve auditability."
+      content="Buyer-focused overview of accounts payable automation for finance teams, covering invoice intake, approval routing, exception handling, auditability, and fewer manual touches."
     />
-    <meta property="og:url" content="https://flowtica.ca/case-finance-ops-ap-automation.html" />
+    <meta property="og:url" content="https://flowtica.ca/accounts-payable-back-office-automation.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Flowtica" />
     <meta property="og:locale" content="en_CA" />
@@ -818,7 +818,7 @@
   <div class="container">
     <div class="row">
       <div class="section-title padd-15">
-        <h2>Accounts Payable Automation</h2>
+        <h1>Accounts Payable and Back-Office Automation</h1>
       </div>
     </div>
 
@@ -827,146 +827,86 @@
         <p>
           <span class="tag-pill">
             <i class="fa-solid fa-file-invoice-dollar"></i>
-            Example · Finance Ops
+            Solution · Finance Operations
           </span>
         </p>
 
-        <h3>Context</h3>
+        <h3>Where AP and repetitive back-office work slow down</h3>
         <p>
-          Invoices arrive through email and vendor portals, then get re-keyed into accounting, routed by memory, and
-          approved through scattered threads. The work is constant: manual entry, approval chasing, exception handling,
-          and month-end cleanup. When invoices get stuck, teams pay late fees, miss discounts, and lose visibility into
-          what is pending and why.
+          AP teams are often dealing with the same pattern every week: invoices arrive from multiple channels, data gets
+          re-entered, approvals are chased across inboxes, and exceptions sit until someone has time to investigate.
+          The work is repetitive, but the exceptions are real, which is why the right fit is a controlled workflow with
+          clear review boundaries rather than a black-box shortcut.
         </p>
 
-
-
-        <h3>Why teams choose this over an AP platform</h3>
+        <h3>What gets automated</h3>
         <ul>
-          <li>No new platform required (works with your existing accounting + inbox)</li>
-          <li>Approval routing and exceptions match your real rules (entities/cost centers/thresholds)</li>
-          <li>Runs in a private environment you control, with audit logs and retention</li>
+          <li>Invoice intake from AP inboxes, forwarded PDFs, and simple upload paths</li>
+          <li>Field extraction for vendor, invoice number, dates, totals, tax, due date, and related references</li>
+          <li>Approval routing by entity, threshold, department, cost center, or other internal rules</li>
+          <li>Exception queues for duplicates, missing data, mismatches, and posting failures</li>
+          <li>Status tracking so teams can see what is pending, blocked, approved, or ready for export</li>
+          <li>Audit-friendly logs for the workflow path and each human decision point</li>
         </ul>
 
-        <h3>What we need to scope it</h3>
+        <h3>What changes operationally</h3>
         <ul>
-          <li>Accounting system (QBO / Xero / Sage / ERP)</li>
-          <li>Rough invoices/month</li>
-          <li>10–20 sample invoices (PDFs)</li>
-          <li>Approval matrix (who approves what thresholds)</li>
-        </ul>
-        <p>
-          That&rsquo;s enough to convert &ldquo;interesting&rdquo; into &ldquo;this is executable.&rdquo;
-        </p>
-
-        <h3>What this MVP automates</h3>
-        <p>
-          This demo shows a fixed-scope MVP that turns accounts payable into a reliable workflow:
-        </p>
-        <ul>
-          <li>Intake from an AP inbox, forwarded invoices, or a simple upload path</li>
-          <li>Extract key fields: vendor, invoice number, dates, totals, tax, due date (optional line items)</li>
-          <li>Validate and flag issues: duplicates, missing fields, mismatched totals, vendor mismatches</li>
-          <li>Route approvals based on your rules: entity, department, amount thresholds, cost center</li>
-          <li>Provide an exception queue for safe human review when confidence is low or data is missing</li>
-          <li>Export or sync approved invoices into accounting, with audit-friendly logging of every decision</li>
+          <li>Invoices stop depending on manual inbox triage before they enter the approval path</li>
+          <li>Approvers get a cleaner workflow instead of scattered follow-up threads</li>
+          <li>Finance has one place to review why an invoice is pending or blocked</li>
+          <li>Month-end and posting handoffs get less dependent on cleanup work and memory</li>
         </ul>
 
-        <h3>Architecture at a glance</h3>
+        <h3>Where exceptions stay with humans</h3>
         <p>
-          The diagram below shows how we structure the workflow so it behaves like infrastructure: observable,
-          maintainable, and integrated with your existing tools.
+          This workflow is designed to reduce repetitive handling, not to hide judgment calls. Exceptions still stay
+          with people when vendor matching is unclear, invoice data is incomplete, supporting context is missing, or the
+          approval path needs a deliberate override.
         </p>
 
         <div class="case-diagram">
           <div class="case-diagram-node">
             <h4>Invoice intake</h4>
             <ul>
-              <li>AP inbox and forwarded invoices</li>
-              <li>PDF attachments and vendor emails</li>
-              <li>Attachment hashing for dedupe</li>
-              <li>Validation for missing fields</li>
+              <li>Inbox and attachment capture</li>
+              <li>Validation for missing or duplicate inputs</li>
+              <li>Structured field extraction</li>
             </ul>
           </div>
 
-          <div class="case-diagram-arrow">→</div>
+          <div class="case-diagram-arrow">&rarr;</div>
 
           <div class="case-diagram-node">
-            <h4>Workflow engine</h4>
+            <h4>Routing and review</h4>
             <ul>
-              <li>Routing rules by entity, vendor, and thresholds</li>
-              <li>SLA timers, reminders, and escalations</li>
-              <li>Human review path for edge cases</li>
-              <li>Audit-friendly logging of state changes</li>
+              <li>Approval rules by threshold and ownership</li>
+              <li>Exception queue for mismatches and uncertain cases</li>
+              <li>Reminder and escalation paths for stalled approvals</li>
             </ul>
           </div>
 
-          <div class="case-diagram-arrow">→</div>
+          <div class="case-diagram-arrow">&rarr;</div>
 
           <div class="case-diagram-node">
-            <h4>AI extraction and validation</h4>
+            <h4>Posting handoff</h4>
             <ul>
-              <li>Turns invoices into structured fields</li>
-              <li>Strict JSON outputs for reliability</li>
-              <li>Flags uncertainty and missing info</li>
-              <li>Supports safe fallbacks to review</li>
-            </ul>
-          </div>
-
-          <div class="case-diagram-arrow">→</div>
-
-          <div class="case-diagram-node">
-            <h4>Approvals and posting</h4>
-            <ul>
-              <li>Approver notifications via email or Teams</li>
-              <li>One-click approve/reject with reason codes</li>
-              <li>Export/sync to accounting (QBO/Xero/Sage/ERP)</li>
-              <li>Status tracking: pending, approved, posted, failed-post (retryable)</li>
+              <li>Ready-for-export state after approval</li>
+              <li>Audit trail of status changes and decisions</li>
+              <li>Retryable path when a downstream sync fails</li>
             </ul>
           </div>
         </div>
 
-        <h3>How it behaves in practice</h3>
-        <ol>
-          <li>A vendor emails a PDF invoice: &ldquo;Invoice #10492, due in 14 days.&rdquo;</li>
-          <li>The workflow extracts key fields, matches the vendor, and checks for duplicates.</li>
-          <li>Approval routing assigns the invoice to the correct approver based on amount and cost center.</li>
-          <li>The approver clicks approve; the decision is logged with timestamp and identity.</li>
-          <li>The invoice is exported/synced into accounting. Failures route to an exception queue with retry rules.</li>
-        </ol>
-
         <h3>What success looks like</h3>
-        <p>
-          This MVP is measurable using finance ops metrics most teams already recognize:
-        </p>
         <ul>
-          <li>Cycle time: received → approved/postable</li>
-          <li>Manual touches per invoice</li>
-          <li>Exception rate and top exception causes</li>
-          <li>Duplicate invoices prevented before posting/payment</li>
-          <li>Percentage of invoices routed correctly without manual triage</li>
+          <li>Fewer manual touches per invoice before it is approved or ready for posting</li>
+          <li>Better visibility into approval delays and exception causes</li>
+          <li>Cleaner auditability for who reviewed what and when</li>
+          <li>Less back-and-forth across email and chat for repeatable AP tasks</li>
         </ul>
 
-        <h3>Typical delivery plan</h3>
-        <ol>
-          <li>Map invoice sources and approval matrix</li>
-          <li>Implement extraction, validation, and dedupe on real sample invoices</li>
-          <li>Build approval routing rules and reminder/escalation paths</li>
-          <li>Connect export/sync to accounting and add posting audit logs</li>
-          <li>Launch with real invoices and iterate based on outcomes</li>
-        </ol>
-
-        <h3>Where we fit in</h3>
-        <p>
-          Flowtica builds and hardens this workflow so it is dependable. We start with one clearly defined process,
-          integrate with your tools, and ship an MVP you can operate confidently. Once AP is stable, we can expand into
-          adjacent finance workflows.
-        </p>
-
         <p style="margin-top: 1.5rem;">
-          <a href="index.html#contact" class="btn">
-            Discuss an AP automation MVP
-          </a>
+          <a href="index.html#contact" class="btn">Discuss AP automation</a>
         </p>
       </div>
     </div>
@@ -977,9 +917,9 @@
   <div class="container">
     <div class="row">
       <div class="padd-15">
-        <h3>Want a workflow like this in your environment?</h3>
-        <p>Start with a free workflow assessment. If it’s a fit, we’ll build a focused MVP connected to your tools so you can validate impact quickly.</p>
-        <a href="index.html#contact" class="btn">Request a free workflow assessment</a>
+        <h3>See how this fits your workflow</h3>
+        <p>Start with a free workflow assessment. If this lane matches a live bottleneck, we scope the first automation, connect it to your tools, and harden it for day-to-day use.</p>
+        <a href="index.html#contact" class="btn">Discuss AP automation</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,98 @@
+<section class="section case-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h1>Accounts Payable and Back-Office Automation</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="padd-15">
+        <p>
+          <span class="tag-pill">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            {{EYEBROW_LABEL}}
+          </span>
+        </p>
+
+        <h3>Where AP and repetitive back-office work slow down</h3>
+        <p>
+          AP teams are often dealing with the same pattern every week: invoices arrive from multiple channels, data gets
+          re-entered, approvals are chased across inboxes, and exceptions sit until someone has time to investigate.
+          The work is repetitive, but the exceptions are real, which is why the right fit is a controlled workflow with
+          clear review boundaries rather than a black-box shortcut.
+        </p>
+
+        <h3>What gets automated</h3>
+        <ul>
+          <li>Invoice intake from AP inboxes, forwarded PDFs, and simple upload paths</li>
+          <li>Field extraction for vendor, invoice number, dates, totals, tax, due date, and related references</li>
+          <li>Approval routing by entity, threshold, department, cost center, or other internal rules</li>
+          <li>Exception queues for duplicates, missing data, mismatches, and posting failures</li>
+          <li>Status tracking so teams can see what is pending, blocked, approved, or ready for export</li>
+          <li>Audit-friendly logs for the workflow path and each human decision point</li>
+        </ul>
+
+        <h3>What changes operationally</h3>
+        <ul>
+          <li>Invoices stop depending on manual inbox triage before they enter the approval path</li>
+          <li>Approvers get a cleaner workflow instead of scattered follow-up threads</li>
+          <li>Finance has one place to review why an invoice is pending or blocked</li>
+          <li>Month-end and posting handoffs get less dependent on cleanup work and memory</li>
+        </ul>
+
+        <h3>Where exceptions stay with humans</h3>
+        <p>
+          This workflow is designed to reduce repetitive handling, not to hide judgment calls. Exceptions still stay
+          with people when vendor matching is unclear, invoice data is incomplete, supporting context is missing, or the
+          approval path needs a deliberate override.
+        </p>
+
+        <div class="case-diagram">
+          <div class="case-diagram-node">
+            <h4>Invoice intake</h4>
+            <ul>
+              <li>Inbox and attachment capture</li>
+              <li>Validation for missing or duplicate inputs</li>
+              <li>Structured field extraction</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">&rarr;</div>
+
+          <div class="case-diagram-node">
+            <h4>Routing and review</h4>
+            <ul>
+              <li>Approval rules by threshold and ownership</li>
+              <li>Exception queue for mismatches and uncertain cases</li>
+              <li>Reminder and escalation paths for stalled approvals</li>
+            </ul>
+          </div>
+
+          <div class="case-diagram-arrow">&rarr;</div>
+
+          <div class="case-diagram-node">
+            <h4>Posting handoff</h4>
+            <ul>
+              <li>Ready-for-export state after approval</li>
+              <li>Audit trail of status changes and decisions</li>
+              <li>Retryable path when a downstream sync fails</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>What success looks like</h3>
+        <ul>
+          <li>Fewer manual touches per invoice before it is approved or ready for posting</li>
+          <li>Better visibility into approval delays and exception causes</li>
+          <li>Cleaner auditability for who reviewed what and when</li>
+          <li>Less back-and-forth across email and chat for repeatable AP tasks</li>
+        </ul>
+
+        <p style="margin-top: 1.5rem;">
+          <a href="{{CTA_HREF}}" class="btn">{{CTA_LABEL}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
