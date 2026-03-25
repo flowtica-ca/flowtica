@@ -45,7 +45,7 @@ def render_nav(prefix: str) -> str:
     return (
         nav_template.replace("{{PREFIX}}", prefix)
         .replace("{{HOME_ACTIVE}}", "")
-        .replace("{{PORTFOLIO_ACTIVE}}", "")
+        .replace("{{SOLUTIONS_ACTIVE}}", "")
     )
 
 
@@ -151,7 +151,7 @@ def build_job(config: dict, template: str) -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUT_DIR / f"{config['slug']}.html"
     out_path.write_text(html + "\n", encoding="utf-8")
-    print(f"✅ Built {out_path}")
+    print(f"Built {out_path}")
 
 
 def main() -> None:

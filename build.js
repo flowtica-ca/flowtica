@@ -16,13 +16,13 @@ const srcDir = path.join(__dirname, "src");
 const outFile = path.join(__dirname, "index.html");
 const navFile = path.join(srcDir, "_nav.html");
 
-function renderNav(prefix, portfolioActive) {
+function renderNav(prefix, solutionsActive) {
   const navTemplate = fs.readFileSync(navFile, "utf8").trim();
 
   return navTemplate
     .replaceAll("{{PREFIX}}", prefix)
-    .replace("{{HOME_ACTIVE}}", portfolioActive ? "" : " class=\"active\"")
-    .replace("{{PORTFOLIO_ACTIVE}}", portfolioActive ? " class=\"active\"" : "");
+    .replace("{{HOME_ACTIVE}}", solutionsActive ? "" : " class=\"active\"")
+    .replace("{{SOLUTIONS_ACTIVE}}", solutionsActive ? " class=\"active\"" : "");
 }
 
 function loadPart(file) {
