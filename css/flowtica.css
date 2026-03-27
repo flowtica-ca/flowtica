@@ -518,10 +518,21 @@ strong {
 }
 
 .home .typing-shell {
-  display: block;
-  min-height: 1.95em;
+  display: inline-grid;
+  width: 100%;
   max-width: 14ch;
   line-height: 0.96;
+}
+
+.home .typing-shell::before,
+.home .typing-shell > .typing {
+  grid-area: 1 / 1;
+}
+
+.home .typing-shell::before {
+  content: attr(data-reserve);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .typing {
@@ -929,6 +940,10 @@ strong {
 .case-card p,
 .case-card li {
   color: rgba(233, 240, 244, 0.82);
+}
+
+.case-card strong {
+  color: #ffffff;
 }
 
 .case-card h4 {
@@ -1633,7 +1648,7 @@ strong {
   }
 
   .home .typing-shell {
-    min-height: 2.1em;
+    width: 100%;
     max-width: 100%;
   }
 
