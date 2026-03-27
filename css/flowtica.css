@@ -1117,7 +1117,12 @@ strong {
 
 .offer-price {
   margin: 0.2rem 0 0.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.45rem;
   font-size: 0.98rem;
+  line-height: 1.45;
 }
 
 .offer-price strong {
@@ -1125,8 +1130,17 @@ strong {
   font-size: 1.2rem;
 }
 
+.offer-price-item {
+  white-space: nowrap;
+}
+
+.offer-divider {
+  color: rgba(20, 33, 45, 0.38);
+  font-size: 0.96rem;
+}
+
 .offer-note {
-  margin-left: 0.35rem;
+  margin-left: 0;
   color: var(--ink-500);
   font-size: 0.88rem;
 }
@@ -1145,6 +1159,10 @@ strong {
 
 .offer-card-featured .offer-note {
   color: rgba(233, 240, 244, 0.58);
+}
+
+.offer-card-featured .offer-divider {
+  color: rgba(233, 240, 244, 0.48);
 }
 
 .demo-list {
