@@ -1,4 +1,4 @@
-import pathlib
+﻿import pathlib
 import re
 import build_jobs
 
@@ -101,7 +101,7 @@ def main():
     footer = render_footer(asset_prefix="")
 
     OUT_FILE.write_text("\n".join([head, *body_chunks, footer]) + "\n", encoding="utf-8")
-    print("✅ Rebuilt index.html from src/*.html")
+    print("Built index.html from src/*.html")
     import build_cases
 
     build_cases.main()
@@ -110,3 +110,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

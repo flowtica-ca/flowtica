@@ -1,4 +1,4 @@
-import pathlib
+﻿import pathlib
 
 CASES = [
     {
@@ -100,7 +100,7 @@ def build_case(config: dict, template: str) -> None:
 
     out_path = pathlib.Path(f"{config['slug']}.html")
     out_path.write_text(html + "\n", encoding="utf-8")
-    print(f"✅ Built {out_path}")
+    print(f"Built {out_path}")
 
 
 def main() -> None:
@@ -114,3 +114,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

@@ -1,11 +1,11 @@
-import pathlib
+﻿import pathlib
 import json
 
 JOBS = [
     {
         "slug": "automation-implementation-specialist",
-        "title": "Automation Implementation Specialist (Junior–Mid) | Flowtica",
-        "description": "On-site in Kingston, ON. Deliver customer automation end-to-end (discovery → plan → build → iterate).",
+        "title": "Automation Implementation Specialist (Junior-Mid) | Flowtica",
+        "description": "On-site in Kingston, ON. Deliver customer automation end-to-end (discovery to plan to build to iterate).",
         "content": "automation-implementation-specialist.body.html",
         "date_posted": "2025-12-24",
         "valid_through": "2026-01-31T23:59:59-05:00",
@@ -78,7 +78,7 @@ def build_job(config: dict, template: str) -> None:
     job_jsonld = f"""{{
   "@context": "https://schema.org",
   "@type": "JobPosting",
-  "title": "Automation Implementation Specialist (Junior–Mid)",
+  "title": "Automation Implementation Specialist (Junior-Mid)",
   "description": {json_escape_for_ld(content)},
   "datePosted": "{config['date_posted']}",
   "validThrough": "{config['valid_through']}",
@@ -151,7 +151,7 @@ def build_job(config: dict, template: str) -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUT_DIR / f"{config['slug']}.html"
     out_path.write_text(html + "\n", encoding="utf-8")
-    print(f"✅ Built {out_path}")
+    print(f"Built {out_path}")
 
 
 def main() -> None:
@@ -171,3 +171,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+

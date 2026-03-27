@@ -1,104 +1,84 @@
-/* 
-Project Name: Modern Portfolio Website
-Description: Flowtica single-page version with smooth scrolling
-Author: Md Al Amin Hossen (template) + Flowtica customization
+/*
+Project Name: Flowtica website
+Description: Shared interactions for navigation, hero typing, and reveal motion
 */
 
-// ---------------- Typing animation ----------------
 (() => {
   const typingEl = document.querySelector(".typing");
-  if (!typingEl) return;
 
-  // Ensure Typed.js is available (loaded via script tag in index.html)
-  if (typeof Typed === "undefined") return;
+  if (!typingEl || typeof Typed === "undefined") {
+    return;
+  }
 
-  // If the element already has text, Typed.js will overwrite it.
-  // Prefer keeping the HTML as: <span class="typing"></span>
   // eslint-disable-next-line no-undef
-new Typed(".typing", {
-  strings: [
-"reliable workflow automation",
-"operational automation that lasts",
-"document intelligence with citations",
-"intake systems your team can trust",
-"integrations that fit your stack",
-
-  ],
-  typeSpeed: 70,
-  backSpeed: 35,
-  backDelay: 1400,
-  loop: true,
-  showCursor: false,
-});
+  new Typed(".typing", {
+    strings: [
+      "reliable workflow automation",
+      "operational AI that lasts",
+      "document intelligence with citations",
+      "intake systems your team can trust",
+      "integrations that fit your stack",
+    ],
+    typeSpeed: 68,
+    backSpeed: 34,
+    backDelay: 1350,
+    loop: true,
+    showCursor: false,
+  });
 })();
 
-// ---------------- Smooth scroll & scroll spy ----------------
 const nav = document.querySelector(".nav");
 const navLinks = nav ? nav.querySelectorAll("a[href^='#']") : [];
-const sections = document.querySelectorAll(".section");
+const sections = document.querySelectorAll(".section[id]");
+const navTogglerBtn = document.querySelector(".nav-toggler");
+const aside = document.querySelector(".aside");
 
-// Smooth scroll on nav click
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
+function toggleAside(forceOpen) {
+  if (!aside || !navTogglerBtn) return;
 
-    const href = link.getAttribute("href");
-    if (!href || !href.includes("#")) return;
+  const shouldOpen =
+    typeof forceOpen === "boolean" ? forceOpen : !aside.classList.contains("open");
 
-    const targetId = href.split("#")[1];
-    const targetEl = document.getElementById(targetId);
-    if (!targetEl) return;
-
-    targetEl.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
-    setActiveNav(targetId);
-
-    // Close aside on small screens
-    if (window.innerWidth < 1200) {
-      toggleAside();
-    }
-  });
-});
-
-// Optional: if there's a ".hire-me" button, make it scroll to its target
-const hireMeBtn = document.querySelector(".hire-me");
-if (hireMeBtn) {
-  hireMeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const href = hireMeBtn.getAttribute("href") || "#contact";
-    const targetId = href.split("#")[1];
-    const targetEl = document.getElementById(targetId);
-    if (!targetEl) return;
-
-    targetEl.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
-    setActiveNav(targetId);
-  });
+  aside.classList.toggle("open", shouldOpen);
+  navTogglerBtn.classList.toggle("open", shouldOpen);
 }
 
-// Highlight nav item based on scroll position (scroll spy)
 function setActiveNav(targetId) {
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href || !href.includes("#")) return;
-    const id = href.split("#")[1];
 
-    if (id === targetId) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+    const id = href.split("#")[1];
+    link.classList.toggle("active", id === targetId);
   });
 }
 
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const href = link.getAttribute("href");
+    if (!href || !href.includes("#")) return;
+
+    const targetId = href.split("#")[1];
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+
+    targetEl.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setActiveNav(targetId);
+
+    if (window.innerWidth < 1200) {
+      toggleAside(false);
+    }
+  });
+});
+
 window.addEventListener("scroll", () => {
-  const scrollPos = window.scrollY + window.innerHeight / 3; // middle-ish of viewport
+  const scrollPos = window.scrollY + window.innerHeight / 3;
   let currentId = null;
 
   sections.forEach((section) => {
@@ -115,19 +95,77 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ---------------- Aside nav toggler ----------------
-const navTogglerBtn = document.querySelector(".nav-toggler");
-const aside = document.querySelector(".aside");
-
-function toggleAside() {
-  if (aside) {
-    aside.classList.toggle("open");
-  }
-  if (navTogglerBtn) {
-    navTogglerBtn.classList.toggle("open");
-  }
-}
-
 if (navTogglerBtn) {
-  navTogglerBtn.addEventListener("click", toggleAside);
+  navTogglerBtn.addEventListener("click", () => toggleAside());
 }
+
+document.addEventListener("click", (event) => {
+  if (!aside || !navTogglerBtn || window.innerWidth >= 1200) return;
+  if (!aside.classList.contains("open")) return;
+
+  const clickedInsideAside = aside.contains(event.target);
+  const clickedToggler = navTogglerBtn.contains(event.target);
+
+  if (!clickedInsideAside && !clickedToggler) {
+    toggleAside(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && aside && aside.classList.contains("open")) {
+    toggleAside(false);
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1200) {
+    toggleAside(false);
+  }
+});
+
+(() => {
+  const revealTargets = document.querySelectorAll(
+    [
+      ".section-title",
+      ".about-text",
+      ".surface-panel",
+      ".service-item-inner",
+      ".case-card",
+      ".offer-card",
+      ".career-card-inner",
+      ".contact-info-item",
+      ".contact-form form",
+      ".job-card",
+      ".case-diagram-node",
+    ].join(",")
+  );
+
+  if (!revealTargets.length) return;
+
+  revealTargets.forEach((item, index) => {
+    item.classList.add("reveal-on-scroll");
+    item.style.setProperty("--reveal-delay", `${Math.min(index * 45, 240)}ms`);
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    revealTargets.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -8% 0px",
+    }
+  );
+
+  revealTargets.forEach((item) => observer.observe(item));
+})();
