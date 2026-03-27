@@ -1,4 +1,4 @@
-import pathlib
+﻿import pathlib
 
 SITE_URL = "https://flowtica.ca"
 
@@ -134,107 +134,7 @@ HEAD_DEFAULTS = {
     "EXTRA_HEAD": "",
 }
 
-GENERATED_PAGE_EXTRA_HEAD = """
-    <style>
-      .case-section p {
-        font-size: 0.95rem;
-      }
-
-      .case-section ul,
-      .case-section ol {
-        font-size: 0.95rem;
-      }
-
-      .case-section .section-title h1 {
-        font-size: 40px;
-        color: var(--text-black-900);
-        font-weight: 700;
-        position: relative;
-        margin: 0;
-      }
-
-      .case-section .section-title h1::before {
-        content: "";
-        height: 4px;
-        width: 50px;
-        background: var(--skin-color);
-        position: absolute;
-        left: 0;
-        top: 100%;
-      }
-
-      .case-section .section-title h1::after {
-        content: "";
-        height: 4px;
-        width: 25px;
-        background: var(--skin-color);
-        position: absolute;
-        left: 0;
-        top: 100%;
-        margin-top: 8px;
-      }
-
-      .case-diagram {
-        margin-top: 1.5rem;
-        padding: 1.4rem;
-        border-radius: 16px;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        align-items: stretch;
-        justify-content: center;
-      }
-
-      .case-diagram-node {
-        flex: 1 1 210px;
-        min-width: 0;
-        border-radius: 12px;
-        padding: 0.9rem 1rem;
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #f7f7f7;
-        font-size: 0.85rem;
-      }
-
-      .case-diagram-node h4 {
-        margin-top: 0;
-        margin-bottom: 0.45rem;
-        font-size: 0.95rem;
-      }
-
-      .case-diagram-node ul {
-        padding-left: 1.1rem;
-        margin: 0;
-      }
-
-      .case-diagram-node li {
-        margin-bottom: 0.25rem;
-      }
-
-      .case-diagram-arrow {
-        align-self: center;
-        font-size: 1.3rem;
-        opacity: 0.85;
-        padding: 0 0.3rem;
-      }
-
-      @media (max-width: 767px) {
-        .case-diagram {
-          flex-direction: column;
-        }
-
-        .case-diagram-arrow {
-          text-align: center;
-        }
-
-        .case-section .section-title h1 {
-          font-size: 1.5rem;
-        }
-      }
-    </style>
-""".strip()
+GENERATED_PAGE_EXTRA_HEAD = ""
 
 
 def render_nav(prefix: str, solutions_active: bool) -> str:
@@ -366,3 +266,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
