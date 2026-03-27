@@ -56,10 +56,11 @@
       }
     </script>
 
-    <!-- Font: Inter -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -110,570 +111,11 @@
       title="color-5"
       disabled
     />
+    <link rel="stylesheet" href="css/flowtica.css" />
 
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/fabicon.png" />
-
-    <!-- Component-level + MOBILE layout fixes -->
-    <style>
-      :root {
-        scroll-behavior: smooth;
-      }
-
-      html,
-      body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-
-      body {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background: #f5f3ff;
-      }
-
-      .btn {
-        border-radius: 999px;
-        padding-inline: 1.75rem;
-        font-weight: 500;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
-      }
-
-      .home .hello {
-        font-weight: 500;
-        letter-spacing: 0.03em;
-        margin-bottom: 0.75rem;
-      }
-
-      .tag-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        padding: 0.3rem 0.75rem;
-        border-radius: 999px;
-        border: 1px solid var(--skin-color, #4a90e2);
-        color: var(--skin-color, #4a90e2);
-        background: transparent;
-        font-size: 0.78rem;
-      }
-
-      .tag-pill i {
-        font-size: 0.8rem;
-      }
-
-      .home-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .home-img-inner {
-        width: 100%;
-        max-width: 360px;
-        border-radius: 18px;
-        padding: 1.5rem;
-        background: radial-gradient(
-            circle at top left,
-            rgba(74, 144, 226, 0.2),
-            transparent 55%
-          ),
-          rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .home-img-inner h4 {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-
-      .home-img-inner p {
-        font-size: 0.85rem;
-        opacity: 0.9;
-      }
-
-      .home-img-metrics {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.9rem;
-        margin-top: 1.25rem;
-      }
-
-      .metric-card {
-        border-radius: 12px;
-        padding: 0.9rem;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        font-size: 0.8rem;
-      }
-
-      .metric-label {
-        opacity: 0.7;
-        font-size: 0.78rem;
-      }
-
-      .metric-value {
-        font-weight: 600;
-        margin-top: 0.15rem;
-      }
-
-      .skills-list {
-        margin-top: 0.5rem;
-      }
-
-      .skills-list ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-      }
-
-      .skills-list li {
-        font-size: 0.9rem;
-        margin-bottom: 0.25rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-      }
-
-      .skills-list li i {
-        font-size: 0.7rem;
-      }
-
-      .portfolio-note {
-        font-size: 0.9rem;
-        opacity: 0.9;
-        margin-bottom: 1.5rem;
-      }
-
-      .case-card {
-        padding: 1.25rem 1.35rem;
-        border-radius: 14px;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-size: 0.8rem;
-      }
-
-      /* ensure readable text on dark background (solution cards) */
-      .case-card,
-      .case-card p,
-      .case-card li,
-      .demo-list li {
-        color: #f7f7f7;
-      }
-
-      .case-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.7rem;
-        border-radius: 999px;
-        border: 1px solid var(--skin-color, #4a90e2);
-        color: var(--skin-color, #4a90e2);
-        background: transparent;
-        margin-bottom: 0.6rem;
-      }
-
-      .case-badge i {
-        font-size: 0.8rem;
-      }
-
-      .case-list {
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.85rem;
-        margin: 0.5rem 0 0.75rem;
-      }
-
-      .case-list li {
-        margin-bottom: 0.25rem;
-      }
-
-      .discount-note {
-        font-size: 0.85rem;
-        opacity: 0.9;
-      }
-
-      .case-card-footer {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .more-examples {
-        margin-top: 0.75rem;
-        padding: 1.25rem 1.35rem;
-        border-radius: 14px;
-        background: rgba(0, 0, 0, 0.28);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .more-examples h4 {
-        margin: 0 0 0.45rem;
-      }
-
-      .example-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 0.75rem;
-      }
-
-      .example-link {
-        display: block;
-        padding: 0.85rem 1rem;
-        border-radius: 12px;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: #f7f7f7;
-        font-size: 0.88rem;
-      }
-
-      .example-link:hover {
-        color: #f7f7f7;
-      }
-
-      .strike {
-        text-decoration: line-through;
-        opacity: 0.7;
-      }
-
-      .offers-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.25rem;
-      }
-
-      .offer-card {
-        border-radius: 14px;
-        padding: 1.5rem;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .offer-price {
-        margin: 0.5rem 0 0.75rem;
-        font-size: 0.95rem;
-      }
-
-      .offer-price strong {
-        font-size: 1.1rem;
-      }
-
-      .offer-price .strike {
-        margin-left: 0.4rem;
-        font-size: 0.85rem;
-      }
-
-      .offer-tagline {
-        font-size: 0.85rem;
-        opacity: 0.9;
-        margin-bottom: 0.6rem;
-      }
-
-      .demo-list {
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.85rem;
-        margin: 0.5rem 0 0.75rem;
-      }
-
-      .demo-list li {
-        margin-bottom: 0.3rem;
-      }
-
-      /* Careers */
-      .careers .container {
-        padding-bottom: 40px;
-      }
-
-      .career-card {
-        flex: 0 0 100%;
-        max-width: 100%;
-      }
-
-      .career-card-inner {
-        background: var(--bg-black-100);
-        border: 1px solid var(--bg-black-50);
-        border-radius: 14px;
-        padding: 1.5rem;
-      }
-
-      .career-toggle {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 1rem;
-        border: none;
-        background: transparent;
-        padding: 0;
-        color: inherit;
-        cursor: pointer;
-        text-align: left;
-      }
-
-      .career-toggle:focus-visible {
-        outline: 2px solid var(--skin-color);
-        outline-offset: 4px;
-        border-radius: 10px;
-      }
-
-      .career-heading {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-      }
-
-      .career-heading h4 {
-        margin: 0;
-        font-size: 1.1rem;
-        color: var(--text-black-900);
-      }
-
-      .career-heading .career-location {
-        margin: 0;
-        color: var(--text-black-700);
-        font-size: 0.95rem;
-      }
-
-      .career-toggle-indicator {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-weight: 600;
-        color: var(--skin-color);
-        padding-top: 0.15rem;
-      }
-
-      .career-details {
-        margin-top: 1.1rem;
-        color: var(--text-black-700);
-        line-height: 1.7;
-      }
-
-      .career-details h4 {
-        margin: 0.85rem 0 0.35rem;
-        font-size: 1rem;
-        color: var(--text-black-900);
-      }
-
-      .career-details h5 {
-        margin: 0.75rem 0 0.35rem;
-        font-size: 0.95rem;
-        color: var(--text-black-900);
-      }
-
-      .career-details p {
-        margin: 0.35rem 0;
-      }
-
-      .career-details ul {
-        margin: 0.35rem 0 0.75rem 1.15rem;
-      }
-
-      .career-details li {
-        margin-bottom: 0.35rem;
-      }
-
-      .career-cta {
-        margin-top: 1.25rem;
-      }
-
-      body.dark .career-card-inner {
-        background: rgba(0, 0, 0, 0.35);
-        border-color: rgba(255, 255, 255, 0.08);
-      }
-
-      .contact-form .form-control {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-      }
-
-      /* Fix dark-mode text visibility in Offers section */
-      body.dark #offers p,
-      body.dark #offers li {
-        color: #f7f7f7;
-      }
-
-      /* ================================
-         MOBILE OVERRIDES (LAYOUT)
-         ================================ */
-
-      @media (max-width: 991px) {
-        body {
-          overflow-x: hidden;
-        }
-
-        .main-container {
-          display: block !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
-        .aside {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          left: -260px !important;
-          width: 260px;
-          z-index: 999;
-          transition: left 0.3s ease;
-        }
-
-        .aside.open {
-          left: 0 !important;
-        }
-
-        .nav-toggler {
-          position: fixed;
-          top: 16px;
-          left: 16px;
-          z-index: 1000;
-        }
-
-        .main-content,
-        .main-content.open {
-          position: relative;
-          margin-left: 0 !important;
-          padding-left: 0 !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
-        .section {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-          margin-left: 0 !important;
-        }
-
-        .section .container {
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 !important;
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-
-        .row {
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: column;
-          margin-left: -15px;
-          margin-right: -15px;
-        }
-
-        .padd-15 {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
-        .home .container {
-          padding-top: 2.5rem;
-        }
-
-        .home-info,
-        .home-img,
-        .service .service-item,
-        .portfolio .portfolio-item,
-        .contact .contact-info-item,
-        #offers .offer-card {
-          flex: 0 0 100% !important;
-          max-width: 100% !important;
-        }
-
-        .home-img {
-          margin-top: 1.5rem;
-        }
-
-        .home-img-inner {
-          max-width: 100%;
-        }
-
-        .home-img-metrics {
-          grid-template-columns: 1fr;
-        }
-
-        .metric-card {
-          font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .section {
-          padding-top: 3rem;
-          padding-bottom: 3rem;
-        }
-
-        .section-title h2 {
-          font-size: 1.5rem;
-        }
-
-        .home-img-inner,
-        .case-card,
-        .offer-card,
-        .more-examples,
-        .example-link {
-          background: rgba(255, 255, 255, 0.96);
-          border: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .home-img-inner p,
-        .case-card p,
-        .offer-card p,
-        .case-card li,
-        .offer-card li,
-        .demo-list li,
-        .example-link {
-          color: #222;
-        }
-
-        .metric-card {
-          background: rgba(255, 255, 255, 0.96);
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          color: #222;
-        }
-
-        .portfolio-note {
-          font-size: 0.88rem;
-        }
-
-        .offers-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-form .form-group {
-          margin-bottom: 0.85rem;
-        }
-
-        .contact-info-item {
-          margin-bottom: 1rem;
-        }
-
-        .contact-title {
-          font-size: 1.25rem;
-        }
-
-        .contact-sub-title {
-          font-size: 0.95rem;
-        }
-
-        .tag-pill {
-          font-size: 0.75rem;
-          padding: 0.35rem 0.85rem;
-        }
-      }
-    </style>
     
   </head>
 
@@ -681,36 +123,47 @@
     <!-- Main Container Start -->
     <div class="main-container">
       <!-- Aside Start -->
-  <div class="aside">
+<div class="aside">
+  <div class="aside-shell">
     <div class="logo">
       <a href="#home"><span>F</span>lowtica</a>
     </div>
-  <div class="nav-toggler">
-    <span></span>
+    <p class="aside-intro">
+      Dependable workflow automation for operations teams that need production-ready systems, not disposable demos.
+    </p>
+    <div class="nav-toggler">
+      <span></span>
+    </div>
+    <ul class="nav">
+      <li>
+        <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
+      </li>
+      <li>
+        <a href="#about"><i class="fa fa-user"></i> About</a>
+      </li>
+      <li>
+        <a href="#service"><i class="fa fa-list"></i> Services</a>
+      </li>
+      <li>
+        <a href="#solutions"><i class="fa fa-briefcase"></i> Solutions</a>
+      </li>
+      <li>
+        <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
+      </li>
+      <li>
+        <a href="#careers"><i class="fa fa-people-group"></i> Careers</a>
+      </li>
+      <li>
+        <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+      </li>
+    </ul>
+    <div class="nav-footer">
+      <p>
+        Free workflow assessment, tight MVP scope, and delivery inside the stack your team already trusts.
+      </p>
+      <a href="#contact" class="btn">Book an intro call</a>
+    </div>
   </div>
-  <ul class="nav">
-    <li>
-      <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
-    </li>
-    <li>
-      <a href="#about"><i class="fa fa-user"></i> About</a>
-    </li>
-    <li>
-      <a href="#service"><i class="fa fa-list"></i> Services</a>
-    </li>
-    <li>
-      <a href="#solutions"><i class="fa fa-briefcase"></i> Solutions</a>
-    </li>
-    <li>
-      <a href="#offers"><i class="fa fa-tag"></i> Offers</a>
-    </li>
-    <li>
-      <a href="#careers"><i class="fa fa-people-group"></i> Careers</a>
-    </li>
-    <li>
-      <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
-    </li>
-  </ul>
 </div>
 <!-- Aside End -->
       
@@ -721,6 +174,7 @@
   <div class="container">
     <div class="row">
       <div class="home-info padd-15">
+        <p class="section-kicker">Workflow automation for operations teams</p>
         <h3 class="hello">
           <span class="tag-pill">
             <i class="fa-regular fa-circle-check"></i>
@@ -729,11 +183,11 @@
         </h3>
 
         <!-- Typed.js target: keep the span EMPTY -->
-        <h3 class="my-profession">
+        <h1 class="my-profession">
           We build <span class="typing"></span>
-        </h3>
+        </h1>
 
-        <p>
+        <p class="hero-copy">
           Flowtica helps operational teams in mid-sized companies eliminate manual
           busywork through custom AI assistants and automations. We integrate with
           the tools you already use, so your team saves hours, reduces errors, and
@@ -741,16 +195,37 @@
           existing workflows.
         </p>
 
-        <a href="#contact" class="btn">Request a Free Workflow Assessment</a>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Request a Free Workflow Assessment</a>
+          <a href="#solutions" class="btn btn-secondary">See example workflows</a>
+        </div>
+
+        <div class="hero-strip">
+          <div class="hero-strip-item">
+            <span class="hero-strip-label">Start fast</span>
+            <span class="hero-strip-value">Free workflow assessment with a clear MVP recommendation.</span>
+          </div>
+          <div class="hero-strip-item">
+            <span class="hero-strip-label">Ship in weeks</span>
+            <span class="hero-strip-value">Focused builds that go live quickly inside your real environment.</span>
+          </div>
+          <div class="hero-strip-item">
+            <span class="hero-strip-label">Stay dependable</span>
+            <span class="hero-strip-value">Logging, guardrails, and handoff-ready systems your team can trust.</span>
+          </div>
+        </div>
       </div>
 
       <div class="home-img padd-15">
         <div class="home-img-inner">
-          <h4>Where Flowtica provides the most value</h4>
-          <p>
-            We work closely with lean teams that need dependable AI systems
-            rather than experimental chatbots.
-          </p>
+          <div class="home-img-header">
+            <span class="tag-pill">Production-minded AI systems</span>
+            <h4>Where Flowtica provides the most value</h4>
+            <p>
+              We work closely with lean teams that need dependable AI systems
+              rather than experimental chatbots.
+            </p>
+          </div>
 
           <div class="home-img-metrics">
             <div class="metric-card">
@@ -770,13 +245,12 @@
             <div class="metric-card">
               <div class="metric-label">Engagement kickoff</div>
               <div class="metric-value">
-                Free workflow assessment → 2-week MVP in your environment
+                Free workflow assessment to a 2-week MVP in your environment
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -793,6 +267,7 @@
       <div class="about-content padd-15">
         <div class="row">
           <div class="about-text padd-15">
+            <p class="section-kicker">Built for teams past the experimentation phase</p>
             <h3>
               Flowtica delivers dependable <span>AI solutions for operations</span>
             </h3>
@@ -820,7 +295,7 @@
 
         <!-- Snapshot + Who we work with -->
         <div class="row">
-          <div class="personal-info padd-15">
+          <div class="personal-info padd-15 surface-panel">
             <h3 class="title">Snapshot</h3>
             <div class="row">
               <div class="info-item padd-15">
@@ -888,7 +363,7 @@
             </div>
           </div>
 
-          <div class="skills padd-15">
+          <div class="skills padd-15 surface-panel">
             <h3 class="title">What we do best</h3>
             <div class="skills-list">
               <ul>
@@ -924,7 +399,7 @@
 
         <!-- How we work & Principles -->
         <div class="row">
-          <div class="education padd-15">
+          <div class="education padd-15 surface-panel">
             <h3 class="title">How we work</h3>
             <div class="row">
               <div class="timeline-box padd-15">
@@ -977,7 +452,7 @@
               </div>
             </div>
           </div>
-          <div class="experience padd-15">
+          <div class="experience padd-15 surface-panel">
             <h3 class="title">Principles</h3>
             <div class="row">
               <div class="timeline-box padd-15">
@@ -1044,11 +519,20 @@
               </div>
             </div>
             <div class="row">
+              <div class="padd-15">
+                <p class="section-kicker">From intake to handoff</p>
+                <p class="section-copy">
+                  Flowtica focuses on production systems that remove manual work, fit your operating constraints,
+                  and connect cleanly into the tools your team already relies on.
+                </p>
+              </div>
+            </div>
+            <div class="row">
               <!-- Services item -->
               <div class="service-item padd-15">
                 <div class="service-item-inner">
                   <div class="icon">
-                    <i class="fa fa-mobile-alt"></i>
+                    <i class="fa-solid fa-phone-volume"></i>
                   </div>
                   <h4>AI Phone &amp; Chat Assistants</h4>
                   <p>
@@ -1064,7 +548,7 @@
               <div class="service-item padd-15">
                 <div class="service-item-inner">
                   <div class="icon">
-                    <i class="fa fa-laptop-code"></i>
+                    <i class="fa-solid fa-file-lines"></i>
                   </div>
                   <h4>Document Q&amp;A for Legal &amp; Operations</h4>
                   <p>
@@ -1080,7 +564,7 @@
               <div class="service-item padd-15">
                 <div class="service-item-inner">
                   <div class="icon">
-                    <i class="fa fa-palette"></i>
+                    <i class="fa-solid fa-diagram-project"></i>
                   </div>
                   <h4>Workflow Automation &amp; Integration</h4>
                   <p>
@@ -1096,7 +580,7 @@
               <div class="service-item padd-15">
                 <div class="service-item-inner">
                   <div class="icon">
-                    <i class="fa fa-code"></i>
+                    <i class="fa-solid fa-shield-halved"></i>
                   </div>
                   <h4>Private &amp; Hybrid Cloud Deployments</h4>
                   <p>
@@ -1111,7 +595,7 @@
               <div class="service-item padd-15">
                 <div class="service-item-inner">
                   <div class="icon">
-                    <i class="fa fa-search"></i>
+                    <i class="fa-solid fa-flask"></i>
                   </div>
                   <h4>Prototyping &amp; Feasibility</h4>
                   <p>
@@ -1127,7 +611,7 @@
               <div class="service-item padd-15">
                 <div class="service-item-inner">
                   <div class="icon">
-                    <i class="fa fa-bullhorn"></i>
+                    <i class="fa-solid fa-chart-line"></i>
                   </div>
                   <h4>Ongoing Support &amp; Iteration</h4>
                   <p>
@@ -1153,6 +637,7 @@
 
     <div class="row">
       <div class="portfolio-heading padd-15">
+        <p class="section-kicker">Current workflow lanes</p>
         <h3>Three workflow lanes we are prioritizing for operations teams</h3>
         <p class="portfolio-note">
           Flowtica builds workflow automation that behaves like infrastructure: connected to your existing tools,
@@ -1168,7 +653,7 @@
           <div>
             <div class="case-badge">
               <i class="fa-solid fa-building"></i>
-              Solution · Property Management
+              Solution &middot; Property Management
             </div>
             <h4>Maintenance intake automation for property managers</h4>
             <p>
@@ -1204,7 +689,7 @@
           <div>
             <div class="case-badge">
               <i class="fa-solid fa-file-invoice-dollar"></i>
-              Solution · Finance Operations
+              Solution &middot; Finance Operations
             </div>
             <h4>Accounts payable and back-office automation</h4>
             <p>
@@ -1240,7 +725,7 @@
           <div>
             <div class="case-badge">
               <i class="fa-solid fa-bullhorn"></i>
-              Solution · Outreach Operations
+              Solution &middot; Outreach Operations
             </div>
             <h4>CASL-first outreach automation with reviewable research</h4>
             <p>
@@ -1297,24 +782,6 @@
 <!-- Solutions Section End -->
 <!-- Offers / Pricing Section Start -->
 <section class="service section" id="offers">
-  <style>
-    /* Scoped layout fix: keep the split-screen on desktop, stack on mobile */
-    #offers .offers-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-    #offers .offer-card {
-      height: 100%;
-    }
-    @media (max-width: 900px) {
-      #offers .offers-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
   <div class="container">
     <div class="row">
       <div class="section-title padd-15">
@@ -1324,13 +791,14 @@
 
     <div class="row">
       <div class="padd-15">
-        <p>
+        <p class="section-kicker">Structured ways to start</p>
+        <p class="section-copy">
           Flowtica offers <strong>workflow automation programs</strong> that start with a low-risk assessment and MVP,
-          then scale into full production delivery. Ship quickly, measure impact, and keep improving what’s live.
+          then scale into full production delivery. Ship quickly, measure impact, and keep improving what&rsquo;s live.
         </p>
-        <p>
-          We work best with partners who can move quickly and provide feedback.
-          For hands-on delivery, we work with a small number of partners at a time.
+        <p class="portfolio-note">
+          We work best with partners who can move quickly and provide feedback. For hands-on delivery, we work with a
+          small number of partners at a time.
         </p>
       </div>
     </div>
@@ -1338,6 +806,7 @@
     <div class="row offers-grid">
       <!-- Offer 0: Free Assessment + MVP -->
       <div class="offer-card padd-15">
+        <span class="offer-badge">Best first step</span>
         <h3>Free Workflow Assessment &amp; 2-Week MVP Build</h3>
         <p class="offer-tagline">
           <strong>Kickstart your AI project with no long-term commitment.</strong> We begin with a free assessment of
@@ -1345,7 +814,7 @@
           a functional AI MVP tailored to that use case so you can see real results fast.
         </p>
         <p class="offer-tagline">
-          After the assessment, you’ll receive a one-page workflow plan: scope, systems involved, success metric,
+          After the assessment, you&rsquo;ll receive a one-page workflow plan: scope, systems involved, success metric,
           and an MVP build outline.
         </p>
         <p class="offer-tagline">
@@ -1353,26 +822,27 @@
         </p>
         <p class="offer-tagline"><strong>What you get in the MVP:</strong></p>
         <ul class="demo-list">
-          <li>A working workflow in your environment (not a slide deck).</li>
-          <li>Integrated with 1–2 systems (e.g., email + helpdesk/CRM).</li>
-          <li>Basic logging + error handling.</li>
-          <li>A short handoff doc: how it works, how to operate it, next improvements.</li>
+          <li>A working workflow in your environment, not a slide deck.</li>
+          <li>Integrated with 1 to 2 systems, for example email plus helpdesk or CRM.</li>
+          <li>Basic logging and error handling.</li>
+          <li>A short handoff doc covering how it works, how to operate it, and next improvements.</li>
         </ul>
         <a href="#contact" class="btn">Request your free assessment</a>
       </div>
 
       <!-- Offer 1: Main 6-Month Program -->
-      <div class="offer-card padd-15">
+      <div class="offer-card offer-card-featured padd-15">
+        <span class="offer-badge">Most comprehensive</span>
         <h3>6-Month AI Workflow Program</h3>
         <p class="offer-tagline">
           <strong>Scale up your AI solution with a full-production engagement.</strong> After a successful MVP, this
           6-month program fully implements and maintains an AI workflow in production. We take end-to-end
-          ownership of one critical process – design, build, launch, and ongoing optimization – to ensure
+          ownership of one critical process: design, build, launch, and ongoing optimization, to ensure
           long-term success.
         </p>
 
         <p class="offer-price">
-          <strong>Minimum $6,000 CAD / month • 6-month minimum • dedicated delivery</strong>
+          <strong>Minimum $6,000 CAD / month &bull; 6-month minimum &bull; dedicated delivery</strong>
         </p>
 
         <p class="offer-tagline">
@@ -1381,15 +851,14 @@
 
         <ul class="demo-list">
           <li>
-            <strong>Design + integrate —</strong> map the process and connect to your existing tools (ticketing, CRM,
-            email/phone, internal systems), including real edge cases.
+            <strong>Design + integrate:</strong> map the process and connect to your existing tools, including real edge cases.
           </li>
           <li>
-            <strong>Launch in weeks —</strong> ship a first production version early, then iterate based on real usage.
+            <strong>Launch in weeks:</strong> ship a first production version early, then iterate based on real usage.
           </li>
           <li>
-            <strong>Operate + improve —</strong> monitoring, logging, retries, alerting, plus regular reviews tied to
-            agreed metrics (hours saved, cycle time, SLA, error rate).
+            <strong>Operate + improve:</strong> monitoring, logging, retries, alerting, plus regular reviews tied to
+            agreed metrics such as hours saved, cycle time, SLA, and error rate.
           </li>
         </ul>
 
@@ -1410,6 +879,7 @@
 
       <!-- Offer 2: Custom / By Request -->
       <div class="offer-card padd-15">
+        <span class="offer-badge">Tailored fit</span>
         <h3>Custom Scope (By request)</h3>
         <p class="offer-tagline">
           If your needs are unusual, we can design a tailored engagement. This is typically used when the workflow
@@ -1429,7 +899,7 @@
         </ul>
 
         <p class="offer-tagline">
-          Share your workflow, tools, and constraints—we’ll recommend the smallest sensible engagement that can prove
+          Share your workflow, tools, and constraints, and we&rsquo;ll recommend the smallest sensible engagement that can prove
           value and keep future options open.
         </p>
 
@@ -1440,39 +910,48 @@
 </section>
 <!-- Offers / Pricing Section End -->
 <!-- Careers Section Start -->
-        <section class="careers section" id="careers">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Careers</h2>
-              </div>
+<section class="careers section" id="careers">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Careers</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="padd-15">
+        <p class="section-kicker">Small team, direct ownership</p>
+        <p class="section-copy">
+          We hire selectively for people who want to work close to the customer, ship quickly, and make messy
+          real-world workflows more dependable.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="career-card padd-15">
+        <div class="career-card-inner shadow-dark">
+          <button
+            class="career-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="career-details-automation-impl"
+          >
+            <div class="career-heading">
+              <h4>Automation Implementation Specialist (Junior-Mid)</h4>
+              <p class="career-location">Location: On-site, Kingston, ON</p>
             </div>
-            <div class="row">
-              <div class="career-card padd-15">
-                <div class="career-card-inner shadow-dark">
-                  <button
-                    class="career-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="career-details-automation-impl"
-                  >
-                    <div class="career-heading">
-                      <h4>Automation Implementation Specialist (Junior–Mid)</h4>
-                      <p class="career-location">Location: On-site, Kingston, ON</p>
-                    </div>
-                    <div class="career-toggle-indicator">
-                      <span class="career-indicator-label">View details</span>
-                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                  </button>
-                  <div class="career-details" id="career-details-automation-impl" hidden>
-                    <p>
-                      Shareable posting:
-                      <a href="jobs/automation-implementation-specialist.html"
-                        >Automation Implementation Specialist (Junior–Mid)</a
-                      >
-                    </p>
-                    <p><strong>TL;DR</strong></p>
+            <div class="career-toggle-indicator">
+              <span class="career-indicator-label">View details</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </button>
+          <div class="career-details" id="career-details-automation-impl" hidden>
+            <p>
+              Shareable posting:
+              <a href="jobs/automation-implementation-specialist.html"
+                >Automation Implementation Specialist (Junior-Mid)</a
+              >
+            </p>
+            <p><strong>TL;DR</strong></p>
 <ul>
   <li>
     1–3 years experience in automation/integrations, internal tools, technical ops/RevOps, or junior software development
@@ -1538,60 +1017,60 @@
   <li>Fast learning curve in automation, integrations, and practical AI for real businesses</li>
 </ul>
 
-                    <div class="career-cta">
-                      <a
-                        class="btn"
-                        href="mailto:hello@flowtica.ca?subject=Application%20-%20Automation%20Implementation%20Specialist%20(Junior%E2%80%93Mid)"
-                        >Apply</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="career-cta">
+              <a
+                class="btn"
+                href="mailto:hello@flowtica.ca?subject=Application%20-%20Automation%20Implementation%20Specialist%20(Junior-Mid)"
+                >Apply</a
+              >
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <script>
-            (() => {
-              const toggle = document.querySelector(".career-toggle");
-              const details = document.getElementById("career-details-automation-impl");
-              const indicatorLabel = document.querySelector(
-                ".career-indicator-label"
-              );
-              const indicatorIcon = document.querySelector(
-                ".career-toggle-indicator i"
-              );
+  <script>
+    (() => {
+      const toggle = document.querySelector(".career-toggle");
+      const details = document.getElementById("career-details-automation-impl");
+      const indicatorLabel = document.querySelector(
+        ".career-indicator-label"
+      );
+      const indicatorIcon = document.querySelector(
+        ".career-toggle-indicator i"
+      );
 
-              if (!toggle || !details || !indicatorLabel) return;
+      if (!toggle || !details || !indicatorLabel) return;
 
-              const setExpanded = (expanded) => {
-                toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-                details.hidden = !expanded;
-                indicatorLabel.textContent = expanded ? "Hide details" : "View details";
+      const setExpanded = (expanded) => {
+        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        details.hidden = !expanded;
+        indicatorLabel.textContent = expanded ? "Hide details" : "View details";
 
-                if (indicatorIcon) {
-                  indicatorIcon.classList.toggle("fa-chevron-up", expanded);
-                  indicatorIcon.classList.toggle("fa-chevron-down", !expanded);
-                }
-              };
+        if (indicatorIcon) {
+          indicatorIcon.classList.toggle("fa-chevron-up", expanded);
+          indicatorIcon.classList.toggle("fa-chevron-down", !expanded);
+        }
+      };
 
-              setExpanded(false);
+      setExpanded(false);
 
-              toggle.addEventListener("click", () => {
-                const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-                setExpanded(!isExpanded);
-              });
+      toggle.addEventListener("click", () => {
+        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        setExpanded(!isExpanded);
+      });
 
-              toggle.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  toggle.click();
-                }
-              });
-            })();
-          </script>
-        </section>
-        <!-- Careers Section End -->
+      toggle.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggle.click();
+        }
+      });
+    })();
+  </script>
+</section>
+<!-- Careers Section End -->
 <!-- Contact Section Start -->
 <section class="contact section" id="contact">
   <div class="container">
@@ -1601,23 +1080,27 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="padd-15">
+        <p class="section-kicker">Start with a real workflow</p>
+      </div>
+    </div>
+
     <h3 class="contact-title padd-15">
       Tell us about your project or workflow challenges
     </h3>
     <h4 class="contact-sub-title padd-15">
       Email us at <a href="mailto:hello@flowtica.ca">hello@flowtica.ca</a> or use the form below to share a short brief.
-      We typically respond within 1–2 business days.
+      We typically respond within 1 to 2 business days.
     </h4>
 
-    <div class="row">
-      <!-- Contact info item-->
+    <div class="row contact-info-grid">
       <div class="contact-info-item padd-15">
         <div class="icon"><i class="fa fa-envelope"></i></div>
         <h4>Email</h4>
         <p><a href="mailto:hello@flowtica.ca">hello@flowtica.ca</a></p>
       </div>
 
-      <!-- Contact info item-->
       <div class="contact-info-item padd-15">
         <div class="icon">
           <i class="fa fa-map-marker-alt"></i>
@@ -1626,7 +1109,6 @@
         <p>Remote, based in Canada</p>
       </div>
 
-      <!-- Contact info item-->
       <div class="contact-info-item padd-15">
         <div class="icon">
           <i class="fa fa-mail-bulk"></i>
@@ -1635,7 +1117,6 @@
         <p>930-829 Norwest Road<br />Kingston, ON K7P 2N3</p>
       </div>
 
-      <!-- Contact info item-->
       <div class="contact-info-item padd-15">
         <div class="icon">
           <i class="fa fa-globe-europe"></i>
@@ -1647,11 +1128,10 @@
 
     <h3 class="contact-title padd-15">Send a message to Flowtica</h3>
     <h4 class="contact-sub-title padd-15">
-      If it’s a good fit, we’ll follow up with a few clarifying questions and propose a time for a brief intro call.
+      If it&rsquo;s a good fit, we&rsquo;ll follow up with a few clarifying questions and propose a time for a brief intro call.
       The more context you share about your workflows, systems, and constraints, the more tailored and actionable our response will be.
     </h4>
 
-    <!-- Contact form -->
     <div class="row">
       <div class="contact-form padd-15">
         <form action="https://formspree.io/f/mdkqzljj" method="POST" novalidate>
@@ -1700,7 +1180,7 @@
                 <textarea
                   class="form-control"
                   name="message"
-                  placeholder="Briefly describe your organization, key tools, and what you’d like to automate or improve."
+                  placeholder="Briefly describe your organization, key tools, and what you&rsquo;d like to automate or improve."
                   rows="5"
                   required
                 ></textarea>
@@ -1716,7 +1196,6 @@
             </div>
           </div>
 
-          <!-- Prefer email moved to the end -->
           <div class="row">
             <div class="form-item col-12 padd-15">
               <div class="form-group">

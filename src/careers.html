@@ -1,89 +1,98 @@
-        <!-- Careers Section Start -->
-        <section class="careers section" id="careers">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Careers</h2>
-              </div>
+<!-- Careers Section Start -->
+<section class="careers section" id="careers">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Careers</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="padd-15">
+        <p class="section-kicker">Small team, direct ownership</p>
+        <p class="section-copy">
+          We hire selectively for people who want to work close to the customer, ship quickly, and make messy
+          real-world workflows more dependable.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="career-card padd-15">
+        <div class="career-card-inner shadow-dark">
+          <button
+            class="career-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="career-details-automation-impl"
+          >
+            <div class="career-heading">
+              <h4>Automation Implementation Specialist (Junior-Mid)</h4>
+              <p class="career-location">Location: On-site, Kingston, ON</p>
             </div>
-            <div class="row">
-              <div class="career-card padd-15">
-                <div class="career-card-inner shadow-dark">
-                  <button
-                    class="career-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="career-details-automation-impl"
-                  >
-                    <div class="career-heading">
-                      <h4>Automation Implementation Specialist (Junior–Mid)</h4>
-                      <p class="career-location">Location: On-site, Kingston, ON</p>
-                    </div>
-                    <div class="career-toggle-indicator">
-                      <span class="career-indicator-label">View details</span>
-                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                  </button>
-                  <div class="career-details" id="career-details-automation-impl" hidden>
-                    <p>
-                      Shareable posting:
-                      <a href="jobs/automation-implementation-specialist.html"
-                        >Automation Implementation Specialist (Junior–Mid)</a
-                      >
-                    </p>
-                    {{INCLUDE:jobs/automation-implementation-specialist.body.html}}
+            <div class="career-toggle-indicator">
+              <span class="career-indicator-label">View details</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </button>
+          <div class="career-details" id="career-details-automation-impl" hidden>
+            <p>
+              Shareable posting:
+              <a href="jobs/automation-implementation-specialist.html"
+                >Automation Implementation Specialist (Junior-Mid)</a
+              >
+            </p>
+            {{INCLUDE:jobs/automation-implementation-specialist.body.html}}
 
-                    <div class="career-cta">
-                      <a
-                        class="btn"
-                        href="mailto:hello@flowtica.ca?subject=Application%20-%20Automation%20Implementation%20Specialist%20(Junior%E2%80%93Mid)"
-                        >Apply</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="career-cta">
+              <a
+                class="btn"
+                href="mailto:hello@flowtica.ca?subject=Application%20-%20Automation%20Implementation%20Specialist%20(Junior-Mid)"
+                >Apply</a
+              >
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <script>
-            (() => {
-              const toggle = document.querySelector(".career-toggle");
-              const details = document.getElementById("career-details-automation-impl");
-              const indicatorLabel = document.querySelector(
-                ".career-indicator-label"
-              );
-              const indicatorIcon = document.querySelector(
-                ".career-toggle-indicator i"
-              );
+  <script>
+    (() => {
+      const toggle = document.querySelector(".career-toggle");
+      const details = document.getElementById("career-details-automation-impl");
+      const indicatorLabel = document.querySelector(
+        ".career-indicator-label"
+      );
+      const indicatorIcon = document.querySelector(
+        ".career-toggle-indicator i"
+      );
 
-              if (!toggle || !details || !indicatorLabel) return;
+      if (!toggle || !details || !indicatorLabel) return;
 
-              const setExpanded = (expanded) => {
-                toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-                details.hidden = !expanded;
-                indicatorLabel.textContent = expanded ? "Hide details" : "View details";
+      const setExpanded = (expanded) => {
+        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        details.hidden = !expanded;
+        indicatorLabel.textContent = expanded ? "Hide details" : "View details";
 
-                if (indicatorIcon) {
-                  indicatorIcon.classList.toggle("fa-chevron-up", expanded);
-                  indicatorIcon.classList.toggle("fa-chevron-down", !expanded);
-                }
-              };
+        if (indicatorIcon) {
+          indicatorIcon.classList.toggle("fa-chevron-up", expanded);
+          indicatorIcon.classList.toggle("fa-chevron-down", !expanded);
+        }
+      };
 
-              setExpanded(false);
+      setExpanded(false);
 
-              toggle.addEventListener("click", () => {
-                const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-                setExpanded(!isExpanded);
-              });
+      toggle.addEventListener("click", () => {
+        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        setExpanded(!isExpanded);
+      });
 
-              toggle.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  toggle.click();
-                }
-              });
-            })();
-          </script>
-        </section>
-        <!-- Careers Section End -->
+      toggle.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggle.click();
+        }
+      });
+    })();
+  </script>
+</section>
+<!-- Careers Section End -->
