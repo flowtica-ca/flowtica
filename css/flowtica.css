@@ -501,6 +501,11 @@ strong {
 
 .home .my-profession {
   margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.08em;
+  min-height: 2.15em;
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(3rem, 5vw, 5.2rem);
   line-height: 0.94;
@@ -508,7 +513,19 @@ strong {
   color: #ffffff;
 }
 
+.home .profession-prefix {
+  display: block;
+}
+
+.home .typing-shell {
+  display: block;
+  min-height: 1.95em;
+  max-width: 14ch;
+  line-height: 0.96;
+}
+
 .typing {
+  display: block;
   color: #9fe4de;
 }
 
@@ -1612,6 +1629,12 @@ strong {
 
   .home .my-profession {
     font-size: clamp(2.4rem, 13vw, 3rem);
+    min-height: 2.5em;
+  }
+
+  .home .typing-shell {
+    min-height: 2.1em;
+    max-width: 100%;
   }
 
   .hero-actions,
